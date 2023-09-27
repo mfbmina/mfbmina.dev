@@ -120,7 +120,7 @@ def cipher(message)
     message.bytes.map do |byte|
     cbyte = ((byte.to_i ** e) % n).to_s
     missing_chars = n.to_s.size — cbyte.size
-    ‘0’ * missing_chars + cbyte
+    '0' * missing_chars + cbyte
     end.join
 end
 ```
@@ -137,7 +137,7 @@ Ter um esquema definido ajuda ao decriptar a mensagem, pois sabemos exatamente q
 def decipher(ciphed_message)
     ciphed_message.chars.each_slice(n.to_s.size).map do |arr|
         (arr.join.to_i ** d) % n
-    end.pack(‘c*’)
+    end.pack('c*')
 end
 ```
 
@@ -154,3 +154,5 @@ Por último, os **padding schemes** podem ser frágeis. No exemplo dado, o esque
 Este é minha segunda postagem sobre criptografia e minha ideia é implementar algumas das técnicas conhecidas e tentar explicar facilmente aqui. Se você tiver interesse em olhar o código completo, por favor acesse o [repositório no Github](https://github.com/mfbmina/cipher_studies/blob/master/rsa.rb).
 
 Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
+
+Você também pode ler este texto em **[Inglês]({{< relref path="rsa-ruby-begginers.md" lang="en" >}})**.

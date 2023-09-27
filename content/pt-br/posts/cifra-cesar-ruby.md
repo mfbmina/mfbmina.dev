@@ -40,7 +40,7 @@ Com estes dois métodos somos capazes de encriptar uma mensagem utilizando a Cif
 
 {{< gist mfbmina 177a26ee79ee2b116d5aa82e52598e01 >}}
 
-Já o método *decipher* deve ser exatamente igual ao método **cipher**, portanto só é necessário duplicar o método **cipher** e trocar a assinatura do método para **decipher**.
+Já o método **decipher** deve ser exatamente igual ao método **cipher**, portanto só é necessário duplicar o método **cipher** e trocar a assinatura do método para **decipher**.
 
 Agora vamos finalmente testar o nosso código!
 
@@ -61,3 +61,5 @@ Infelizmente essa implementação tem um problema. Os caracteres em Ruby podem s
 Este é minha primeira postagem sobre criptografia e minha ideia é implementar algumas das técnicas conhecidas e tentar explicar facilmente aqui. Se você tiver interesse em olhar o código completo, por favor acesse o [repositório no Github](https://github.com/mfbmina/cipher_studies/blob/master/caeser.rb).
 
 Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
+
+Você também pode ler este texto em **[Inglês]({{< relref path="caesar-cypher-ruby.md" lang="en" >}})**.
