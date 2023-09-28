@@ -61,4 +61,4 @@ This is the first post about cipher, my idea is to implement some techniques and
 
 You also can find me on **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
 
-You can also find this text in **[Portuguese]({{< relref path="cifra-cesar-ruby.md" lang="pt-br" >}})**.
+You can also find this text in **[Portuguese]({{< relref path="cifra-cesar-ruby.md" lang="br" >}})**.

@@ -1,0 +1,41 @@
+baseurl = "https://username.github.io"
+DefaultContentLanguage = "br"
+title = "Matheus Mina"
+theme = "beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[languages]
+  [languages.br]
+    contentDir = 'content/br'
+  [languages.en]
+    contentDir = 'content/en'
+
+[Params]
+
+  logo = "img/gopher.png" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "02/01/2006"
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+
+[Author]
+  name = "Matheus Mina"
+  website = "mfbmina.dev"
+  email = "mfbmina@gmail.com"
+  github = "mfbmina"
+  twitter = "mfbmina"
+  linkedin = "mfbmina"
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 1

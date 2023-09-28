@@ -78,4 +78,4 @@ It is also important to say that we had to change the `sort` function signature 
 
 As we can see, starting using concurrency in Go is quite simple. The language also supports more advanced options but we can talk about it in the next blog post. If you like the subject, you can also find me on **[Twitter](https://twitter.com/mfbmina)**, **[GitHub](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
 
-You can also find this text in **[Portuguese]({{< relref path="introducao-concorrencia-go.md" lang="pt-br" >}})**.
+You can also find this text in **[Portuguese]({{< relref path="introducao-concorrencia-go.md" lang="br" >}})**.
