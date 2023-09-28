@@ -21,9 +21,6 @@
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
-[context.next.environment]
-  HUGO_ENABLEGITINFO = "true"
-
 [[redirects]]
   from   = "/npmjs/*"
   to     = "/npmjs/"
