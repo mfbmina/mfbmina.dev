@@ -6,6 +6,7 @@ pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
+disqusShortname = 'mfbmina'
 
 [languages]
   [languages.br]
@@ -14,7 +15,6 @@ pygmentsCodefencesGuessSyntax = true
     contentDir = 'content/en'
 
 [Params]
-
   logo = "img/gopher.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "02/01/2006"
