@@ -2,6 +2,7 @@
 title = 'Automatizando tarefas com Go'
 date = 2018-03-11
 draft = false
+tags = ['go']
 +++
 
 Na vida de uma pessoa desenvolvedora, nos deparamos diversas vezes com tarefas monótonas, repetitivas e sempre nos vem a ideia na cabeça de como podemos automatizar isso. Aqui na Trybe, temos dois cenários bem legais de como Go nos ajudou a automatizar algumas dessas tarefas.

@@ -15,7 +15,7 @@ disqusShortname = 'mfbmina'
     contentDir = 'content/en'
 
 [Params]
-  logo = "img/gopher.png" # Expecting square dimensions
+  logo = "img/me.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "02/01/2006"
   rss = true
@@ -26,6 +26,7 @@ disqusShortname = 'mfbmina'
   socialShare = true
   delayDisqus = true
   showRelatedPosts = true
+  hideAuthor = true
 
 [Author]
   name = "Matheus Mina"
@@ -37,5 +38,10 @@ disqusShortname = 'mfbmina'
 
 [[menu.main]]
     name = "About"
-    url = "/pages/about/"
+    url = "/about/"
     weight = 1
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 2

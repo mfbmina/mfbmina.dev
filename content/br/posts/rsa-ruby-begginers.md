@@ -2,6 +2,7 @@
 title = 'RSA em Ruby para iniciantes'
 date = 2018-12-13T09:22:18-03:00
 draft = false
+tags = ['ruby','rsa']
 +++
 
 ## Introdução
@@ -141,7 +142,7 @@ def decipher(ciphed_message)
 end
 ```
 
-Eu já tratei sobre **bytes** e sobre o que método **pack* faz em minha postagem sobre ROT N. Caso ainda tenha dúvidas, é só checar [aqui]({{< ref "/cifra-cesar-ruby" >}} "Implementando a Cifra de César em Ruby").
+Eu já tratei sobre **bytes** e sobre o que método **pack* faz em minha postagem sobre ROT N. Caso ainda tenha dúvidas, é só checar [aqui]({{< ref "/caesar-cypher-ruby.md" >}} "Implementando a Cifra de César em Ruby").
 
 ## Conclusão
 
@@ -154,5 +155,3 @@ Por último, os **padding schemes** podem ser frágeis. No exemplo dado, o esque
 Este é minha segunda postagem sobre criptografia e minha ideia é implementar algumas das técnicas conhecidas e tentar explicar facilmente aqui. Se você tiver interesse em olhar o código completo, por favor acesse o [repositório no Github](https://github.com/mfbmina/cipher_studies/blob/master/rsa.rb).
 
 Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
-
-Você também pode ler este texto em **[Inglês]({{< relref path="rsa-ruby-begginers.md" lang="en" >}})**.

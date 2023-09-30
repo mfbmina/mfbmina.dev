@@ -2,6 +2,7 @@
 title = 'Introduction to Concurrency in Go'
 date = 2022-11-01
 draft = false
+tags = ['go', 'concurrency']
 +++
 
 One of the best Go features is how easy we can use concurrency. The language gives us `goroutines`, which are like lightweight threads managed by the Go runtime. It help us to run several functions at the same instant and is very helpful if you wish to improve the performance of your application.
@@ -77,5 +78,3 @@ We can notice that `channels` have a special operator `<-`. To understand how it
 It is also important to say that we had to change the `sort` function signature was updated to accept a `chan`. It is initialized in the main function and then given to the `goroutines`.
 
 As we can see, starting using concurrency in Go is quite simple. The language also supports more advanced options but we can talk about it in the next blog post. If you like the subject, you can also find me on **[Twitter](https://twitter.com/mfbmina)**, **[GitHub](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
-
-You can also find this text in **[Portuguese]({{< relref path="introducao-concorrencia-go.md" lang="br" >}})**.

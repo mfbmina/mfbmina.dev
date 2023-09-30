@@ -2,6 +2,7 @@
 title = 'Introdução a concorrência em Go'
 date = 2022-11-01
 draft = false
+tags = ['go','concurrency']
 +++
 
 Uma das funcionalidades mais legais de Go é a facilidade de se utilizar concorrência. A linguagem nos fornece as chamadas `goroutines` que são *lighweight threads* gerenciadas pelo própio *runtime* do Go. Concorrência nos permite rodar diversas funções ao mesmo tempo. Isso é extremamente útil caso você queira melhorar a performance de sua aplicação.
@@ -77,5 +78,3 @@ Como podemos notar, existe um operador especial para os `channels` que é o `<-`
 Também é importante dizer que a assinatura da função `sort` foi alterada para receber um `chan`. Esse `chan` então é inicializado na função principal e passado para as `goroutines`.
 
  Como podemos ver, começar a utilizar concorrência em Go é simples. A linguagem também suporta opções mais avançadas, mas isso fica para um próximo blog post. Se curtiu o assunto, você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).** Você também pode achar esse texto em **[Inglês](https://dev.to/mfbmina/introduction-to-concurrency-in-go-2bg7)**.
-
-Você também pode ler este texto em **[Inglês]({{< relref path="introduction-concurrency-go.md" lang="en" >}})**.

@@ -2,6 +2,7 @@
 title = 'Enriquecendo requests com Traefik'
 date = 2022-10-13T09:22:18-03:00
 draft = false
+tags = ['go', 'apigateway', 'traefik']
 +++
 
 Atualmente grande parte dos fluxos de autenticação se baseia em gerar um token, que pode por exemplo usar o padrão JWT, e o frontend faz as requisições informando ao backend quem é o usuário que está de fato realizando a chamada. Isso pode ser observado com as requests do frontend enviando o header `Authorization` nas requests.

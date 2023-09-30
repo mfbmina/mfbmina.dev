@@ -2,6 +2,7 @@
 title = 'Implementando a Cifra de César em Ruby'
 date = 2018-11-25T09:22:18-03:00
 draft = false
+tags = ['ruby', 'rot13', 'rotn']
 +++
 
 A Cifra de César é a mais simples e conhecida técnica de encriptação. Ela também é conhecida por **cifra de troca**, **código de César, troca de César**, **ROT N** ou **ROT13**, sendo esse o nome mais comum, trocando as letras em treze rotações.
@@ -61,5 +62,3 @@ Infelizmente essa implementação tem um problema. Os caracteres em Ruby podem s
 Este é minha primeira postagem sobre criptografia e minha ideia é implementar algumas das técnicas conhecidas e tentar explicar facilmente aqui. Se você tiver interesse em olhar o código completo, por favor acesse o [repositório no Github](https://github.com/mfbmina/cipher_studies/blob/master/caeser.rb).
 
 Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
-
-Você também pode ler este texto em **[Inglês]({{< relref path="caesar-cypher-ruby.md" lang="en" >}})**.

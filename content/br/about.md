@@ -1,6 +1,6 @@
 ---
-title: Olá, eu sou o Matheus
-subtitle: mas se preferir, pode chamar de Mina!
+title: Olá!
+subtitle: sou o Matheus, mas pode chamar de Mina!
 comments: false
 socialShare: false
 ---

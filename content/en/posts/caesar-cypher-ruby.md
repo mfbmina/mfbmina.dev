@@ -2,6 +2,7 @@
 title = 'Implementing the Caesar Cipher in Ruby'
 date = 2018-11-25T09:22:18-03:00
 draft = false
+tags = ['ruby', 'rot13', 'rotn']
 +++
 
 Caesar cipher is the simplest and most widely known encryption technique. It is also known as **Caesar's cipher**, **shift cipher**, **Caesar's code**, **Caesar shift**, or **ROT N** (**ROT13** is the most famous one, shifting letters by 13).
@@ -60,5 +61,3 @@ Unfortunately, this solution does not work for strings with multi-byte character
 This is the first post about cipher, my idea is to implement some techniques and try to easily explain it here. If you want to take a look at the whole code, please check at **[Github](https://github.com/mfbmina/cipher_studies/blob/master/caeser.rb)**.
 
 You also can find me on **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
-
-You can also find this text in **[Portuguese]({{< relref path="cifra-cesar-ruby.md" lang="br" >}})**.

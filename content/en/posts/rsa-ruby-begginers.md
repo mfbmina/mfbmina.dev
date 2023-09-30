@@ -2,6 +2,7 @@
 title = 'RSA in Ruby for beginners'
 date = 2018-12-13T09:22:18-03:00
 draft = false
+tags = ['ruby', 'rsa']
 +++
 
 ## Introdução
@@ -151,5 +152,3 @@ Also, padding schemes can be fragile. In my example, I am choosing a "dumb" padd
 This is the second post about cipher, my idea is to implement some techniques and try to easily explain it here. If you want to take a look at the whole code, please check at [GitHub]((https://github.com/mfbmina/cipher_studies/blob/master/rsa.rb)).
 
 You also can find me on **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
-
-You can also find this text in **[Portuguese]({{< relref path="rsa-ruby-iniciantes.md" lang="br" >}})**.

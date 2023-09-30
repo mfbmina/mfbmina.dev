@@ -1,6 +1,6 @@
 ---
-title: Hello, I'm Matheus
-subtitle: but you can call me Mina!
+title: Hello!
+subtitle: I'm Matheus but you can call me Mina!
 comments: false
 socialShare: false
 ---
