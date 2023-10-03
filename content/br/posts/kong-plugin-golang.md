@@ -202,6 +202,8 @@ A própia Kong fez um estudo sobre a performance, que pode ser encontrado [aqui]
 
 Go é uma ótima ferramenta para se escrever plugins para o Kong. Podemos contar com toda a facilidade e performance da linguagem, além de todas as ferramentas que a linguagem oferece. No meu caso, consegui ganhar velocidade na entrega e uma maior cobertura de testes. Também é possível isolar a lógica dos plugins com a utilização da pdk, facilitando assim escrever plugins que funcionam pra diversas tecnologia, desacoplando do Kong.
 
+Para ver todo o contéudo apresentado nesse post, é só acessar o [repositório](https://github.com/mfbmina/poc-goplugin-kong).
+
 ## Referências
 
 - [Kong](https://github.com/Kong/kong)
