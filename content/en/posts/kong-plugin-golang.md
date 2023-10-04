@@ -35,7 +35,7 @@ All kong plugins work based on which phase access they need to run. The possible
 - Preread
 - Log
 
-In this example, we will be using `Access`` because we need to update the response before forwarding the request to the responsible microservice. You don't need to worry about it because the signatures for all phases are the same. To know more about all phase access, check this [documentation](https://docs.konghq.com/gateway/latest/plugin-development/custom-logic/).
+In this example, we will be using `Access` because we need to update the response before forwarding the request to the responsible microservice. You don't need to worry about it because the signatures for all phases are the same. To know more about all phase access, check this [documentation](https://docs.konghq.com/gateway/latest/plugin-development/custom-logic/).
 
 ```golang
 func (conf Config) Access(kong *pdk.PDK) {
