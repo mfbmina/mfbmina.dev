@@ -52,7 +52,7 @@ func (conf Config) Access(kong *pdk.PDK) {
 }
 ```
 
-Esse método utiliza o PDK para ler os headers disponíveis, através do método `kong.Request.GetHeader` e depois adiciona um header na resposta utilizando o método `kong.Response.SetHeader`. Para mais informações dos métodos dísponíveis, vale a pena olhar as refêrencias desse post.
+Essa função utiliza o PDK para ler os headers disponíveis, através de `kong.Request.GetHeader` e depois adiciona um header na resposta utilizando o `kong.Response.SetHeader`. Para mais informações dos funções dísponíveis, dê uma olhada na documentação da [Go PDK](https://pkg.go.dev/github.com/Kong/go-pdk).
 
 Por fim, vamos a função principal:
 
@@ -203,6 +203,8 @@ A própia Kong fez um estudo sobre a performance, que pode ser encontrado [aqui]
 Go é uma ótima ferramenta para se escrever plugins para o Kong. Podemos contar com toda a facilidade e performance da linguagem, além de todas as ferramentas que a linguagem oferece. No meu caso, consegui ganhar velocidade na entrega e uma maior cobertura de testes. Também é possível isolar a lógica dos plugins com a utilização da pdk, facilitando assim escrever plugins que funcionam pra diversas tecnologia, desacoplando do Kong.
 
 Para ver todo o contéudo apresentado nesse post, é só acessar o [repositório](https://github.com/mfbmina/poc-goplugin-kong).
+
+Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
 
 ## Referências
 
