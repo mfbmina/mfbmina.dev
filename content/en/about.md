@@ -1,9 +1,10 @@
----
-title: Hello!
-subtitle: I'm Matheus but you can call me Mina!
-comments: false
-socialShare: false
----
++++
+title = 'Hello!'
+subtitle = 'Welcome!'
+date = 2023-10-04T09:22:18-03:00
++++
+
+My name is Matheus, but I'm mostly know as Mina!
 
 I'm a software developer/engineer who met Go after years of working with Ruby and fell in love with the language. I wanna write about technologies and subjects that I'm studying, working on, or have some interest in.
 

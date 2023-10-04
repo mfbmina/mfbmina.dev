@@ -1,9 +1,10 @@
----
-title: Olá!
-subtitle: sou o Matheus, mas pode chamar de Mina!
-comments: false
-socialShare: false
----
++++
+title = 'Olá!'
+subtitle = 'Seja bem vindo!'
+date = 2023-10-04T09:22:18-03:00
++++
+
+Me chamo Matheus, mas sou mais conhecido como Mina!
 
 Sou um desenvolvedor/engenheiro de software que conheceu Go, após anos trabalhando com Ruby, e se apaixonou pela linguagem. Quero escrever sobre tecnologias e temas que estou estudando, trabalhando ou até mesmo que tenho algum interesse.
 

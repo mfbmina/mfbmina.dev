@@ -8,7 +8,7 @@
 - id: lastModified
   translation: "(Ultima modificação em {{ . }})"
 - id: translationsLabel
-  translation: "Outras línguas: "
+  translation: "Tradução: "
 - id: translationsSeparator
   translation: ", "
 - id: readMore
@@ -29,7 +29,7 @@
 
 # 404 page
 - id: pageNotFound
-  translation: "Ooops, a página não existe. Tente outra. (Erro 404)"
+  translation: "Whoops, this page doesn't exist. Move along. (404 error)"
 
 # Footer
 - id: poweredBy # Accepts HTML

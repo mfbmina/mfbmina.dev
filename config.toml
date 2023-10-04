@@ -17,13 +17,11 @@ pygmentsCodefencesGuessSyntax = true
   logo = "img/me.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "02/01/2006"
-  rss = true
   comments = true
   readingTime = true
-  wordCount = true
+  wordCount = false
   useHLJS = true
   socialShare = true
-  delayDisqus = false
   showRelatedPosts = true
   hideAuthor = true
 
