@@ -4,15 +4,15 @@ date = 2023-10-03T12:55:19-03:00
 tags = ["go", "apigateway", "kong"]
 +++
 
-O Kong, segundo a própia documentação, é um apigateway open source, criado para a nuvem, agnostico em plataforma, feito para alta performance e extensível via plugins. O Kong possui uma grande gama de plugins oficiais que nos permitem fazer grande parte das customizações que necessitamos e quando o plugin não está disponível, podemos criar nosso própio plugin.
+O Kong, segundo a própia [documentação](https://github.com/Kong/kong), é um apigateway open source, criado para a nuvem, agnóstico em plataforma, feito para alta performance e extensível via plugins. O Kong possui uma grande gama de [plugins oficiais](https://docs.konghq.com/konnect/reference/plugins/) que nos permitem fazer grande parte das customizações que necessitamos e quando o plugin não está disponível, podemos criar nosso própio plugin.
 
 A linguagem padrão para se criar plugins é Lua, contudo outras linguagens são suportadas e uma delas é Go. Pessoalmente, não tenho experiência em escrever códigos em Lua, portanto, utilizar Go me permite uma maior velocidade de desenvolvimento e maior qualidade no plugin.
 
 ## Desenvolvimento
 
-Criar um plugin usando Go é bem simples, é necessário seguir a assinatura proposta pelo pdk do Kong, mas ela é de fácil entendimento. Para demonstrar isso, vamos criar um plugin que vai ler um header da requisição e a configuração do plugin. Com essas duas informações, vamos adicionar um novo header na resposta.
+Criar um plugin usando Go é bem simples, é necessário seguir a assinatura proposta pelo [plugin development kit](https://docs.konghq.com/gateway/latest/plugin-development/), ou PDK, do Kong, mas ela é de fácil entendimento. Para demonstrar isso, vamos criar um plugin que vai ler um header da requisição e a configuração do plugin. Com essas duas informações, vamos adicionar um novo header na resposta.
 
-A primeira coisa a ser feita é definir as constantes `version` e `priority`. Como o própio nome diz, isso define a versão do plugin que está sendo desenvolvido e a prioridade em execução a relação a outros plugins. Vale a pena pontuar que quanto maior o valor da prioridade, mais cedo o plugin vai ser executado.
+A primeira coisa a ser feita é definir as constantes `version` e `priority`. Como o própio nome diz, isso define a versão do plugin que está sendo desenvolvido e a prioridade em execução a relação a outros plugins. Vale a pena pontuar que quanto maior o valor da prioridade, mais cedo o plugin vai ser executado. Para ver mais sobre a prioridades dos plugins, este [post](https://docs.konghq.com/konnect/reference/plugins/) explica bem.
 
 ```golang
 var Version = "0.0.1"
@@ -35,7 +35,7 @@ Os plugins do Kong funcionam baseados em quais fases do ciclo de vida da requisi
 - Preread
 - Log
 
-No nosso exemplo, vamos utilizar o `Access`, pois vamos atualizar a resposta antes de encaminharmos a requisição para o serviço responsável. Contudo, a assinatura de todas as fases são iguais.
+No nosso exemplo, vamos utilizar o `Access`, pois vamos atualizar a resposta antes de encaminharmos a requisição para o serviço responsável. Contudo, a assinatura de todas as fases são iguais. Para entender mais sobre as fases, recomendo ler essa [documentação](https://docs.konghq.com/gateway/latest/plugin-development/custom-logic/).
 
 ```golang
 func (conf Config) Access(kong *pdk.PDK) {
@@ -52,7 +52,7 @@ func (conf Config) Access(kong *pdk.PDK) {
 }
 ```
 
-Esse método utiliza o pdk para ler os headers disponíveis, através do método `kong.Request.GetHeader` e depois adiciona um header na resposta utilizando o método `kong.Response.SetHeader`. Para mais informações dos métodos dísponíveis, vale a pena olhar as refêrencias desse post.
+Esse método utiliza o PDK para ler os headers disponíveis, através do método `kong.Request.GetHeader` e depois adiciona um header na resposta utilizando o método `kong.Response.SetHeader`. Para mais informações dos métodos dísponíveis, vale a pena olhar as refêrencias desse post.
 
 Por fim, vamos a função principal:
 
@@ -207,8 +207,10 @@ Para ver todo o contéudo apresentado nesse post, é só acessar o [repositório
 ## Referências
 
 - [Kong](https://github.com/Kong/kong)
+- [Kong plugins](https://docs.konghq.com/gateway/latest/kong-plugins/queue/reference/)
 - [Kong PDK](https://docs.konghq.com/gateway/latest/plugin-development/)
 - [Kong Go plugins](https://docs.konghq.com/gateway/latest/plugin-development/pluginserver/go/)
 - [Kong Go PDK](https://pkg.go.dev/github.com/Kong/go-pdk)
+- [Kong Phase Access](https://docs.konghq.com/gateway/latest/plugin-development/custom-logic/)
 - [Exemplos de plugins em Go](https://github.com/Kong/go-plugins)
 - [Repositório com os códigos do post](https://github.com/mfbmina/poc-goplugin-kong)
