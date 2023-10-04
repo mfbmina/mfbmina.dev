@@ -6,7 +6,6 @@ pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
-disqusShortname = 'mfbmina'
 
 [languages]
   [languages.br]
@@ -24,7 +23,7 @@ disqusShortname = 'mfbmina'
   wordCount = true
   useHLJS = true
   socialShare = true
-  delayDisqus = true
+  delayDisqus = false
   showRelatedPosts = true
   hideAuthor = true
 
