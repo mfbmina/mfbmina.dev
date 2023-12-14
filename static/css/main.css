@@ -516,18 +516,10 @@ footer div.disclaimer {
   margin-bottom: 30px;
 }
 
-.blog-tags:before {
-  content: "Tags: ";
-}
-
 .blog-tags a {
   color: #008AFF;
   text-decoration: none;
   padding: 0px 5px;
-}
-
-.blog-tags a:before {
-  content: "#";
 }
 
 .blog-tags a:hover {
@@ -537,6 +529,11 @@ footer div.disclaimer {
 }
 
 .post-preview .blog-tags {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.blog-post .blog-tags {
   margin-top: 5px;
   margin-bottom: 0;
 }
@@ -865,7 +862,7 @@ div.splitbox div.right {
     padding: 15px 25px;
   }
 }
-.disqus-comments button:hover, 
+.disqus-comments button:hover,
 .disqus-comments button:focus {
   color: #FFF;
   background: #0085a1;

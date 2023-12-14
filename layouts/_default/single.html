@@ -7,13 +7,7 @@
           {{ partial "post_meta.html" . }}
         </p>
 
-        {{ if .Params.tags }}
-          <div class="blog-tags">
-            {{ range .Params.tags }}
-              <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
-            {{ end }}
-          </div>
-        {{ end }}
+        {{ partial "tags.html" . }}
 
         <hr />
 
