@@ -1,6 +1,7 @@
 baseurl = "https://mfbmina.dev"
 DefaultContentLanguage = "br"
-title = "Matheus Mina"
+title = "mfbmina.dev"
+subtitle = "Matheus Mina"
 theme = "beautifulhugo"
 pygmentsStyle = "trac"
 pygmentsUseClasses = true
@@ -14,19 +15,21 @@ pygmentsCodefencesGuessSyntax = true
     contentDir = 'content/en'
 
 [params]
+  homeTitle = "mfbmina.dev"
+  subtitle = "by Matheus Mina"
   logo = "img/me.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "02/01/2006"
   comments = true
   readingTime = true
-  wordCount = false
+  wordCount = true
   useHLJS = true
   socialShare = true
   showRelatedPosts = true
   hideAuthor = true
-  [params.Author]
+  [params.author]
     name = "Matheus Mina"
-    website = "mfbmina.dev"
+    website = "https://mfbmina.dev"
     email = "mfbmina@gmail.com"
     github = "mfbmina"
     twitter = "mfbmina"
