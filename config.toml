@@ -13,7 +13,7 @@ pygmentsCodefencesGuessSyntax = true
   [languages.en]
     contentDir = 'content/en'
 
-[Params]
+[params]
   logo = "img/me.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
   dateFormat = "02/01/2006"
@@ -24,14 +24,13 @@ pygmentsCodefencesGuessSyntax = true
   socialShare = true
   showRelatedPosts = true
   hideAuthor = true
-
-[Author]
-  name = "Matheus Mina"
-  website = "mfbmina.dev"
-  email = "mfbmina@gmail.com"
-  github = "mfbmina"
-  twitter = "mfbmina"
-  linkedin = "mfbmina"
+  [params.Author]
+    name = "Matheus Mina"
+    website = "mfbmina.dev"
+    email = "mfbmina@gmail.com"
+    github = "mfbmina"
+    twitter = "mfbmina"
+    linkedin = "mfbmina"
 
 [[menu.main]]
     name = "About"
