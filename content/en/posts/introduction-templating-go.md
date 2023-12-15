@@ -7,7 +7,7 @@ tags = ['go','templating','introduction']
 
 Computer and programming languages were born to make our lives easier,  as they automatize day-to-day tasks. Programmers and software engineers usually have to build files that are almost the same as others, where the only change is one field or another. For example, there are configuration files, invoices, XMLs, HTMLs or any file which we can use to build other files. There is a simple solution for this problem: we can create a template and change the parts that I need manually! That works, but it is not the best way to deal with the problem because it is scalable. We can use technology to help.
 
-Go gives the [text/template](https://pkg.go.dev/text/template) package, which allows developers to create their own templates and also gives the tools to deal with them. A template is just a `.tmpl` file with some special marks inside the text. These marks allow specific actions like conditionals, loops, etc. For a more complete list of actions, you should check the [documentation](https://pkg.go.dev/text/template#hdr-Actions) which has them detailed. As an example, we will create our own invoice template:
+Go gives the [text/template](https://pkg.go.dev/text/template) package, which allows developers to create their own templates and also gives the tools to deal with them. A template is just a text file, usually with the extension `.tmpl`, with some special marks inside the text. These marks allow specific actions like conditionals, loops, etc. For a more complete list of actions, you should check the [documentation](https://pkg.go.dev/text/template#hdr-Actions) which has them detailed. As an example, we will create our own invoice template:
 
 ```tmpl
 Invoice #{{ .Number }}
@@ -85,3 +85,5 @@ Total Value   81.46
 See how easy is to use templates with Go? We have solved the issue in a simple and scalable way. You can also check all the source code in this repository. It's also possible to use HTML templates, but we can talk about that in the next post.
 
 If you've liked this post, you can follow my blog for more content like this. You can also find me on **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**
+
+Edit 1: I also want to thank my friend Cassio Botaro for the review and insights! Thanks man!
