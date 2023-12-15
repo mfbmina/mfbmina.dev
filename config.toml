@@ -19,7 +19,6 @@ pygmentsCodefencesGuessSyntax = true
   subtitle = "by Matheus Mina"
   logo = "img/me.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
-  dateFormat = "02/01/2006"
   comments = true
   readingTime = true
   wordCount = true
