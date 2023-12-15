@@ -32,7 +32,7 @@
   {{- end }}
   "url" : "{{ .Permalink }}",
   "wordCount" : "{{ .WordCount }}",
-  "image" : "{{ .Site.Params.logo | absURL }}",
+  "image" : "{{ .Site.Params.ShareImg | absURL }}",
   "keywords" : [ "{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}" ],
   "publisher" : {
     "@type": "Organization",

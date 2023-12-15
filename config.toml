@@ -17,7 +17,8 @@ pygmentsCodefencesGuessSyntax = true
 [params]
   homeTitle = "mfbmina.dev"
   subtitle = "by Matheus Mina"
-  logo = "img/me.png" # Expecting square dimensions
+  logo = "img/me.png"
+  ShareImg = "img/gopher.png"
   favicon = "img/favicon.ico"
   comments = true
   readingTime = true
