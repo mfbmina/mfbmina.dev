@@ -1,7 +1,7 @@
 +++
 title = 'Writing Kong plugins with Go'
 date = 2023-10-03T12:55:19-03:00
-tags = ["go", "apigateway", "kong"]
+tags = ["go","apigateway","kong"]
 +++
 
 The Kong, quoting its own [documentation](https://github.com/Kong/kong), is an open-source API gateway, cloud-native, platform-agnostic, scalable API Gateway distinguished for its high performance and extensibility via plugins. Kong has a lot of [official plugins](https://docs.konghq.com/konnect/reference/plugins/) that allow us to customize what we need, and when there aren't any available, you can build your own.

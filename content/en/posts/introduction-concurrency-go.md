@@ -2,7 +2,7 @@
 title = 'Introduction to Concurrency in Go'
 date = 2022-11-01
 draft = false
-tags = ['go', 'concurrency']
+tags = ['go','concurrency','introduction']
 +++
 
 One of the best Go features is how easy we can use concurrency. The language gives us `goroutines`, which are like lightweight threads managed by the Go runtime. It help us to run several functions at the same instant and is very helpful if you wish to improve the performance of your application.

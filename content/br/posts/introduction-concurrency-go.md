@@ -2,7 +2,7 @@
 title = 'Introdução a concorrência em Go'
 date = 2022-11-01
 draft = false
-tags = ['go','concurrency']
+tags = ['go','concurrency','introduction']
 +++
 
 Uma das funcionalidades mais legais de Go é a facilidade de se utilizar concorrência. A linguagem nos fornece as chamadas `goroutines` que são *lighweight threads* gerenciadas pelo própio *runtime* do Go. Concorrência nos permite rodar diversas funções ao mesmo tempo. Isso é extremamente útil caso você queira melhorar a performance de sua aplicação.
