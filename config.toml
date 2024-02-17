@@ -2,7 +2,6 @@ baseurl = "https://mfbmina.dev"
 DefaultContentLanguage = "br"
 title = "mfbmina.dev"
 subtitle = "Matheus Mina"
-theme = ""
 pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
