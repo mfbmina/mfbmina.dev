@@ -26,6 +26,7 @@ pygmentsCodefencesGuessSyntax = true
   socialShare = true
   showRelatedPosts = true
   hideAuthor = true
+  rss = true
   [params.author]
     name = "Matheus Mina"
     website = "https://mfbmina.dev"
@@ -33,6 +34,7 @@ pygmentsCodefencesGuessSyntax = true
     github = "mfbmina"
     twitter = "mfbmina"
     linkedin = "mfbmina"
+    devto = "mfbmina"
 
 [[menu.main]]
     name = "About"
