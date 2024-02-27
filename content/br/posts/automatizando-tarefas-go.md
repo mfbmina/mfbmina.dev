@@ -1,6 +1,6 @@
 +++
 title = 'Automatizando tarefas com Go'
-date = 2018-03-11
+date = 2022-03-11
 draft = false
 tags = ['go']
 +++
