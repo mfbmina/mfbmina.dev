@@ -1,6 +1,6 @@
 <img alt="gopher" src="static/img/gopher.png" width="100">
 
-My personal blog! Visit [mfbmina.dev](mfbmina.dev)!
+My personal blog! Visit [mfbmina.dev](https://mfbmina.dev)!
 
 ## Setup
 
