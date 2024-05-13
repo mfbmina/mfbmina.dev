@@ -2,6 +2,7 @@
 title = 'Criando um Sliding Puzzle em Go'
 date = 2024-05-13T14:56:44-03:00
 draft = false
+tags = ["go", "gamedev"]
 +++
 
 Escrever um jogo é uma ótima maneira de se começar a programar, principalmente pois diversas pessoas começaram a programar por que queriam criar jogos para computadores ou até mesmo video game. Inclusive, um dos meus primeiros "projetos" foi um joguinho, ainda quando cursava o curso técnico em Informática Industrial, em 2010. 
