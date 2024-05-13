@@ -6,11 +6,11 @@ draft = false
 
 Escrever um jogo é uma ótima maneira de se começar a programar, principalmente pois diversas pessoas começaram a programar por que queriam criar jogos para computadores ou até mesmo video game. Inclusive, um dos meus primeiros "projetos" foi um joguinho, ainda quando cursava o curso técnico em Informática Industrial, em 2010. 
 
-No curso, utilizávamos Python e implementamos um slide puzzle. Foi bem desafiador na época, pois tive que entender da mecânica do jogo, de como criar uma GUI, mas entreguei o projeto. Quando comecei a trabalhar com Ruby, também fiz uma implementação para comparar o que já tinha feito em Python. 
+No curso, utilizávamos Python e implementamos um slide puzzle. Foi bem desafiador na época, pois tive que entender da mecânica do jogo, de como criar uma GUI, mas entreguei o projeto. Quando comecei a trabalhar com Ruby, também fiz uma implementação para comparar com o que já tinha feito em Python. 
 
 ![Sliding puzzle](/img/posts/sliding-puzzle.png)
 
-Decidi então escrever um sliding puzzle usando Go. O primeiro passo foi escrever o que chamei de `core`, ou seja, a parte principal do jogo. Para isso, defini uma estrutura chamada `Play` que contém o tabuleiro e as posições `x` e `y` do valor nulo. O tabuleiro pode ser representado com um array, contudo acho mais simples uma representação usando uma matriz quadrada, e por nosso caso, escolhi uma 3x3. Para representar o valor nulo, o valor escolhido foi o `0`.
+Decidi então escrever um sliding puzzle usando Go. O primeiro passo foi escrever o que chamei de `core`, ou seja, a parte principal do jogo. Para isso, defini uma estrutura chamada `Play` que contém o tabuleiro e as posições `x` e `y` do valor nulo. O tabuleiro pode ser representado com um array, contudo acho mais simples uma representação usando uma matriz quadrada, e pro nosso caso, escolhi uma 3x3. Para representar o valor nulo, o valor escolhido foi o `0`.
 
 ```go
 var DEFAULT_TABLE = [3][3]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 0}}
@@ -118,7 +118,7 @@ func (p *Play) IsWin() bool {
 }
 ```
 
-A primeira interface gráfica que implementei foi para o STDOUT do terminal. Para seguir essa interface, precisamos apenas definir uma função de `Render`. Definimos também as teclas que são utilizáveis e ficamos num loop que se quebra em duas situações: 
+A primeira interface gráfica que implementei foi para o STDOUT do terminal. Para seguir a interface de `View`, precisamos apenas definir uma função de `Render`. Definimos também as teclas que são utilizáveis e ficamos num loop que se quebra em duas situações: 
 - ou o usuário apertou a tecla de saída
 - ou o usuário venceu a partida
 
@@ -287,7 +287,6 @@ func (u *UI) Draw(screen *ebiten.Image) {
 
 func loadImage(name string) *ebiten.Image {
 	fName := fmt.Sprintf("assets/%s.png", name)
-	// Write your UI's rendering.
 	f, err := assets.Open(fName)
 	if err != nil {
 		panic(err)
