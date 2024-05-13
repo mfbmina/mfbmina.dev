@@ -8,7 +8,7 @@ Escrever um jogo é uma ótima maneira de se começar a programar, principalment
 
 No curso, utilizávamos Python e implementamos um slide puzzle. Foi bem desafiador na época, pois tive que entender da mecânica do jogo, de como criar uma GUI, mas entreguei o projeto. Quando comecei a trabalhar com Ruby, também fiz uma implementação para comparar o que já tinha feito em Python. 
 
-![Sliding puzzle](/static/img/posts/sliding-puzzle.png)
+![Sliding puzzle](https://mfbmina.dev/img/posts/sliding-puzzle.png?width=300)
 
 Decidi então escrever um sliding puzzle usando Go. O primeiro passo foi escrever o que chamei de `core`, ou seja, a parte principal do jogo. Para isso, defini uma estrutura chamada `Play` que contém o tabuleiro e as posições `x` e `y` do valor nulo. O tabuleiro pode ser representado com um array, contudo acho mais simples uma representação usando uma matriz quadrada, e por nosso caso, escolhi uma 3x3. Para representar o valor nulo, o valor escolhido foi o `0`.
 
