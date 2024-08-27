@@ -2,6 +2,7 @@
 title = 'Circuit Breaker em aplicações Go'
 date = 2024-08-26T20:07:07-03:00
 draft = false
+tags = ["go", "resiliencia", "performance"]
 +++
 
 Nos dias de hoje, é bem comum que nossa aplicação dependa de outras, principalmente se estamos trabalhando em um ambiente de microsserviços. É bem comum que nossa aplicação comece a reportar erros, que ao se investigar, notamos que alguma API de uma equipe parceira ou fornecedor está fora do ar. 
