@@ -1,7 +1,7 @@
 +++
 title = 'Circuit Breaker em aplicações Go'
 date = 2024-08-26T20:07:07-03:00
-draft = true
+draft = false
 +++
 
 Nos dias de hoje, é bem comum que nossa aplicação dependa de outras, principalmente se estamos trabalhando em um ambiente de microsserviços. É bem comum que nossa aplicação comece a reportar erros, que ao se investigar, notamos que alguma API de uma equipe parceira ou fornecedor está fora do ar. 
@@ -96,5 +96,7 @@ func Get(url string) (int, error) {
 ```
 
 E temos nosso serviço Go usando um circuit breaker! Ao utilizar esse padrão, você consegue aumentar a resiliência e a tolerância a falhas dos seus serviços. Podemos notar que ao utilizar a biblioteca, a complexidade foi toda abstraida, tornando muito simples o processo de integramos isso em nosso dia a dia. Se quiser ver o código todo da prova de conceito é só acessar [aqui.](https://github.com/mfbmina/poc_circuit_breaker)
+
+Se tiver curiosidade para conhecer outros padrões de resiliência, o Elton Minetto publicou um ótimo post sobre o [tema](https://eltonminetto.dev/post/2024-08-24-resilience-in-communication-between-microservices-using-the-failsafe-go-lib/)!
 
 Me diga o que você achou dessa postagem nos comentários e fica uma pergunta: você já utilizou circuit breakers antes?
