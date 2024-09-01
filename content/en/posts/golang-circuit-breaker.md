@@ -43,7 +43,7 @@ func main() {
 }
 ```
 
-Our service B will be responsible for calling service A and will build our circuit breaker. The Go community already has the lib [gobreaker]("https://github.com/sony/gobreaker") that already implements the pattern. First of all, we define our breaker properties:
+Our service B will be responsible for calling service A and will build our circuit breaker. The Go community already has the lib [gobreaker](https://github.com/sony/gobreaker) that already implements the pattern. First of all, we define our breaker properties:
 
 ```go
 var st gobreaker.Settings

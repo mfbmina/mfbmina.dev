@@ -42,7 +42,7 @@ func main() {
 }
 ```
 
-Já o serviço B vai ser responsável por chamar o serviço A. É ele quem vai construir o nosso circuit breaker. Para nossa sorte, a comunidade de Go já tem a biblioteca [gobreaker]("https://github.com/sony/gobreaker") que implementa o padrão! Primeiro, definimos as propriedades do nosso breaker:
+Já o serviço B vai ser responsável por chamar o serviço A. É ele quem vai construir o nosso circuit breaker. Para nossa sorte, a comunidade de Go já tem a biblioteca [gobreaker](https://github.com/sony/gobreaker) que implementa o padrão! Primeiro, definimos as propriedades do nosso breaker:
 
 ```go
 var st gobreaker.Settings
