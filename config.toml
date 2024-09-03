@@ -31,9 +31,11 @@ pygmentsCodefencesGuessSyntax = true
     website = "https://mfbmina.dev"
     email = "mfbmina@gmail.com"
     github = "mfbmina"
+    bluesky = "mfbmina.dev"
     twitter = "mfbmina"
     linkedin = "mfbmina"
     devto = "mfbmina"
+    telegram = "mfbmina"
 
 [[menu.main]]
     name = "About"

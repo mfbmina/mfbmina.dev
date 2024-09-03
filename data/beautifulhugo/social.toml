@@ -214,3 +214,9 @@ id = "devto"
 url = "https://dev.to/%s"
 title = "dev.to"
 icon = "fa-brands fa-dev"
+
+[[social_icons]]
+id = "bluesky"
+url = "https://bsky.app/profile/%s"
+title = "dev.to"
+icon = "fa-brands fa-bluesky"
