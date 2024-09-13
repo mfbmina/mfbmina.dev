@@ -7,8 +7,6 @@ tags = ['ruby','rsa','introduction']
 
 ## Introdução
 
-![Picture by [rawpixel](https://unsplash.com/@rawpixel?utm_source=medium&utm_medium=referral) and available at [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/8000/0*jySVcIvNiplrN6kx)
-
 RSA is a public/private encryption algorithm and it is based on the difficulty of the factorization of the product of two large prime numbers. It was named after its creators Rivest, Shamir, and Adleman.
 
 It is an expensive algorithm, computationally speaking, and because of this, it is not common to use it directly, but it is still widely used in the market and is one of the most important encryption algorithms. As an example, OpenSSL implements this algorithm for generating keys and it is commonly used for encrypting SSL certificates or SSH keys.
@@ -139,7 +137,7 @@ end
 ```
 
 Eu já tratei sobre **bytes** e sobre o que método **pack* faz em minha postagem sobre ROT N. Caso ainda tenha dúvidas, é só checar .
-I've already talked about what **pack** and **bytes** do in my post about ROT N. If you have some doubts about it, you can [check it out]({{< ref "/caesar-cypher-ruby" >}} "Implementing the Caesar Cipher in Ruby").
+I've already talked about what **pack** and **bytes** do in my post about ROT N. If you have some doubts about it, you can [check it out]({{< ref "caesar-cypher-ruby.md" >}}).
 
 ## Conclusion
 

@@ -7,8 +7,6 @@ tags = ['ruby','rsa','introduction']
 
 ## Introdução
 
-![Foto tirada por [rawpixel](https://unsplash.com/@rawpixel?utm_source=medium&utm_medium=referral) e disponível em [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)](https://cdn-images-1.medium.com/max/8000/0*jySVcIvNiplrN6kx)
-
 RSA é um algoritmo de encriptação baseado em chaves públicas e privadas , que foi desenvolvido pensando na dificuldade de se fatorar dois números primos grandes. O seu nome vem das iniciais de seus criadores Rivest, Shamir e Adleman.
 
 Computacionalmente falando, ele é um algoritmo caro, mas mesmo assim é amplamente utilizado no mercado e um dos mais importantes algoritmos de criptografia. Seu uso é geralmente realizado de maneira indireta, como por exemplo pelo OpenSSL, que utiliza RSA na geração de suas chaves ou até mesmo quanto utilizamos chaves SSH ou certificados SSL, que também são encriptados por este algoritmo.
@@ -142,7 +140,7 @@ def decipher(ciphed_message)
 end
 ```
 
-Eu já tratei sobre **bytes** e sobre o que método **pack* faz em minha postagem sobre ROT N. Caso ainda tenha dúvidas, é só checar [aqui]({{< ref "/caesar-cypher-ruby.md" >}} "Implementando a Cifra de César em Ruby").
+Eu já tratei sobre **bytes** e sobre o que método **pack* faz em minha postagem sobre ROT N. Caso ainda tenha dúvidas, é só checar [aqui]({{< ref "caesar-cypher-ruby.md" >}}).
 
 ## Conclusão
 
