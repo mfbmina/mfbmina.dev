@@ -34,7 +34,7 @@ RFC is an acronym for `Request for Comments`. The goal of a RFC is to specify ev
 
 The [IETF](https://datatracker.ietf.org/) (Internet Engineering Task Force) maintains almost every RFC of big projects and patterns, and it is a great guide on how to write them.	It also has a [guide](https://www.ietf.org/process/rfcs/).
 
-# Considerações finais
+# Last two cents
 
 I hope that with all this information and links about different ways of writing tech docs, you notice that doesn't matter which model you or your team pick. The most important thing is to have some form of documentation. All of them have their strengths and weaknesses, and it is your responsibility to understand all their trade-offs and choose which suits you the best. It is also important to not be too rigid in its process because we know that docs usually don't age well.
 
