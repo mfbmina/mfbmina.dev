@@ -15,7 +15,7 @@ Como meu blog serve muito de documentação pessoal, achei legal documentar aqui
 
 ![RPC](/img/posts/rpc.png)
 
-O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido para seu caso de uso! Se você não se importa com uma eventual resposta ou até mesmo em perder pacotes, UDP. Caso contrário, use TCP. Para aqueles que gostam de ler as RFCs, pode encontrar o link [aqui!]((https://datatracker.ietf.org/doc/html/rfc1831))
+O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido para seu caso de uso! Se você não se importa com uma eventual resposta ou até mesmo em perder pacotes, UDP. Caso contrário, use TCP. Para aqueles que gostam de ler as RFCs, pode encontrar o link [aqui!](https://datatracker.ietf.org/doc/html/rfc1831)
 
 ## OK, mas como o RPC se difere de uma chamada REST, por exemplo?
 
@@ -162,7 +162,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 
 ### A mágica do protobuf...
 
-Vamos então criar nossos arquivos proto! Nesse arquivo vamos definir nosso serviço, quais os handlers que ele possui e para cada handler, qual a requisição e qual resposta esperadas.
+Vamos então criar nossos arquivos `.proto`! Nesse arquivo vamos definir nosso serviço, quais os handlers que ele possui e para cada handler, qual a requisição e qual resposta esperadas.
 
 ```proto
 syntax = "proto3";
@@ -184,7 +184,7 @@ message PingResponse {
 }
 ```
 
-Com o arquivo proto, vamos fazer a mágica do gRPC + protobuf acontecer. Os plugins instalados acima, conseguem gerar tudo o que for necessário para um servidor ou cliente gRPC com o seguinte comando:
+Com o arquivo `.proto`, vamos fazer a mágica do gRPC + protobuf acontecer. Os plugins instalados acima, conseguem gerar tudo o que for necessário para um servidor ou cliente gRPC com o seguinte comando:
 
 ```sh
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative proto/ping_pong.proto
