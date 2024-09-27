@@ -1,7 +1,7 @@
 +++
 title = 'gRPC: onde vive? o que come?'
 date = 2024-09-25T19:14:38-03:00
-draft = true
+draft = false
 tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 

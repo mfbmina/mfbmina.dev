@@ -1,7 +1,7 @@
 +++
 title = 'gRPC: what is it? An introduction...'
 date = 2024-09-25T19:14:38-03:00
-draft = true
+draft = false
 tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 
