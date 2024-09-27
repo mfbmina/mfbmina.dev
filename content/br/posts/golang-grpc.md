@@ -13,7 +13,7 @@ Como meu blog serve muito de documentação pessoal, achei legal documentar aqui
 
 [RPC](https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto) é uma sigla para `Remote Procedure Call` (em Português `Chamada de Procedimento Remoto`). Ou seja, você envia procedimentos/comandos para um servidor remoto. Sendo simples e direto, isso é RPC. Ele funciona da seguinte forma:
 
-![RPC](/img/posts/rpc.png)
+![RPC](/img/posts/br/rpc.png)
 
 O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido para seu caso de uso! Se você não se importa com uma eventual resposta ou até mesmo em perder pacotes, UDP. Caso contrário, use TCP. Para aqueles que gostam de ler as RFCs, pode encontrar o link [aqui!](https://datatracker.ietf.org/doc/html/rfc1831)
 
@@ -274,7 +274,7 @@ Quem tiver interesse para ver o código completo, pode acessar a [PoC gRPC](http
 
 O gRPC não é nada mais que uma abstração em cima do RPC convencional utilizando o protobuf como serializador e o protocolo `http/2`. Existem algumas considerações de performance ao se utilizar o `http/2` e em alguns cenários, como em requisições com o corpo simples, o `http/1` se mostra mais performático que o `http/2`. Recomendo a leitura deste [benchmark](https://github.com/duh-rpc/duh-go-benchmarks) e desta issue aberta no [golang/go](https://github.com/golang/go/issues/47840) sobre o `http/2`. Contudo, em requisições de corpo complexo, como grande parte das que resolvemos dia a dia, gRPC se torna uma solução extremamente atraente devido ao serializador do protobuf, que é extremamente mais rápido que JSON. O Elton Minetto fez um [blog post](https://eltonminetto.dev/post/2024-08-05-json-vs-flatbuffers-vs-protobuf/) explicando melhor essas alternativas e realizando um benchmark. Um consideração também é o protobuf consegue resolver o problema de inconsistência de contratos entre servidor e cliente, contudo é necessário uma maneira fácil de distribuir os arquivos `.proto`.
 
-Por fim, minha recomendação é use gRPC se sua equipe tiver a necessidade e a maturidade necessária para tal. Hoje, grande parte das aplicações web não necessitam da performance que gRPC visa propor e nem todos já trabalharam com essa tecnologia, o que pode causar uma menor velocidade e qualidade nas entregas.. Como nessa postagem eu citei muitos links, decidi listar todas as referências aqui:
+Por fim, minha recomendação é use gRPC se sua equipe tiver a necessidade e a maturidade necessária para tal. Hoje, grande parte das aplicações web não necessitam da performance que gRPC visa propor e nem todos já trabalharam com essa tecnologia, o que pode causar uma menor velocidade e qualidade nas entregas. Como nessa postagem eu citei muitos links, decidi listar todas as referências abaixo:
 
 - [RPC](https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto)
 - [RPC RFC]((https://datatracker.ietf.org/doc/html/rfc1831))

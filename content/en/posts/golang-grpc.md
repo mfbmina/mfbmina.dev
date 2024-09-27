@@ -13,7 +13,7 @@ As my blog works as a personal documentation, I decided to document what I learn
 
 [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call) is an acronym for `Remote Procedure Call`. In other words, you send procedures/commands to a remote server. Straight forward, that is RPC! This image describes how it works: 
 
-![RPC](/img/posts/rpc.png)
+![RPC](/img/posts/en/rpc.png)
 
 RPC works with UDP and TCP. It is up to you to decide what suits you better. If you don't need an answer or lose some packages, go for UDP. If that is important for you, go for TCP. For those who like to read the RFCs, you can find it [here](https://datatracker.ietf.org/doc/html/rfc1831)!
 
@@ -21,7 +21,7 @@ RPC works with UDP and TCP. It is up to you to decide what suits you better. If 
 
 Both are a way to design your APIs, but a REST architecture has very well-defined principles that have to be followed to achieve a RESTfull architecture. RPC also has some principles that should be defined between the client and the server. For the RPC client, it is like calling a local procedure. Also, RPC doesn't care about the connection being UDP or TCP, but for REST, if you want to be RESTfull, you cannot use UDP.
 
-To learn more about both, I recommend this guide from AWS about [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/).
+To learn more about both, I recommend this guide from AWS about [RPC x REST](https://aws.amazon.com/en/compare/the-difference-between-rpc-and-rest/).
 
 ## And how to implement an RPC server with Go?
 
@@ -72,7 +72,7 @@ func (h *Handler) Ping(args *Args, reply *Args) error {
 }
 ```
 
-Now the procedure exists, it can handle the connections:
+Now the procedure exists and can handle the connections:
 
 ```golang
 func main() {
@@ -125,7 +125,9 @@ func main() {
 }
 ```
 
-It is possible to notice that we need to inform the server's address and which handler we wanna execute. As we are using binary data, the package [encoding/gob](https://pkg.go.dev/encoding/gob) is used to transport the data. If you go for another codec, like `JSON`, you must tell your server to use it. To see the full example, please visit the [PoC](https://github.com/mfbmina/poc_rpc).
+It is possible to notice that we need to inform the server's address and which handler we wanna execute. As we are using binary data, the package [encoding/gob](https://pkg.go.dev/encoding/gob) is used to transport the data. If you go for another codec, like `JSON`, you must tell your server to use it. 
+
+To see the full example, please visit the [PoC](https://github.com/mfbmina/poc_rpc).
 
 # And what is gRPC?
 
@@ -271,7 +273,7 @@ gRPC is not more than an abstraction over the conventional RPC, using protobuf a
 My final recommendation is to use gRPC if you and your team need it and are mature enough for it. Usually, web applications don't need all the performance that gRPC aims to give. It is usual to find people who have never worked with it, which can cause a slow development process and a loss in software quality. In this post, I've cited a lot of references, and they are all listed below:
 - [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call)
 - [RPC RFC]((https://datatracker.ietf.org/doc/html/rfc1831))
-- [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/)
+- [RPC x REST](https://aws.amazon.com/en/compare/the-difference-between-rpc-and-rest/)
 - [PoC RPC](https://github.com/mfbmina/poc_rpc)
 - [net/rpc](https://pkg.go.dev/net/rpc)
 - [encoding/gob](https://pkg.go.dev/encoding/gob)
