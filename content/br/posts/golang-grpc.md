@@ -5,7 +5,7 @@ draft = false
 tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 
-A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distribuídos, ainda quando estava cursando a graduação em Ciência da Computação. Achei legal, mas na época lembro de não compreender exatamente o porque eu usaria RPC ao invés de usar o padrão REST, por exemplo. Passa o tempo, e vou trabalhar em uma empresa em que parte do sistema legado era utilizando SOAP. Lembro de pensar: "hm, interessante. Parece com RPC, mas traféga XML". Anos depois, ouço pela primeira vez falar sobre gRPC, mas nunca entendi complementamente o que era, o que comia e pra que servia.
+A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distribuídos, ainda quando estava cursando a graduação em Ciência da Computação. Achei legal, mas na época lembro de não compreender exatamente o porque eu usaria RPC ao invés de usar o padrão REST, por exemplo. Passa o tempo, e vou trabalhar em uma empresa em que parte do sistema legado era utilizando SOAP. Lembro de pensar: "hmm, interessante! Parece com RPC, mas traféga XML". Anos depois, ouço pela primeira vez falar sobre gRPC, mas nunca entendi complementamente o que era, o que comia e pra que servia.
 
 Como meu blog serve muito de documentação pessoal, achei legal documentar aqui o que aprendi sobre, começando sobre o que é RPC e depois indo para o gRPC.
 
@@ -19,8 +19,9 @@ O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido p
 
 ## OK, mas como o RPC se difere de uma chamada REST, por exemplo?
 
-Ambos são maneiras de arquiteturar APIs. Porém, a arquitetura REST possuí principíos muito bem definidos e que devem ser seguidos para se ter uma arquitetura RESTfull. O RPC até possui principios, mas eles são definidos entre cliente e servidor. Para o cliente RPC, é como se ele tivesse chamando um procedimento local. Outro ponto importante é que para o RPC, não importa muito se a conexão é TCP ou UDP. Já para APIs REST, se você quiser seguir o RESTfull, não vai conseguir utilizar UDP.
+Ambos são maneiras de arquiteturar APIs, porém, a arquitetura REST possuí principíos muito bem definidos e que devem ser seguidos para se ter uma arquitetura RESTfull. O RPC até possui principios, mas eles são definidos entre cliente e servidor. Para o cliente RPC, é como se ele tivesse chamando um procedimento local.
 
+Outro ponto importante é que para o RPC, não importa muito se a conexão é TCP ou UDP. Já para APIs REST, se você quiser seguir o RESTfull, não vai conseguir utilizar UDP.
 
 Para quem quiser saber mais sobre, recomendo este excelente guia da AWS sobre [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/).
 
