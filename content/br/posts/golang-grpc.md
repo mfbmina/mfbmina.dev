@@ -5,7 +5,7 @@ draft = false
 tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 
-A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distruídos, ainda quando estava cursando a graduação em Ciência da Computação. Achei legal, mas na época lembro de não compreender exatamente o porque eu usaria RPC ao invés de usar o padrão REST, por exemplo. Passa o tempo, e vou trabalhar em uma empresa em que parte do sistema legado era utilizando SOAP. Lembro de pensar: "hm, interessante. Parece com RPC, mas traféga XML". Anos depois, ouço pela primeira vez falar sobre gRPC, mas nunca entendi complementamente o que era, o que comia e pra que servia.
+A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distribuídos, ainda quando estava cursando a graduação em Ciência da Computação. Achei legal, mas na época lembro de não compreender exatamente o porque eu usaria RPC ao invés de usar o padrão REST, por exemplo. Passa o tempo, e vou trabalhar em uma empresa em que parte do sistema legado era utilizando SOAP. Lembro de pensar: "hm, interessante. Parece com RPC, mas traféga XML". Anos depois, ouço pela primeira vez falar sobre gRPC, mas nunca entendi complementamente o que era, o que comia e pra que servia.
 
 Como meu blog serve muito de documentação pessoal, achei legal documentar aqui o que aprendi sobre, começando sobre o que é RPC e depois indo para o gRPC.
 
