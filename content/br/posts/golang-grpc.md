@@ -19,9 +19,9 @@ O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido p
 
 ## OK, mas como o RPC se difere de uma chamada REST, por exemplo?
 
-Ambos são maneiras de arquiteturar APIs, porém, a arquitetura REST possuí principíos muito bem definidos e que devem ser seguidos para se ter uma arquitetura RESTfull. O RPC até possui principios, mas eles são definidos entre cliente e servidor. Para o cliente RPC, é como se ele tivesse chamando um procedimento local.
+Ambos são maneiras de arquiteturar APIs, porém, a arquitetura REST possuí principíos muito bem definidos e que devem ser seguidos para se ter uma arquitetura RESTful. O RPC até possui principios, mas eles são definidos entre cliente e servidor. Para o cliente RPC, é como se ele tivesse chamando um procedimento local.
 
-Outro ponto importante é que para o RPC, não importa muito se a conexão é TCP ou UDP. Já para APIs REST, se você quiser seguir o RESTfull, não vai conseguir utilizar UDP.
+Outro ponto importante é que para o RPC, não importa muito se a conexão é TCP ou UDP. Já para APIs REST, se você quiser seguir o RESTful, não vai conseguir utilizar UDP.
 
 Para quem quiser saber mais sobre, recomendo este excelente guia da AWS sobre [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/).
 
