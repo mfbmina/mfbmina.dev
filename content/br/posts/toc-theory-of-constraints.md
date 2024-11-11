@@ -4,9 +4,9 @@ date = 2024-11-11T18:19:03-03:00
 draft = false
 +++
 
-No fim do ano passado, minha equipe começou o seu projeto mais importante até então e acabei assumindo a liderança na organização do projeto, coordenando as reuniões, o processo de entrega e etc. Durante os primeiros meses, o projeto foi andando bem, tomamos algumas decisões difíceis, provamos alguns conceitos, e iniciamos o rollout da primeira fase.
+No fim do ano passado, minha equipe começou o seu projeto mais importante até então e acabei assumindo a liderança na organização do projeto, coordenando as reuniões, o processo de entrega e etc. Durante os primeiros meses, o projeto foi andando bem, tomamos algumas decisões difíceis, provamos alguns conceitos e iniciamos o rollout da primeira fase.
 
-Contudo, eu sentia que estava atrasando o time em alguns aspects e que estava sendo um gargalo no processo como um todo. Em um 1x1 com o head da área, contei a ele sobre essa frustação e a resposta que recebi foi essa: 
+Contudo, eu sentia que estava atrasando o time em alguns aspectos e que estava sendo um gargalo no processo como um todo. Em um 1x1 com o head da área, contei a ele sobre essa frustação e a resposta que recebi foi essa:
 
 > Sim, você é um gargalo na equipe hoje, mas isso não é necessáriamente ruim.
 
@@ -47,11 +47,13 @@ Como citado anteriormente, você pode até mesmo colocar restrições forçadas 
 
 ## Conclusão
 
-Apesar do livro ser um romance e se passar numa fábrica, é possível traçar diversos paralelos com o que passamos no dia a dia de uma equipe de desenvolvimento de software. É importante perceber que nosso trabalho e nosso produto faz parte de uma cadeia maior, de um sistema, e que entender esse sistema e as restrições deles nos ajudam a manter um fluxo constante e de qualidade nas nossas entregas. Antes de tomar decisões precipitadas de otimização, valide as hipóteses! Tenha certeza de que de fato você está sendo produtivo e que está aumentando a performance de um gargalo. Alguns aprendizados que tirei lendo o livro são:
+Apesar do livro ser um romance e se passar numa fábrica, é possível traçar diversos paralelos com o que passamos no dia a dia de uma equipe de desenvolvimento de software. É importante perceber que nosso trabalho e nosso produto faz parte de uma cadeia maior, de um sistema, e que entender esse sistema e as restrições deles nos ajudam a manter um fluxo constante e de qualidade nas nossas entregas. Antes de tomar decisões precipitadas de otimização, valide as hipóteses! Tenha certeza de que de fato você está sendo produtivo e que está aumentando a performance de um gargalo.
+
+Alguns aprendizados que tirei lendo o livro são:
 - Produtividade não é o mesmo que ocupação. Você só é produtivo, se seu trabalho está te levando mais perto das suas metas. Ou seja, se você está trabalhando em algo que não vai mexer o ponteiro das metas, talvez isso não seja importante.
 - Os gargalos são o ponto mais importante do processo. Para aumentar a eficiência geral, você precisa aumentar as eficiências dos gargalos.
 - Qualquer melhoria que não seja num gargalo, é uma otimização prematura que não aumenta a eficiencia do sistema. Ter ótimos locais, não ajuda a ter um sistema ótimo.
 - Para identificar seus gargalos, aplique o método cientifico. Sugira uma hipótese, baseada em dados ou até mesmo em conhecimento empírico. Dada a hipótese, se ela for verdade algo deve acontecer. Se não acontecer, ela é descartada e uma nova idéia é validada.
 - A melhoria é sempre continua, quando surgirem novos gargalos, aplique o processo sistematico novamente. E sempre vão existir novas restrições e novos pontos de melhoria.
 
-Por fim, essa é a teoria das restrições e quem gostou eu recomendo fortemente ler o livro! 
+Por fim, aprendi mais sobre o meu papel na equipe e no projeto e entendi como posso moldar a minha participação para reduzir o impacto de ser um garlos. Essa então é a teoria das restrições e quem gostou eu recomendo fortemente ler o livro!
