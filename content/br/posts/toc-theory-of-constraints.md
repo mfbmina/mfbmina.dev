@@ -2,6 +2,7 @@
 title = 'A teoria das restrições'
 date = 2024-11-11T18:19:03-03:00
 draft = false
+tags = ['tech', 'theory', 'continous improvement']
 +++
 
 No fim do ano passado, minha equipe começou o seu projeto mais importante até então e acabei assumindo a liderança na organização do projeto, coordenando as reuniões, o processo de entrega e etc. Durante os primeiros meses, o projeto foi andando bem, tomamos algumas decisões difíceis, provamos alguns conceitos e iniciamos o rollout da primeira fase.
