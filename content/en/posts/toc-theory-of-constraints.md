@@ -11,16 +11,16 @@ However, I always felt that I was holding the team back and being a bottleneck i
 
 > Yes, you are being a bottleneck for the team, but that isn't necessarily bad.
 
-I tried to argue with him because I couldn't understand how being a bottleneck wasn't bad, and then he introduced me the theory of constraints. In the end, he recommended a book by Eliyahu M. Goldratt called The Goal: A Process of Ongoing Improvement. Hence, I want to share what I took from it here.
+I tried to argue with him because I couldn't understand how being a bottleneck wasn't bad, and then he introduced me to the theory of constraints. In the end, he recommended a book by Eliyahu M. Goldratt called The Goal: A Process of Ongoing Improvement. Hence, I want to share what I took from it here.
 
 ## Metrics
 
-Before we understand the theory of constraints, we need to know what are the company main goal. We can argue that companies try to improve the world, or they provide better services but that isn't their main goal. Their focus is earning money, and if this is the final goal for every company, all our focus should be on achieving this objective.
+Before we understand the theory of constraints, we need to know what is the company main goal. We can argue that companies try to improve the world, or they provide better services, but that isn't their main goal. Their focus is earning money, and if this is the final goal for every company, all our focus should be on achieving this objective.
 
 Because making money is a generic goal, the author gives us three goals to focus on. They are:
-production: how the company makes money;
-inventory: the money the company has invested to make more money;
-operational expense: the money spent on turning inventory into production;
+- production: how the company makes money;
+- inventory: the money the company has invested to make more money;
+- operational expense: the money spent on turning inventory into production;
 
 In that sense, we should aim to increase the production, while reducing inventory and operational expenses. Also, all metrics must have an impact on the company's goals.
 
@@ -51,10 +51,10 @@ As I said, you can also add constraints to your system to ensure a continuous de
 Despite the book being a romance and happening in an industry, it is possible to draw a parallel to what we live daily in a software development team. It is important to note that our job is part of a larger system, and you should understand it and its restrictions to build an effective and constant delivery flow. Before you make any optimization, be sure that you validate all hypotheses. Make sure that you are being productive and if you are, in fact, increasing the performance of a bottleneck.
 
 Summarizing what I learn from the book:
-Productivity and occupation aren't synonymous. Work is only productive if it brings you closer to your goals. If not, maybe you're working on something that isn't so important;
-Bottlenecks are the system's main part! To increase the overall efficiency, you must increase the efficiency on the constraints;
-Each improvement at a non-bottleneck is a premature optimization that doesn't improve the overall efficiency. Having local optimus doesn't bring you closer to an optimized system;
-To identify your constraints, apply the scientific method. Suggest a hypothesis, and if it turns true, something should happen. If not, you may discard it and validate a new idea;
-The optimization is always continuous. When new bottlenecks appear, apply the systematic approach again. It will always emerge new restrictions and new improvement opportunities;
+- Productivity and occupation aren't synonymous. Work is only productive if it brings you closer to your goals. If not, maybe you're working on something that isn't so important;
+- Bottlenecks are the system's main part! To increase the overall efficiency, you must increase the efficiency on the constraints;
+- Each improvement at a non-bottleneck is a premature optimization that doesn't improve the overall efficiency. Having local optimus doesn't bring you closer to an optimized system;
+- To identify your constraints, apply the scientific method. Suggest a hypothesis, and if it turns true, something should happen. If not, you may discard it and validate a new idea;
+- The optimization is always continuous. When new bottlenecks appear, apply the systematic approach again. It will always emerge new restrictions and new improvement opportunities;
 
 Lastly, I learned more about my role at the squad and the project. Now, I have a better understanding on how I work and how I can reduce the impact of being a bottleneck. That is the Theory of Constraints, and for those who enjoyed it, I recommend reading the book!
