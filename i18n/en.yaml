@@ -28,8 +28,10 @@
 
 
 # 404 page
-- id: pageNotFound
+- id: titleNotFound
   translation: "404"
+- id: subtitleNotFound
+  translation: Page doesn't exist
 
 # Footer
 - id: poweredBy # Accepts HTML
