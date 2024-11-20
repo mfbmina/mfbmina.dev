@@ -4,16 +4,12 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         {{ .Content }}
-
-        {{ if ne .Type "page" }}
-          <hr>
-        {{ end }}
-
-        {{ partial "share-links" . }}
-        {{ partial "comments" . }}
-        {{ partial "related_posts" . }}
-        {{ partial "post_nav" . }}
       </article>
+
+      {{ partial "share-links" . }}
+      {{ partial "comments" . }}
+      {{ partial "related_posts" . }}
+      {{ partial "post_nav" . }}
     </div>
   </div>
 </div>

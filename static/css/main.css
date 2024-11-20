@@ -408,11 +408,6 @@ footer div.disclaimer {
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-@media only screen and (min-width: 768px) {
-  .post-preview {
-    padding: 35px 0;
-  }
-}
 
 .post-preview:last-child {
   border-bottom: 0;
@@ -533,6 +528,13 @@ footer div.disclaimer {
   margin-bottom: 0;
 }
 
+article.blog-post {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0 10px 0;
+  margin: 10px 0 10px 0;
+}
+
 .blog-post .blog-tags {
   margin-top: 5px;
   margin-bottom: 0;
@@ -560,7 +562,7 @@ footer div.disclaimer {
 /* --- Post and page headers --- */
 
 .intro-header {
-  margin: 80px 0 20px;
+  margin: 80px 0 10px;
   position: relative;
 }
 .intro-header.big-img {
@@ -813,6 +815,7 @@ table tr td :last-child {
   width: 75%;
   display: flex;
   float: left;
+  padding: 0;
 }
 
 .share-box ul.share {
@@ -822,6 +825,7 @@ table tr td :last-child {
 
 .share-box {
   margin-top: 10px;
+  padding: 10px;
 }
 
 /* --- Google Custom Search Engine Popup --- */
