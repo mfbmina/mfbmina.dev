@@ -3,24 +3,15 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p class="post-heading post-meta">
-          {{ partial "post_meta.html" . }}
-        </p>
-
-        {{ partial "tags.html" . }}
-
-        <hr />
-
-        {{ .Content }}
-
-        {{ if $.Param "socialShare" }}
-        <hr/>
+        {{ if (.Params.socialShare) | or (ne .Type "page") }}
         <section id="social-share">
           <div class="list-inline footer-links">
             {{ partial "share-links" . }}
           </div>
         </section>
         {{ end }}
+
+        {{ .Content }}
 
         {{ if .Site.Params.showRelatedPosts }}
           {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
@@ -37,9 +28,8 @@
             </ul>
           {{ end }}
         {{ end }}
-      </article>
 
-      {{ if ne .Type "page" }}
+        {{ if ne .Type "page" }}
         <ul class="pager blog-pager">
           {{ if .PrevInSection }}
             <li class="previous">
@@ -52,10 +42,9 @@
             </li>
           {{ end }}
         </ul>
-      {{ end }}
+        {{ end }}
 
-
-      {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
+        {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
         <script src="https://utteranc.es/client.js"
           repo="mfbmina/mfbmina.dev"
           issue-term="pathname"
@@ -63,8 +52,8 @@
           crossorigin="anonymous"
           async>
         </script>
-      {{ end }}
-
+        {{ end }}
+      </article>
     </div>
   </div>
 </div>

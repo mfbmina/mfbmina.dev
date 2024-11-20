@@ -17,10 +17,8 @@
     </a>
 
     <p class="post-meta">
-        {{ partial "post_meta.html" . }}
+      {{ partial "post_meta.html" . }}
     </p>
-
-    {{ partial "tags.html" . }}
 
     <div class="post-entry">
         {{ if or (.Truncated) (.Params.summary) }}
