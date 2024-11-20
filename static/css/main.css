@@ -800,8 +800,13 @@ table tr td :last-child {
 
 /* --- Social media sharing section --- */
 
-#social-share-section {
-  margin-bottom: 30px;
+article .share-box ul.share {
+  display: block;
+  text-align: center;
+}
+
+.share-box {
+  margin-top: 10px;
 }
 
 /* --- Google Custom Search Engine Popup --- */

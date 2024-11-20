@@ -3,56 +3,16 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        {{ if (.Params.socialShare) | or (ne .Type "page") }}
-        <section id="social-share">
-          <div class="list-inline footer-links">
-            {{ partial "share-links" . }}
-          </div>
-        </section>
-        {{ end }}
-
         {{ .Content }}
 
-        {{ if .Site.Params.showRelatedPosts }}
-          {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-            {{ $.Scratch.Set "has_related" true }}
-          {{ end }}
-
-          {{ if $.Scratch.Get "has_related" }}
-            <h4 class="see-also">{{ i18n "seeAlso" }}</h4>
-            <ul>
-              {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
-              {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
-          {{ end }}
-        {{ end }}
-
         {{ if ne .Type "page" }}
-        <ul class="pager blog-pager">
-          {{ if .PrevInSection }}
-            <li class="previous">
-              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
-            </li>
-          {{ end }}
-          {{ if .NextInSection }}
-            <li class="next">
-              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
-            </li>
-          {{ end }}
-        </ul>
+          <hr>
         {{ end }}
 
-        {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
-        <script src="https://utteranc.es/client.js"
-          repo="mfbmina/mfbmina.dev"
-          issue-term="pathname"
-          theme="preferred-color-scheme"
-          crossorigin="anonymous"
-          async>
-        </script>
-        {{ end }}
+        {{ partial "share-links" . }}
+        {{ partial "comments" . }}
+        {{ partial "related_posts" . }}
+        {{ partial "post_nav" . }}
       </article>
     </div>
   </div>

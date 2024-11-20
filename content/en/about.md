@@ -2,6 +2,7 @@
 title = 'Hello!'
 subtitle = 'Welcome!'
 date = 2023-10-04T09:22:18-03:00
+socialShare = false
 +++
 
 I'm Mina or Matheus, you can call me both!
