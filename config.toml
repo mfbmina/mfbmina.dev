@@ -20,7 +20,6 @@ title = "mfbmina.dev"
   logo = "img/me.png"
   readingTime = true
   rss = true
-  selfHosted = false
   shareImg = "img/gopher.png"
   showRelatedPosts = true
   socialShare = true
