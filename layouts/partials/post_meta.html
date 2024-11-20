@@ -24,22 +24,6 @@
       &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;{{ .Site.Params.Author.name | safeHTML }}
     {{ end }}
   {{ end }}
-  {{- if .Site.Params.staticman -}}
-    &nbsp;|&nbsp;<i class="fas fa-comment"></i>&nbsp;
-    {{ $slug := replace .RelPermalink "/" "" }}
-    {{ if .Site.Data.comments }}
-      {{ $comments := index $.Site.Data.comments $slug }}
-      {{ if $comments }}
-        {{ if gt (len $comments) 1  }}
-          {{ len $comments  }} {{ i18n "moreComment" }}
-        {{ else }}
-          {{ len $comments  }} {{ i18n "oneComment" }}
-        {{ end }}
-      {{ else }}
-        0 {{ i18n "oneComment" }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
   {{ if .IsTranslated -}}
     &nbsp;|&nbsp;<i class="fas fa-flag"></i>&nbsp;
     {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
@@ -49,3 +33,5 @@
     {{ $linksOutput | safeHTML}}
   {{- end }}
 </span>
+
+{{ partial "tags.html" . }}

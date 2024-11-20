@@ -1,10 +1,10 @@
 baseurl = "https://mfbmina.dev"
 DefaultContentLanguage = "br"
-title = "mfbmina.dev"
-subtitle = "Matheus Mina"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
+subtitle = "Matheus Mina"
+title = "mfbmina.dev"
 
 [languages]
   [languages.br]
@@ -13,19 +13,19 @@ pygmentsCodefencesGuessSyntax = true
     contentDir = 'content/en'
 
 [params]
-  homeTitle = "mfbmina.dev"
-  subtitle = "by Matheus Mina"
-  logo = "img/me.png"
-  ShareImg = "img/gopher.png"
-  favicon = "img/favicon.ico"
   comments = true
-  readingTime = true
-  wordCount = true
-  useHLJS = false
-  socialShare = true
-  showRelatedPosts = true
+  favicon = "img/favicon.ico"
   hideAuthor = true
+  homeTitle = "mfbmina.dev"
+  logo = "img/me.png"
+  readingTime = true
   rss = true
+  shareImg = "img/gopher.png"
+  showRelatedPosts = true
+  socialShare = true
+  subtitle = "by Matheus Mina"
+  useHLJS = false
+  wordCount = true
   [params.author]
     name = "Matheus Mina"
     website = "https://mfbmina.dev"

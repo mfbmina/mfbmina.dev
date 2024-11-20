@@ -28,8 +28,10 @@
 
 
 # 404 page
-- id: pageNotFound
+- id: titleNotFound
   translation: "404"
+- id: subtitleNotFound
+  translation: Página inexistente
 
 # Footer
 - id: poweredBy # Accepts HTML
@@ -46,28 +48,6 @@
   translation: "Buscar {{ .Site.Title }}"
 - id: gcseClose
   translation: "Fechar"
-
-# Staticman
-- id: noComment
-  translation: "Sem comentários"
-- id: oneComment
-  translation: "comentário"
-- id: moreComment
-  translation: "comentários"
-- id: useMarkdown
-  translation: "Você pode usar sintaxe MarkDown"
-- id: yourName
-  translation: "Seu nome"
-- id: yourEmail
-  translation: "Seu email"
-- id: yourWebsite
-  translation: "Seu website"
-
-# Delayed Disqus
-- id: show
-  translation: "Mostrar"
-- id: comments
-  translation: "comentários"
 
 # Related posts
 - id: seeAlso
