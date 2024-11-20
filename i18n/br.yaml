@@ -47,12 +47,6 @@
 - id: gcseClose
   translation: "Fechar"
 
-# Delayed Disqus
-- id: show
-  translation: "Mostrar"
-- id: comments
-  translation: "comentários"
-
 # Related posts
 - id: seeAlso
   translation: "Veja também"
