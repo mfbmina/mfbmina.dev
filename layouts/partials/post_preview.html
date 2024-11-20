@@ -22,10 +22,15 @@
 
     <div class="post-entry">
         {{ if or (.Truncated) (.Params.summary) }}
-        {{ .Summary }}
-        <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
+          {{ .Summary }}
         {{ else }}
-        {{ .Content }}
+          {{ .Content }}
         {{ end }}
+        <div class="post-entry-footer">
+          {{ partial "share-links" . }}
+          <div class="read-more">
+            <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
+          </div>
+        </div>
     </div>
 </article>

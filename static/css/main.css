@@ -491,6 +491,15 @@ footer div.disclaimer {
   float: right;
 }
 
+.post-entry-footer {
+  display: flex;
+}
+
+.post-entry-footer .read-more{
+  width: 25%;
+  margin-top: 10px;
+}
+
 @media only screen and (min-width: 768px) {
   .post-preview .post-title {
     font-size: 36px;
@@ -800,7 +809,13 @@ table tr td :last-child {
 
 /* --- Social media sharing section --- */
 
-article .share-box ul.share {
+.post-entry .share-box {
+  width: 75%;
+  display: flex;
+  float: left;
+}
+
+.share-box ul.share {
   display: block;
   text-align: center;
 }
