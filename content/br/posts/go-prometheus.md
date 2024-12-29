@@ -2,6 +2,7 @@
 title = 'Métricas com Go e Prometheus'
 date = 2024-12-27T19:07:46-03:00
 draft = false
+tags = ["go", "monitoring", "metrics", "prometheus"]
 +++
 
 No mundo do desenvolvimento, é necessário saber como a aplicação que estamos trabalhando está se comportando e a maneira mais conhecida de realizarmos isso é por meio de métricas.  Elas podem ser de diversos tipos, como, por exemplo, de desempenho, de produto ou de saúde. Atualmente, o [Prometheus](https://www.cncf.io/projects/prometheus/) é amplamente utilizado pelo mercado a fim de coletar essas métricas.
@@ -83,7 +84,7 @@ scrape_configs:
     - 'myapp:8080'
 ```
 
-Se quiser verificar se tudo está funcionando, é só acessar `http://localhost:9090` e ver se deu certo a configuração. Contudo, muitas vezes as métricas padrões não são suficientes para representar o comportamento da nossa aplicação e é necessário definir métricas customizadas. Ao utilizar a biblioteca padrão do Prometheus para Go, essa tarefa se torna trivial, simples como o exemplo abaixo:
+Se quiser verificar se tudo está funcionando, é só acessar `http://localhost:9090` e ver se deu certo a configuração. Contudo, muitas vezes as métricas padrões não são suficientes para representar o comportamento da nossa aplicação e é necessário definir métricas customizadas. Ao utilizar a biblioteca padrão do Prometheus para Go, essa tarefa se torna trivial e simples, como o exemplo abaixo:
 
 ```golang
 successRate := promauto.NewCounter(prometheus.CounterOpts{
@@ -94,7 +95,7 @@ successRate := promauto.NewCounter(prometheus.CounterOpts{
 successRate.Inc()
 ```
 
-Desta forma, uma nova métrica será retornada ao acessar o endpoint `/metrics`. Contudo, nem sempre é possível ter um servidor web para ter as métricas expostas dessa forma. A partir dessa premissa, foi desenvolvido o [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/). Ele funciona da seguinte forma: você envia suas métricas por chamadas HTTP e ele armazena e expõe o endpoint `/metrics` para a coleta do Prometheus. Contudo, nem sempre é uma boa ideia utilizar esta estratégia, pois, segundo a própria documentação oficial:
+Desta forma, uma nova métrica será retornada ao acessar o endpoint `/metrics`. Porém, nem sempre é possível ter um servidor web para ter as métricas expostas dessa forma. A partir dessa premissa, foi desenvolvido o [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/). Ele funciona da seguinte forma: você envia suas métricas por chamadas HTTP e ele armazena e expõe o endpoint `/metrics` para a coleta do Prometheus. Todavia, nem sempre é uma boa ideia utilizar esta estratégia, pois, segundo a própria documentação oficial:
 - Quando se monitora múltiplas instâncias por meio de um único Pushgateway, ele se torna um ponto único de falha e um potencial gargalo.
 - Você perde o monitoramento automático da saúde da sua aplicação, gerada em cada varredura.
 - O Pushgateway nunca esquece nenhum dado que foi enviado para ele e vai sempre os expor para o Prometheus, exceto caso seja manualmente deletado.
