@@ -1,14 +1,15 @@
 +++
 title = 'Testando chamadas para APIs da melhor forma'
-date = 2025-02-04T20:35:31-03:00
-draft = true
+date = 2025-02-05T20:35:31-03:00
+draft = false
+tags = ["go", "api", "testing"]
 +++
 
 Atualmente, grande parte do trabalho de um desenvolvedor WEB consiste em chamar APIs, seja para realizar uma integração com um sistema de uma equipe parceira ou para integrar com algum fornecedor.
 
 Outra grande frente do dia-a-dia é a escrita de testes. Testes garantem (ou deveriam garantir :D) que o código escrito por nós funciona da maneira esperada e que surpresas não vão acontecer quando a funcionalidade estiver em ambiente produtivo.
 
-Desta forma, é natural pensar que saber escrever testes para chamadas a alguma API é essencial para um bom engenheiro. Nessa postagem, quero mostrar algumas técnicas que vão facilitar a escrita de testes de suas funcionalidades!
+Desta forma, é natural pensar que saber escrever testes para chamadas a alguma API é essencial para uma pessoa engenheira de software competente. Nessa postagem, quero mostrar algumas técnicas que vão facilitar a escrita de testes de suas funcionalidades!
 
 Então, o primeiro passo é construir o serviço que irá ser testado. Esse serviço vai ser extremamente simples: vamos chamar uma API da PokéDex (estou no hype do Pokémon TCG Pocket) e listar os Pokémons existentes.
 
@@ -191,6 +192,8 @@ func Test_APItest(t *testing.T) {
 	assert.Equal(t, p[0].Name, "Charizard")
 }
 ```
+
+O [Minetto](https://eltonminetto.dev) tem um ótimo [post](https://eltonminetto.dev/post/2020-04-10-golang-apitest/) sobre essa biblioteca! Vale a pena conferir!
 
 ## Conclusão
 Na minha opinião, não existe uma técnica melhor que a outra, mas sim o que você prefere. Se não quer ter nenhuma dependência extra no seu projeto e não liga de ter que escrever os `matchers` manualmente, escolha o `httptest` e seja feliz.
