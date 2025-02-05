@@ -1,7 +1,7 @@
 +++
 title = 'Testando chamadas para APIs da melhor forma'
 date = 2025-02-05T16:35:31-03:00
-draft = true
+draft = false
 tags = ["go", "api", "testing"]
 +++
 
