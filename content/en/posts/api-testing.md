@@ -211,7 +211,7 @@ func Test_APItest(t *testing.T) {
 }
 ```
 
-[Minetto](https://eltonminetto.dev) has a great [post](https://eltonminetto.dev/post/2020-04-10-golang-apitest/) about this lib! It is worth checking!
+[Minetto](https://eltonminetto.dev/en) has a great [post](https://eltonminetto.dev/en/post/2020-04-21-golang-apitest/) about this lib! It is worth checking!
 
 ## Conclusion
 At my opinion, one method is not better than the other. It depends on what's work better for you and your team. If having an extra dependency is a no-go, and you don't mind writing the matchers manually, choose `httptest` and be happy!
