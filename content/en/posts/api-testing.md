@@ -70,46 +70,29 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
+	"net/http/httptest"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
-type RespBody struct {
-	Results []Pokemon `json:"results"`
-}
+func Test_HTTPtest(t *testing.T) {
+	j, err := json.Marshal(RespBody{Results: []Pokemon{{Name: "Charizard"}}})
+	assert.Nil(t, err)
 
-type Pokemon struct {
-	Name string `json:"name"`
-}
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/api/v2/pokemon" {
+			t.Errorf("Expected to request '/api/v2/pokemon', got: %s", r.URL.Path)
+		}
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(j))
+	}))
+	defer server.Close()
 
-const URL = "https://pokeapi.co"
-
-func main() {
-	pkmns, err := FetchPokemon(URL)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	for _, pkmn := range pkmns {
-		fmt.Println(pkmn.Name)
-	}
-}
-
-func FetchPokemon(u string) ([]Pokemon, error) {
-	r, err := http.Get(fmt.Sprintf("%s/api/v2/pokemon", u))
-	if err != nil {
-		return nil, err
-	}
-
-	defer r.Body.Close()
-	resp := RespBody{}
-	err = json.NewDecoder(r.Body).Decode(&resp)
-	if err != nil {
-		return nil, err
-	}
-
-	return resp.Results, nil
+	p, err := FetchPokemon(server.URL)
+	assert.Nil(t, err)
+	assert.Equal(t, p[0].Name, "Charizard")
 }
 ```
 
