@@ -2,7 +2,7 @@
 title = 'The theory of constraints'
 date = 2024-11-11T18:19:03-03:00
 draft = false
-tags = ['tech', 'theory', 'continous improvement']
+tags = ['tech', 'theory', 'continous improvement', 'book']
 +++
 
 At the end of 2023, my squad started its most important project. I assumed the project leadership role, organizing the project, coordinating the meetings, the release process, etc. At the first months, the project went well, as we took some hard decisions, proved a couple of concepts, and started the rollout for the first phase.
