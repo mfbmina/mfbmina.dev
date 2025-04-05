@@ -2,7 +2,7 @@
 title = 'Go Tool: tudo o que ninguem pediu'
 date = 2025-04-03T20:02:01-03:00
 draft = false
-tags = ["go", "1.24"]
+tags = ["go", "1.24", "tools"]
 +++
 
 Depois de muitos anos trabalhando com Ruby, migrei para trabalhar com Go sem muita experiência com a linguagem. Meu primeiro atrito foi com a gestão de dependências, pois sempre achei a versão de dependências de Go ruim, com os comandos confusos e, o pior, sem distinção entre dependências de desenvolvimento e dependências produtivas, pois ambas são incluídas no binário final. Vamos olhar o exemplo do `go.mod` de uma PoC:
@@ -31,7 +31,7 @@ require github.com/sony/gobreaker/v2 v2.0.0
 tool github.com/golangci/golangci-lint/v2/cmd/golangci-lint
 ```
 
-A primeira vista parece excelente, já que você pode ter as ferramentas no seu arquivo de dependências, mas o ponto principal ainda não foi resolvido. Ele até mesmo piora dependendo do seu ponto de vista, pois além de incluir todas as dependências de produção e desenvolvimento num mesmo arquivo `go.sum`, ele ainda traz as ferramentas utilizadas no desenvolvimento. Inclusive, ferramentas como o [golangci-lint não recomendam](https://golangci-lint.run/welcome/install/#install-from-sources) esse tipo de instalação, justamente para isolar essa ferramenta das dependências reais. Existem algumas estratégias para se utilizar o `go tools`, mas confesso que não testei por simplesmente ter perdido o interesse na funcionalidade.
+A primeira vista parece excelente, já que você pode ter as ferramentas no seu arquivo de dependências, mas o ponto principal ainda não foi resolvido. Ele até mesmo piora dependendo do seu ponto de vista, pois além de incluir todas as dependências de produção e desenvolvimento num mesmo arquivo `go.mod`, ele ainda traz as ferramentas utilizadas no desenvolvimento, sem a possibilidade de só instalar alguns deles. Inclusive, ferramentas como o [golangci-lint não recomendam](https://golangci-lint.run/welcome/install/#install-from-sources) esse tipo de instalação, justamente para isolar essa ferramenta das dependências reais. Existem algumas estratégias para se utilizar o `go tools`, mas confesso que não testei por simplesmente ter perdido o interesse na funcionalidade.
 
 O que eu esperava era algo na linha de se poder criar grupos de dependências, assim como aplicações Ruby, JavaScript, PHP, etc. Como exemplo, vamos olhar um Gemfile, um arquivo de dependências Ruby:
 
