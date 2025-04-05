@@ -2,7 +2,7 @@
 title = 'Go Tool: everything that nobody has asked for'
 date = 2025-04-03T20:02:01-03:00
 draft = false
-tags = ["go", "1.24", "tools"]
+tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
 After many years working with Ruby, I migrate to Go without much experience with the language. My first friction was with dependency management because I always find it bad, with fuzzy commands and, the worst, without distinction between development and production dependencies, since both of them are included in the binary. Let's take a look at a `go.mod`  from a PoC:

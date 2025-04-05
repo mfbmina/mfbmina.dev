@@ -2,7 +2,7 @@
 title = 'Go Tool: tudo o que ninguem pediu'
 date = 2025-04-03T20:02:01-03:00
 draft = false
-tags = ["go", "1.24", "tools"]
+tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
 Depois de muitos anos trabalhando com Ruby, migrei para trabalhar com Go sem muita experiência com a linguagem. Meu primeiro atrito foi com a gestão de dependências, pois sempre achei a versão de dependências de Go ruim, com os comandos confusos e, o pior, sem distinção entre dependências de desenvolvimento e dependências produtivas, pois ambas são incluídas no binário final. Vamos olhar o exemplo do `go.mod` de uma PoC:
