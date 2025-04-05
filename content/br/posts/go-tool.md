@@ -1,5 +1,5 @@
 +++
-title = 'Go Tool: tudo o que ninguem pediu'
+title = 'Go Tool: tudo o que ninguém pediu'
 date = 2025-04-03T20:02:01-03:00
 draft = false
 tags = ["go", "1.24", "tools", "news", "opinion"]
