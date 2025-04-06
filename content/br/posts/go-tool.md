@@ -5,6 +5,8 @@ draft = false
 tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
+> Oi pessoal, editando o post para dizer que após conversar com diversas pessoas eu percebi que não entendia corretamente o funcionamento de dependências em Go e estava esperando uma funcionalidade que já meio que existe, uma vez que só o que é utilizado vai pro binário final! Obrigado em especial ao Laurent Demailly, do Gophers Slack, e a alguns usuários do Reddit!
+
 Depois de muitos anos trabalhando com Ruby, migrei para trabalhar com Go sem muita experiência com a linguagem. Meu primeiro atrito foi com a gestão de dependências, pois sempre achei a versão de dependências de Go ruim, com os comandos confusos e, o pior, sem distinção entre dependências de desenvolvimento e dependências produtivas, pois ambas são incluídas no binário final. Vamos olhar o exemplo do `go.mod` de uma PoC:
 
 ```go.mod

@@ -5,6 +5,8 @@ draft = false
 tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
+> Hey guys, editing the post to say that after talking to some people, I noticed that I whole misunderstood how Go dependencies work, and I was expecting some feature that already kind of exists, since just what is used from the code is at the final binary! A special thanks to Laurent Demailly, from Gophers Slack, and to some Reddit users!
+
 After many years working with Ruby, I migrate to Go without much experience with the language. My first friction was with dependency management because I always find it bad, with fuzzy commands and, the worst, without distinction between development and production dependencies, since both of them are included in the binary. Let's take a look at a `go.mod`  from a PoC:
 
 ```go.mod
