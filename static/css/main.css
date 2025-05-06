@@ -465,6 +465,7 @@ footer div.disclaimer {
 .post-entry {
   width: 100%;
   margin-top: 10px;
+  text-align: justify;
 }
 .post-image {
   float: right;
@@ -491,7 +492,7 @@ footer div.disclaimer {
 }
 
 .post-entry-footer .read-more{
-  width: 25%;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -533,6 +534,7 @@ article.blog-post {
   border-bottom: 1px solid #eee;
   padding: 10px 0 10px 0;
   margin: 10px 0 10px 0;
+  text-align: justify;
 }
 
 .blog-post .blog-tags {
@@ -807,20 +809,6 @@ table tr td :first-child {
 table tr th :last-child,
 table tr td :last-child {
   margin-bottom: 0;
-}
-
-/* --- Social media sharing section --- */
-
-.post-entry .share-box {
-  width: 75%;
-  display: flex;
-  float: left;
-  margin-top: 10px;
-}
-
-.share-box ul.share {
-  display: block;
-  text-align: center;
 }
 
 /* --- Google Custom Search Engine Popup --- */

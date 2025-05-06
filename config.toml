@@ -22,7 +22,6 @@ title = "mfbmina.dev"
   rss = true
   shareImg = "img/gopher.png"
   showRelatedPosts = true
-  socialShare = true
   subtitle = "by Matheus Mina"
   wordCount = true
   [params.author]

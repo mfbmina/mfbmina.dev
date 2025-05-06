@@ -2,7 +2,6 @@
 title = 'Olá!'
 subtitle = 'Seja bem vindo!'
 date = 2023-10-04T09:22:18-03:00
-socialShare = false
 +++
 
 Me chamo Matheus, mas sou mais conhecido como Mina!
