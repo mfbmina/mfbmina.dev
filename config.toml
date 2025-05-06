@@ -24,7 +24,6 @@ title = "mfbmina.dev"
   showRelatedPosts = true
   socialShare = true
   subtitle = "by Matheus Mina"
-  useHLJS = false
   wordCount = true
   [params.author]
     name = "Matheus Mina"
