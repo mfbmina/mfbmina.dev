@@ -1,9 +1,0 @@
-{{ if .Params.tags }}
-  <div class="blog-tags">
-    {{ range .Params.tags }}
-      <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">
-        <i class="fa-solid fa-tag"></i>&nbsp;{{ . }}
-      </a>
-    {{ end }}
-  </div>
-{{ end }}

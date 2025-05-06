@@ -2,7 +2,6 @@
 title = 'Implementing the Caesar Cipher in Ruby'
 date = 2018-11-25T09:22:18-03:00
 draft = false
-tags = ['ruby', 'rot13', 'rotn']
 +++
 
 Caesar cipher is the simplest and most widely known encryption technique. It is also known as **Caesar's cipher**, **shift cipher**, **Caesar's code**, **Caesar shift**, or **ROT N** (**ROT13** is the most famous one, shifting letters by 13).

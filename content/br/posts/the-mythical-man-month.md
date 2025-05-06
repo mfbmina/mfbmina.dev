@@ -2,7 +2,6 @@
 title = 'The Mythical Man Month'
 date = 2025-02-10T11:39:42-03:00
 draft = false
-tags = ['tech', 'book', 'software engineering']
 +++
 
 Após ler o livro [The Goal]({{< relref toc-theory-of-constraints >}}) fui atrás de uma próxima leitura e me recomendaram o The Mythical Man-Month, do Fred Brooks. Esse livro é um clássico da literatura da computação, desconhecido por mim até agora, mas que descreve o ciclo de desenvolvimento de softwares na década de 70.

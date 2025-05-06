@@ -2,7 +2,6 @@
 title = 'The importance of tech docs'
 date = 2024-09-12T19:11:16-03:00
 draft = false
-tags = ['tech', 'documentation']
 +++
 
 When I chose to pursue a career in computer science when I was 15 years old, it was basically on liking math and physics. I want to distance myself from writing posts, essays, etc. Time goes by, and now, one of the things that I value at a mature company or team is the existence of technical documentation.

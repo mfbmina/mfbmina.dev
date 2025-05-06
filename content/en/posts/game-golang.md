@@ -2,7 +2,6 @@
 title = 'Building a Sliding Puzzle with Go'
 date = 2024-05-13T14:56:44-03:00
 draft = false
-tags = ["go", "gamedev"]
 +++
 
 Building a game is an excellent way of starting programming. Tons of people have started programming because they wanted to create computer games. Even me, back in 2010, had one of my first projects to write a small game when I was still in my Technician course.

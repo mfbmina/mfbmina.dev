@@ -1,7 +1,6 @@
 +++
 title = 'Escrevendo plugins para o Kong em Go'
 date = 2023-10-03T12:55:19-03:00
-tags = ["go", "apigateway", "kong"]
 +++
 
 O Kong, segundo a própia [documentação](https://github.com/Kong/kong), é um apigateway open source, criado para a nuvem, agnóstico em plataforma, feito para alta performance e extensível via plugins. O Kong possui uma grande gama de [plugins oficiais](https://docs.konghq.com/konnect/reference/plugins/) que nos permitem fazer grande parte das customizações que necessitamos e quando o plugin não está disponível, podemos criar nosso própio plugin.

@@ -2,7 +2,6 @@
 title = 'Introduction to templating with Go'
 date = 2023-12-15
 draft = false
-tags = ['go','templating','introduction']
 +++
 
 Computer and programming languages were born to make our lives easier,  as they automatize day-to-day tasks. Programmers and software engineers usually have to build files that are almost the same as others, where the only change is one field or another. For example, there are configuration files, invoices, XMLs, HTMLs or any file which we can use to build other files. There is a simple solution for this problem: we can create a template and change the parts that I need manually! That works, but it is not the best way to deal with the problem because it is scalable. We can use technology to help.

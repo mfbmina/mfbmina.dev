@@ -2,7 +2,6 @@
 title = 'Metrics with Go and Prometheus'
 date = 2024-12-27T19:07:46-03:00
 draft = false
-tags = ["go", "monitoring", "metrics", "prometheus"]
 +++
 
 At the developing world, it is necessary to know how the application that you're working on is behaving, and the most known way of doing that is by metrics. They can be of several types, such as performance, product, or health. Nowadays, [Prometheus](https://www.cncf.io/projects/prometheus/) is the market way for collecting metrics.

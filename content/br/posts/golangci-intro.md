@@ -2,7 +2,6 @@
 title = 'Primeiros passos com linters em Go'
 date = 2024-02-17T17:39:22-03:00
 draft = false
-tags = ['go','linter','introduction']
 +++
 
 Linter é uma ferramenta de análise estática de código que é usada para encontrar erros de programação, bugs, falta de padronização de código e até mesmo falhas de segurança. Essas ferramentas ajudam os desenvolvedores pois permitem que bastante tempo seja salvo, já que identificam problemas antes mesmo de chegarem em produção. Além disso, são extremamente utéis no processo de code review, já que salvam os desenvolvedores de desnecessáriamente avaliar se o colega utilizou os padrões da equipe ou não.

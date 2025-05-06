@@ -2,7 +2,6 @@
 title = 'Implementando a Cifra de César em Ruby'
 date = 2018-11-25T09:22:18-03:00
 draft = false
-tags = ['ruby', 'rot13', 'rotn']
 +++
 
 A Cifra de César é a mais simples e conhecida técnica de encriptação. Ela também é conhecida por **cifra de troca**, **código de César, troca de César**, **ROT N** ou **ROT13**, sendo esse o nome mais comum, trocando as letras em treze rotações.

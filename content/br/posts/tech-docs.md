@@ -2,7 +2,6 @@
 title = 'A importância das documentações técnicas'
 date = 2024-09-12T19:11:16-03:00
 draft = false
-tags = ['tech', 'documentation']
 +++
 
 Quando optei pela carreira em computação, aos 15 anos, foi uma decisão baseada em gostar bastante de matemática e física.  Queria me ver longe de escrever textos, redações e etc. Com o passar do tempo, essa visão foi mudando e agora uma das coisas na qual mais valorizo em uma equipe/empresa madura é a existência de documentação técnica.

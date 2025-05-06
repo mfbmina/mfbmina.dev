@@ -2,7 +2,6 @@
 title = 'Introdução a templating em Go'
 date = 2023-12-15
 draft = false
-tags = ['go','templating','introduction']
 +++
 
 Computadores e linguagens de programação surgiram para facilitar as nossas vidas e automatizar as tarefas do cotidiano. No dia a dia de nós, programadores e engenheiros de software, muitas vezes temos que criar diversos arquivos semelhantes, cujo um ou outro campo muda de forma sutil. Um exemplo claro são arquivos de configuração, faturas, XMLs, HTMLs ou qualquer arquivo que nos permita gerar arquivos similares mudando poucos pontos. Existe uma solução simples para esse problema: criar um template e ir alterando só as partes que preciso de forma manual! Contudo, isso não é a melhor forma de resolver o problema, pois ela não é escalável. Além de que podemos utilizar tecnologia para facilitar nossas vidas.

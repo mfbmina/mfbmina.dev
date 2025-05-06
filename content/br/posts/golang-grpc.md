@@ -2,7 +2,6 @@
 title = 'gRPC: onde vive? o que come?'
 date = 2024-09-27T14:14:38-03:00
 draft = false
-tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 
 A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distribuídos, ainda quando estava cursando a graduação em Ciência da Computação. Achei legal, mas na época lembro de não compreender exatamente o porque eu usaria RPC ao invés de usar o padrão REST, por exemplo. Passa o tempo, e vou trabalhar em uma empresa em que parte do sistema legado era utilizando SOAP. Lembro de pensar: "hmm, interessante! Parece com RPC, mas traféga XML". Anos depois, ouço pela primeira vez falar sobre gRPC, mas nunca entendi complementamente o que era, o que comia e pra que servia.

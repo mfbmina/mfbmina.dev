@@ -2,7 +2,6 @@
 title = 'First steps with Go linters'
 date = 2024-02-17T17:39:22-03:00
 draft = false
-tags = ['go','linter','introduction']
 +++
 
 Linter is a static code analysis tool used to find programming errors, bugs, leaks of code standards, and even security flaws. These tools help developers because they save time by identifying issues before they happen in the production environment. It also keeps developers from unnecessarily checking if your colleague used the team standards.

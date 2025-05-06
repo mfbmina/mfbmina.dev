@@ -2,7 +2,6 @@
 title = 'gRPC: what is it? An introduction...'
 date = 2024-09-27T14:14:38-03:00
 draft = false
-tags = ["go", "rpc", "grpc", "distributed systems"]
 +++
 
 The first time I heard about RPC, I was in a distributed systems class while completing my bachelor's in computer science. I like it but didn't fully understand why I should use it instead of REST. Time passed, and I started working at a company where the legacy services use SOAP. I remember thinking: "hm, that's cool! It is like RPC but using XML instead! Years later, I heard for the first time about gRPC, but I've never fully understood it until now!

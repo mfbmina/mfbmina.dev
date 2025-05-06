@@ -36,11 +36,6 @@ title = "mfbmina.dev"
     telegram = "mfbmina"
 
 [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 1
-
-[[menu.main]]
     name = "Posts"
     url = "/"
     weight = 1
@@ -48,9 +43,9 @@ title = "mfbmina.dev"
 [[menu.main]]
     name = "Talks"
     url = "/talks/"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
+    name = "About"
+    url = "/about/"
+    weight = 3

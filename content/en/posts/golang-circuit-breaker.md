@@ -2,7 +2,6 @@
 title = 'Circuit Breaker in Go apps'
 date = 2024-08-26T20:07:07-03:00
 draft = false
-tags = ["go", "resilience", "performance"]
 +++
 
 Today it is common for our applications to have a couple of dependencies, especially when working in a microservice environment. It isn't rare when our app reports errors, we find out that one dependency is down.
