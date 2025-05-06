@@ -423,6 +423,11 @@ footer div.disclaimer {
   }
 }
 
+.single-post {
+  display: block;
+  text-align: center;
+}
+
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
@@ -438,8 +443,9 @@ footer div.disclaimer {
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 .post-preview .post-meta,
-.posts-heading .post-meta,
+.single-post .post-meta,
 .page-meta {
   color: #808080;
   font-size: 18px;
@@ -449,8 +455,7 @@ footer div.disclaimer {
 .page-meta {
   align-self: center;
 }
-.post-preview .post-meta a,
-.posts-heading .post-meta a,
+.post-meta a,
 .page-meta a {
   color: #404040;
   text-decoration: none;
@@ -508,7 +513,7 @@ footer div.disclaimer {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #999;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .blog-tags a {
@@ -530,16 +535,9 @@ footer div.disclaimer {
 }
 
 article.blog-post {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding: 10px 0 10px 0;
   margin: 10px 0 10px 0;
   text-align: justify;
-}
-
-.blog-post .blog-tags {
-  margin-top: 5px;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
