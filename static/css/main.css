@@ -423,6 +423,11 @@ footer div.disclaimer {
   }
 }
 
+.single-post {
+  display: block;
+  text-align: center;
+}
+
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
@@ -438,8 +443,9 @@ footer div.disclaimer {
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 .post-preview .post-meta,
-.posts-heading .post-meta,
+.single-post .post-meta,
 .page-meta {
   color: #808080;
   font-size: 18px;
@@ -449,8 +455,7 @@ footer div.disclaimer {
 .page-meta {
   align-self: center;
 }
-.post-preview .post-meta a,
-.posts-heading .post-meta a,
+.post-meta a,
 .page-meta a {
   color: #404040;
   text-decoration: none;
@@ -465,6 +470,7 @@ footer div.disclaimer {
 .post-entry {
   width: 100%;
   margin-top: 10px;
+  text-align: justify;
 }
 .post-image {
   float: right;
@@ -491,7 +497,7 @@ footer div.disclaimer {
 }
 
 .post-entry-footer .read-more{
-  width: 25%;
+  width: 100%;
   margin-top: 10px;
 }
 
@@ -507,7 +513,7 @@ footer div.disclaimer {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #999;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .blog-tags a {
@@ -529,15 +535,9 @@ footer div.disclaimer {
 }
 
 article.blog-post {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding: 10px 0 10px 0;
   margin: 10px 0 10px 0;
-}
-
-.blog-post .blog-tags {
-  margin-top: 5px;
-  margin-bottom: 0;
+  text-align: justify;
 }
 
 @media only screen and (min-width: 768px) {
@@ -809,53 +809,6 @@ table tr td :last-child {
   margin-bottom: 0;
 }
 
-/* --- Social media sharing section --- */
-
-.post-entry .share-box {
-  width: 75%;
-  display: flex;
-  float: left;
-  margin-top: 10px;
-}
-
-.share-box ul.share {
-  display: block;
-  text-align: center;
-}
-
-/* --- Google Custom Search Engine Popup --- */
-#modalSearch table tr, #modalSearch table tr td, #modalSearch table tr th {
-  border:none;
-}
-.reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
-  box-sizing: content-box;
-  line-height: normal;
-}
-
-/* IPython split style */
-div.splitbox {width:100%; overflow:auto;}
-
-div.splitbox div.left {
-               width:48%;
-               float:left;}
-div.splitbox div.right {
-               width:48%;
-               float:right;}
-
-@media only screen and (max-width: 600px) {
-div.splitbox div.left {
-               width:100%;
-               float:left;}
-div.splitbox div.right {
-               width:100%;
-               float:left;}
-}
-
 /* Related posts */
 h4.see-also {
   margin-top: 20px;
@@ -940,6 +893,11 @@ h4.see-also {
 
 /* --- Make long KaTeX equations scrollable in the x-axis --- */
 .katex-display>.katex {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* --- Speakerdeck container --- */
+.speakerdeck-container {
+  margin-top: 15px;
+}

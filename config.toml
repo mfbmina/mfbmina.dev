@@ -22,9 +22,7 @@ title = "mfbmina.dev"
   rss = true
   shareImg = "img/gopher.png"
   showRelatedPosts = true
-  socialShare = true
   subtitle = "by Matheus Mina"
-  useHLJS = false
   wordCount = true
   [params.author]
     name = "Matheus Mina"
@@ -38,11 +36,16 @@ title = "mfbmina.dev"
     telegram = "mfbmina"
 
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Posts"
+    url = "/"
     weight = 1
 
 [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
+    name = "Talks"
+    url = "/talks/"
     weight = 2
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3

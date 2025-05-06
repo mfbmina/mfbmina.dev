@@ -2,7 +2,6 @@
 title = 'RSA in Ruby for beginners'
 date = 2018-12-13T09:22:18-03:00
 draft = false
-tags = ['ruby','rsa','introduction']
 +++
 
 ## Introdução

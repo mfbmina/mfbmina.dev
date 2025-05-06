@@ -42,12 +42,6 @@
   translation: "Ver navegação"
 - id: languageSwitcherLabel
   translation: "Idioma"
-- id: gcseLabelShort
-  translation: "Buscar"
-- id: gcseLabelLong
-  translation: "Buscar {{ .Site.Title }}"
-- id: gcseClose
-  translation: "Fechar"
 
 # Related posts
 - id: seeAlso

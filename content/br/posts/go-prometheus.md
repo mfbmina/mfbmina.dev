@@ -2,7 +2,6 @@
 title = 'Métricas com Go e Prometheus'
 date = 2024-12-27T19:07:46-03:00
 draft = false
-tags = ["go", "monitoring", "metrics", "prometheus"]
 +++
 
 No mundo do desenvolvimento, é necessário saber como a aplicação que estamos trabalhando está se comportando e a maneira mais conhecida de realizarmos isso é por meio de métricas.  Elas podem ser de diversos tipos, como, por exemplo, de desempenho, de produto ou de saúde. Atualmente, o [Prometheus](https://www.cncf.io/projects/prometheus/) é amplamente utilizado pelo mercado a fim de coletar essas métricas.

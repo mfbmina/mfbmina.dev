@@ -2,7 +2,6 @@
 title = 'Go Tool: tudo o que ninguém pediu'
 date = 2025-04-03T20:02:01-03:00
 draft = false
-tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
 > Oi pessoal, editando o post para dizer que após conversar com diversas pessoas eu percebi que não entendia corretamente o funcionamento de dependências em Go e estava esperando uma funcionalidade que já meio que existe, uma vez que só o que é utilizado vai pro binário final! Obrigado em especial ao Laurent Demailly, do Gophers Slack, e a alguns usuários do Reddit!

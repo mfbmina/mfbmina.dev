@@ -2,7 +2,6 @@
 title = 'The best way for testing outbound API calls'
 date = 2025-02-05T16:35:31-03:00
 draft = false
-tags = ["go", "api", "testing"]
 +++
 
 Nowadays, a huge part of a developer's work consists in calling APIs, sometimes to integrate with a team within the company, sometimes to build an integration with a supplier.

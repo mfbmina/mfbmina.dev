@@ -2,7 +2,6 @@
 title = 'The Mythical Man Month'
 date = 2025-02-10T11:39:42-03:00
 draft = false
-tags = ['tech', 'book', 'software engineering']
 +++
 
 After reading the book the [Goal]({{< relref toc-theory-of-constraints >}}), I went after the next reading, and I was recommended to read The Mythical Man-Month, from Fred Brooks. This book is a computer science class, which I didn't know yet, that describes the software development life cycle in the 70s.

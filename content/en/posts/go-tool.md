@@ -2,7 +2,6 @@
 title = 'Go Tool: everything that nobody has asked for'
 date = 2025-04-03T20:02:01-03:00
 draft = false
-tags = ["go", "1.24", "tools", "news", "opinion"]
 +++
 
 > Hey guys, editing the post to say that after talking to some people, I noticed that I whole misunderstood how Go dependencies work, and I was expecting some feature that already kind of exists, since just what is used from the code is at the final binary! A special thanks to Laurent Demailly, from Gophers Slack, and to some Reddit users!

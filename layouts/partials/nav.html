@@ -51,14 +51,6 @@
             </li>
           {{ end }}
         {{ end }}
-
-        {{ if isset .Site.Params "gcse" }}
-          <li>
-            <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch" style="outline: none;">
-              <span class="hidden-sm hidden-md hidden-lg">{{ i18n "gcseLabelShort" }}</span> <span id="searchGlyph" class="glyphicon glyphicon-search"></span>
-            </a>
-          </li>
-        {{ end }}
       </ul>
     </div>
 
@@ -74,23 +66,3 @@
 
   </div>
 </nav>
-
-<!-- Search Modal -->
-{{ if isset .Site.Params "gcse" }}
-  <div id="modalSearch" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">{{ i18n "gcseLabelLong" . }}</h4>
-        </div>
-        <div class="modal-body">
-          <gcse:search></gcse:search>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n "gcseClose" }}</button>
-        </div>
-      </div>
-    </div>
-  </div>
-{{ end }}

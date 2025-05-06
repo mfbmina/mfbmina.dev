@@ -16,9 +16,9 @@
         {{ end }}
     </a>
 
-    <p class="post-meta">
-      {{ partial "post_meta.html" . }}
-    </p>
+      <p class="post-meta">
+        {{ partial "post_meta.html" . }}
+      </p>
 
     <div class="post-entry">
         {{ if or (.Truncated) (.Params.summary) }}
@@ -27,7 +27,6 @@
           {{ .Content }}
         {{ end }}
         <div class="post-entry-footer">
-          {{ partial "share-links" . }}
           <div class="read-more">
             <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
           </div>

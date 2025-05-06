@@ -2,7 +2,6 @@
 title = 'Testando chamadas para APIs da melhor forma'
 date = 2025-02-05T16:35:31-03:00
 draft = false
-tags = ["go", "api", "testing"]
 +++
 
 Atualmente, grande parte do trabalho de um desenvolvedor WEB consiste em chamar APIs, seja para realizar uma integração com um sistema de uma equipe parceira ou para integrar com algum fornecedor.

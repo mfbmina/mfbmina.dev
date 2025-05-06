@@ -2,7 +2,6 @@
 title = 'Go 1.24: Benchmark Tests'
 date = 2025-03-24T20:07:57-03:00
 draft = false
-tags = ["go", "testing", "1.24", "news"]
 +++
 
 One of my favorite features in Go is the possibility of writing benchmark tests. At Go 1.24, this feature has a new look, making it easier to use. 

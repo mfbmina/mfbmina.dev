@@ -1,0 +1,10 @@
+{{ $id := .Get "id" }}
+{{ if not $id }}
+  {{ errorf "Missing required parameter 'id' for shortcode 'speakerdeck'" }}
+{{ end }}
+{{ if $id }}
+  <div class="speakerdeck-container">
+    <div class="speakerdeck-embed" data-id="{{ $id }}" data-ratio="1.7772511848341233">
+      <script defer class="speakerdeck-embed" data-id="{{ $id }}" data-ratio="1.7772511848341233" src="//speakerdeck.com/assets/embed.js"></script>
+    </div>
+{{ end }}
