@@ -9,14 +9,19 @@
 {{ $title := $.Scratch.Get "title" }}
 {{ $subtitle := $.Scratch.Get "subtitle" }}
 
-{{ if $title }}
+{{ $type := .Type }}
+{{ if eq $type "talks" }}
+  {{ $type = "posts" }}
+{{ end}}
+
+  {{ if $title }}
   <header class="header-section">
     <div class="intro-header no-img">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="{{ .Type }}-heading">
-              {{ if eq .Type "list" }}
+            <div class="{{ $type }}-heading">
+              {{ if eq $type "list" }}
                 <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
               {{ else }}
                 <h1>{{ with $title }}{{.}}{{ else }}<br/>{{ end }}</h1>
@@ -24,14 +29,12 @@
               <hr class="small">
 
               {{ if $subtitle }}
-                {{ if eq .Type "page" }}
-                  <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
+                {{ if eq $type "page" }}
+                  <span class="{{ $type }}-subheading">{{ $subtitle }}</span>
                 {{ else }}
-                  <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
+                  <h2 class="{{ $type }}-subheading">{{ $subtitle }}</h2>
                 {{ end }}
               {{ end }}
-
-
             </div>
           </div>
         </div>

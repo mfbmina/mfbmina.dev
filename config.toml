@@ -41,6 +41,16 @@ title = "mfbmina.dev"
     weight = 1
 
 [[menu.main]]
+    name = "Posts"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Talks"
+    url = "/talks/"
+    weight = 1
+
+[[menu.main]]
     name = "Tags"
     url = "/tags/"
     weight = 2

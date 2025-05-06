@@ -893,6 +893,11 @@ h4.see-also {
 
 /* --- Make long KaTeX equations scrollable in the x-axis --- */
 .katex-display>.katex {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* --- Speakerdeck container --- */
+.speakerdeck-container {
+  margin-top: 15px;
+}
