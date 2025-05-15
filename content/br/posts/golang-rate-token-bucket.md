@@ -60,11 +60,11 @@ O legal do pacote `rate` é que ele possui três estrátégias diferentes. A pri
 
 ```golang
 func doSomethingWithAllow(l *rate.Limiter, x int, c chan int) {
-	if l.Allow() {
-		fmt.Printf("Allowing %d to run\n", x)
-	}
+  if l.Allow() {
+    fmt.Printf("Allowing %d to run\n", x)
+  }
 
-	c <- x
+  c <- x
 }
 ```
 
@@ -76,15 +76,15 @@ A segunda estratégia é chamada de `wait` e é provavelmente a estratégia mais
 
 ```golang
 func doSomethingWithWait(l *rate.Limiter, x int, c chan int) {
-	err := l.Wait(context.Background())
-	if err != nil {
-		fmt.Printf("Error waiting for %d: %v\n", x, err)
-		c <- x
-		return
-	}
+  err := l.Wait(context.Background())
+  if err != nil {
+    fmt.Printf("Error waiting for %d: %v\n", x, err)
+    c <- x
+    return
+  }
 
-	fmt.Printf("Allowing %d to run\n", x)
-	c <- x
+  fmt.Printf("Allowing %d to run\n", x)
+  c <- x
 }
 ```
 
@@ -96,17 +96,17 @@ Por fim, temos a estratégia de `reserve`. Como o nome diz, você reservar o pr�
 
 ```golang
 func doSomethingWithReserve(l *rate.Limiter, x int, c chan int) {
-	r := l.Reserve()
-	if !r.OK() {
-		return
-	}
+  r := l.Reserve()
+  if !r.OK() {
+    return
+  }
 
-	fmt.Printf("Reserving %d to run\n", x)
-	d := r.Delay()
-	time.Sleep(d)
-	fmt.Printf("Allowing %d to run\n", x)
+  fmt.Printf("Reserving %d to run\n", x)
+  d := r.Delay()
+  time.Sleep(d)
+  fmt.Printf("Allowing %d to run\n", x)
 
-	c <- x
+  c <- x
 }
 ```
 
@@ -124,10 +124,10 @@ Outra funcionalidade que achei bem legal, foi a possiblidade de se fazer um Circ
 Segundo a documentação:
 ```golang
 func main() {
-	s := rate.Sometimes{Every: 2}
-	s.Do(func() { fmt.Println("1") })
-	s.Do(func() { fmt.Println("2") })
-	s.Do(func() { fmt.Println("3") })
+  s := rate.Sometimes{Every: 2}
+  s.Do(func() { fmt.Println("1") })
+  s.Do(func() { fmt.Println("2") })
+  s.Do(func() { fmt.Println("3") })
 }
 
 // -> Output:
