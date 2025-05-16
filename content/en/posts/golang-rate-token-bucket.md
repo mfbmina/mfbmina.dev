@@ -4,9 +4,9 @@ date = 2025-05-14T19:16:23-03:00
 draft = false
 +++
 
-At my [Circuit Breaker]({{< relref golang-circuit-breaker >}}) post,  I mentioned that nowadays it is common that the application has to communicate with other ones, and with that, traffic control strategies become essential. Recently I've discovered the [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) a strategy based on tokens used to control the traffic.
+At my [Circuit Breaker]({{< relref golang-circuit-breaker >}}) post, I mentioned that nowadays it is common that the application has to communicate with other ones, and with that, traffic control strategies become essential. Recently I've discovered the [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) a strategy based on tokens used to control the traffic.
 
-Imagine that you have 5 tickets to a ride, and every new hour you get a new ticket, but you  can never exceed the limit of 5. Every time you ride, a ticket is used. So, if you use all your tickets, you can't ride anymore until you get a new one. It is a very interesting algorithm, used by the PIX (a Brazilian instant payment method), for not allowing an attacker to scrape all users' data.
+Imagine that you have 5 tickets to a ride, and every new hour you get a new ticket, but you can never exceed the limit of 5. Every time you ride, a ticket is used. So, if you use all your tickets, you can't ride anymore until you get a new one. It is a very interesting algorithm, used by the PIX (a Brazilian instant payment method), for not allowing an attacker to scrape all users' data.
 
 ![Token bucket](/img/posts/golang-token-bucket/token_bucket.png)
 
@@ -40,7 +40,7 @@ While running the code above, it is noticeable that the `goroutines` were execut
 
 ![goroutine example](/img/posts/golang-token-bucket/something.gif)
 
-The Token Bucket algorithm comes from the necessity of controlling the execution, and, as always, Go or its community gives us a solution. In this case, it is the [rate](https://pkg.go.dev/golang.org/x/time/rate) package. Using it is quite simple. At first a new `Limitter` is initialized with the maximum number of tokens and a `Limit`,  which defines how many tokens are created per second.
+The Token Bucket algorithm comes from the necessity of controlling the execution, and, as always, Go or its community gives us a solution. In this case, it is the [rate](https://pkg.go.dev/golang.org/x/time/rate) package. Using it is quite simple. At first a new `Limitter` is initialized with the maximum number of tokens and a `Limit`, which defines how many tokens are created per second.
 
 ```golang
 package main
@@ -68,7 +68,7 @@ func doSomethingWithAllow(l *rate.Limiter, x int, c chan int) {
 }
 ```
 
-At this strategy,  the execution is allowed if there is a token to be consumed at that moment, and, if not, nothing will happen.
+At this strategy, the execution is allowed if there is a token to be consumed at that moment, and, if not, nothing will happen.
 
 ![Allow strategy](/img/posts/golang-token-bucket/allow.gif)
 
@@ -156,7 +156,7 @@ To sell all the examples, access this [repository.](https://github.com/mfbmina/p
 ## Useful links
 
 - [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket)
-- [Pacote Rate](https://pkg.go.dev/golang.org/x/time/rate)
+- [Rate package](https://pkg.go.dev/golang.org/x/time/rate)
 - [Introduction to Concurrency in Go]({{< relref introduction-concurrency-go >}})
 - [Circuit Breaker]({{< relref golang-circuit-breaker >}})
-- [Request timit at PIX (in Portuguese  )](https://www.bcb.gov.br/content/estabilidadefinanceira/pix/API-DICT.html#section/Seguranca/Limitacao-de-requisicoes)
+- [Request timit at PIX (in Portuguese)](https://www.bcb.gov.br/content/estabilidadefinanceira/pix/API-DICT.html#section/Seguranca/Limitacao-de-requisicoes)

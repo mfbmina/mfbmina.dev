@@ -56,7 +56,7 @@ func main() {
 }
 ```
 
-O legal do pacote `rate` é que ele possui três estrátégias diferentes. A primeira delas é a estratégia de `allow`. 
+O legal do pacote `rate` é que ele possui três estratégias diferentes. A primeira delas é a estratégia de `allow`. 
 
 ```golang
 func doSomethingWithAllow(l *rate.Limiter, x int, c chan int) {
