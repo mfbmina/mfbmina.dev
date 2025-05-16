@@ -4,13 +4,13 @@ date = 2025-05-14T19:16:23-03:00
 draft = false
 +++
 
-No post sobre [Circuit Breaker]({{< relref golang-circuit-breaker >}}), citei que atualmente é comum que a sua aplicação tenha que se comunicar com outras e, com isso, estratégias de controle de tráfego se tornam essenciais. Recentemente descobri o [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket), uma estratégia baseada em tokens para controlar o tráfego.
+No post sobre [Circuit Breaker,]({{< relref golang-circuit-breaker >}}) citei que atualmente é comum que a sua aplicação tenha que se comunicar com outras e, com isso, estratégias de controle de tráfego se tornam essenciais. Recentemente descobri o [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) uma estratégia baseada em tokens para controlar o tráfego.
 
 Imagine que você tenha 5 ingressos para um brinquedo e que a cada hora você ganhe um novo ingresso, mas nunca podendo exceder o limite de 5. A cada ida ao brinquedo, um ticket é usado. Dessa forma, ao utilizar todos os seus tickets, você não pode ir ao brinquedo até ganhar um novo ticket. É um algoritmo bem interessante, utilizado, por exemplo, pelo PIX, para controlar a busca de chaves e evitando que um malfeitor pegue dados de usuários.
 
 ![Token bucket](/img/posts/golang-token-bucket/token_bucket.png)
 
-Traduzindo para código, vamos propor um cenário em que 10 `goroutines` sejam inicializadas e vão executar uma ação qualquer. Caso você ainda não conheça sobre [goroutines e concorrência]({{< relref introduction-concurrency-go >}}), recomendo o meu post sobre o tema.
+Traduzindo para código, vamos propor um cenário em que 10 `goroutines` sejam inicializadas e vão executar uma ação qualquer. Caso você ainda não conheça sobre [goroutines e concorrência,]({{< relref introduction-concurrency-go >}}) recomendo o meu post sobre o tema.
 
 ```golang
 package main
@@ -40,7 +40,7 @@ Ao executar o código acima, pode-se notar que as `goroutines` foram executadas 
 
 ![goroutine example](/img/posts/golang-token-bucket/something.gif)
 
-O algoritmo de Token Bucket vem da necessidade de controlar essa execução e, como sempre, a própria linguagem e/ou a comunidade Go nos fornecem uma solução, neste caso o pacote [rate](https://pkg.go.dev/golang.org/x/time/rate). Seu uso é bem simples, primeiro é necessário inicializar um novo `Limitter`, que recebe a quantidade máxima de tokens disponível e um `Limit`, que define a taxa com que novos tokens são gerados por segundo. 
+O algoritmo de Token Bucket vem da necessidade de controlar essa execução e, como sempre, a própria linguagem e/ou a comunidade Go nos fornecem uma solução, neste caso o pacote [rate.](https://pkg.go.dev/golang.org/x/time/rate) Seu uso é bem simples, primeiro é necessário inicializar um novo `Limitter`, que recebe a quantidade máxima de tokens disponível e um `Limit`, que define a taxa com que novos tokens são gerados por segundo. 
 
 ```golang
 package main

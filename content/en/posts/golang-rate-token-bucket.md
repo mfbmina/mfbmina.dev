@@ -4,13 +4,13 @@ date = 2025-05-14T19:16:23-03:00
 draft = false
 +++
 
-At my [Circuit Breaker]({{< relref golang-circuit-breaker >}}) post,  I mentioned that nowadays it is common that the application has to communicate with other ones, and with that, traffic control strategies become essential. Recently I've discovered the [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket), a strategy based on tokens used to control the traffic.
+At my [Circuit Breaker]({{< relref golang-circuit-breaker >}}) post,  I mentioned that nowadays it is common that the application has to communicate with other ones, and with that, traffic control strategies become essential. Recently I've discovered the [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) a strategy based on tokens used to control the traffic.
 
 Imagine that you have 5 tickets to a ride, and every new hour you get a new ticket, but you  can never exceed the limit of 5. Every time you ride, a ticket is used. So, if you use all your tickets, you can't ride anymore until you get a new one. It is a very interesting algorithm, used by the PIX (a Brazilian instant payment method), for not allowing an attacker to scrape all users' data.
 
 ![Token bucket](/img/posts/golang-token-bucket/token_bucket.png)
 
-Translating to code, let's propose a scenario where 10 `goroutines` are initialized and execute something. If you don't know yet about [goroutines and concurrency]({{< relref introduction-concurrency-go >}}), I recommend my post about it.
+Translating to code, let's propose a scenario where 10 `goroutines` are initialized and execute something. If you don't know yet about [goroutines and concurrency,]({{< relref introduction-concurrency-go >}}) I recommend my post about it.
 
 ```golang
 package main
