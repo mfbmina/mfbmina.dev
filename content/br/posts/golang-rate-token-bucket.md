@@ -68,7 +68,7 @@ func doSomethingWithAllow(l *rate.Limiter, x int, c chan int) {
 }
 ```
 
-Nesta estratégia, a execução será permitida se existir um token para ser consumido naquele momento e, caso não exista, nada será executado.  
+Nesta estratégia, a execução será permitida se existir um token para ser consumido naquele momento e, caso não exista, nada será executado.
 
 ![Allow strategy](/img/posts/golang-token-bucket/allow.gif)
 
@@ -159,3 +159,4 @@ Para ver todos os exemplos, acesse este [repositório.](https://github.com/mfbmi
 - [Pacote Rate](https://pkg.go.dev/golang.org/x/time/rate)
 - [Introdução a concorrência em Go]({{< relref introduction-concurrency-go >}})
 - [Circuit Breaker]({{< relref golang-circuit-breaker >}})
+- [Limitação requisições no PIX](https://www.bcb.gov.br/content/estabilidadefinanceira/pix/API-DICT.html#section/Seguranca/Limitacao-de-requisicoes)
