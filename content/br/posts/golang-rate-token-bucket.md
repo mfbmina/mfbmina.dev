@@ -20,7 +20,7 @@ import	"golang.org/x/time/rate"
 func main() {
   c := make(chan int)
 
-  for range 10 {
+  for i := range 10 {
     go doSomething(i, c)
   }
 
