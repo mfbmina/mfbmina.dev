@@ -52,7 +52,7 @@ func indirectUnreachable() {
 }
 ```
 
-The Go team then provided a solution to this problem with the `deadcode` tool. It's worth mentioning that the tool should always be run from `main`, as it searches for dead code based on what would be executed in production. When you run this tool, you finally get all unused functions:
+The Go team then provided a solution to this problem with the [deadcode](https://pkg.go.dev/golang.org/x/tools/cmd/deadcode) tool. It's worth mentioning that the tool should always be run from `main`, as it searches for dead code based on what would be executed in production. When you run this tool, you finally get all unused functions:
 
 ```sh
 $ go tool deadcode ./...

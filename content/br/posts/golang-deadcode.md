@@ -52,7 +52,7 @@ func indirectUnreachable() {
 }
 ``` 
 
-A equipe do Go trouxe então uma solução para este problema, a ferramenta `deadcode`. Vale a pena mencionar que a ferramenta sempre deve ser executada a partir da `main`, pois ela procura por código morto a partir do que seria executado em produção. Ao rodar essa ferramenta, temos finalmente o resultado de todas as funções não utilizadas.
+A equipe do Go trouxe então uma solução para este problema, a ferramenta [deadcode](https://pkg.go.dev/golang.org/x/tools/cmd/deadcode). Vale a pena mencionar que a ferramenta sempre deve ser executada a partir da `main`, pois ela procura por código morto a partir do que seria executado em produção. Ao rodar essa ferramenta, temos finalmente o resultado de todas as funções não utilizadas.
 
 ```sh
 $ go tool deadcode ./...
