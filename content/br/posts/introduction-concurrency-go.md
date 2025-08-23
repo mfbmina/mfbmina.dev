@@ -1,5 +1,5 @@
 +++
-title = 'Introdução a concorrência em Go'
+title = 'Introdução à concorrência em Go'
 date = 2022-11-01
 draft = false
 +++
