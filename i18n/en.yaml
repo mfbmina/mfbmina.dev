@@ -8,7 +8,7 @@
 - id: lastModified
   translation: "- Modified on {{ . }}"
 - id: translationsLabel
-  translation: "Translation: "
+  translation: "Read in: "
 - id: translationsSeparator
   translation: ", "
 - id: readMore
@@ -21,11 +21,17 @@
   translation: "Previous Post"
 - id: nextPost
   translation: "Next Post"
+- id: readingTime
+  translation: "Reading time:"
 - id: readTime
   translation: "min"
 - id: words
   translation: "words"
 
+- id: br
+  translation: "Português"
+- id: en
+  translation: "English"
 
 # 404 page
 - id: titleNotFound

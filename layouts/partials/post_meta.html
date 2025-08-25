@@ -2,31 +2,18 @@
   <span class="post-meta">
     {{ $lastmodstr := default (i18n "dateFormat") .Site.Params.dateformat | .Lastmod.Format }}
     {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
-    <i class="fas fa-calendar"></i>&nbsp;{{ $datestr | i18n "postedOnDate"}}
+    {{ $datestr | i18n "postedOnDate"}}
     {{ if ne $datestr $lastmodstr }}
-      &nbsp;{{ $lastmodstr | i18n "lastModified"  }}
+      &nbsp;|&nbsp;{{ $lastmodstr | i18n "lastModified"  }}
     {{ end }}
     {{ if .Site.Params.readingTime }}
-      &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}
-    {{ end }}
-    {{ if .Site.Params.wordCount }}
-      &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;{{ .WordCount }}&nbsp;{{ i18n "words" }}
-    {{ end }}
-    {{ if not .Site.Params.hideAuthor }}
-      {{ if .Params.author }}
-        {{ if reflect.IsSlice .Params.author }}
-          {{ range .Params.author }}
-            &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;{{ . | safeHTML }}
-    {{ end }}
-        {{ else }}
-          &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;{{ .Params.author | safeHTML }}
-        {{ end }}
-      {{ else }}
-        &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;{{ .Site.Params.Author.name | safeHTML }}
+      &nbsp;|&nbsp;{{ i18n "readingTime"}}&nbsp;{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}
+      {{ if .Site.Params.wordCount }}
+        ({{ .WordCount }}&nbsp;{{ i18n "words" }})
       {{ end }}
     {{ end }}
     {{ if .IsTranslated -}}
-      &nbsp;|&nbsp;<i class="fas fa-flag"></i>&nbsp;
+      &nbsp;|&nbsp;{{ i18n "translationsLabel" }}
       {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
       {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
       {{- $cleanLinks := apply $links "chomp" "." -}}
@@ -38,12 +25,9 @@
   <span class="post-meta">
     {{ $lastmodstr := default (i18n "dateFormat") .Site.Params.dateformat | .Lastmod.Format }}
     {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
-    <i class="fas fa-calendar"></i>&nbsp;{{ $datestr | i18n "postedOnDate"}}
-    {{ if ne $datestr $lastmodstr }}
-      &nbsp;{{ $lastmodstr | i18n "lastModified"  }}
-    {{ end }}
+    &nbsp;{{ $datestr | i18n "postedOnDate"}}
     {{ if .IsTranslated -}}
-      &nbsp;|&nbsp;<i class="fas fa-flag"></i>&nbsp;
+      &nbsp;|&nbsp;{{ i18n "translationsLabel" }}
       {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
       {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
       {{- $cleanLinks := apply $links "chomp" "." -}}
