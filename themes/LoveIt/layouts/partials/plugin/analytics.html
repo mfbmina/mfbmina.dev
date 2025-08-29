@@ -41,3 +41,8 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/{{ . }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     {{- end -}}
 {{- end -}}
+
+{{- /* Goat Counter */ -}}
+{{- with $analytics.goatCounter.code -}}
+    <script data-goatcounter="https://{{ . }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{- end -}}

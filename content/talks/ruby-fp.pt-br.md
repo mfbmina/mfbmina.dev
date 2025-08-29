@@ -14,3 +14,4 @@ Vídeo e slides em inglês.
 {{< youtube Rg5nPwgIo90 >}}
 
 **Slides**
+{{< speakerdeck id="086a784307bf4f94b446c444f0fbb7d4" >}}

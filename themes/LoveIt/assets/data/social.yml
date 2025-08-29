@@ -1,4 +1,4 @@
-# 001: Github
+# 001: GitHub
 github:
   Weight: 1
   Prefix: https://github.com/
@@ -14,13 +14,16 @@ linkedin:
   Icon:
     Class: fab fa-linkedin fa-fw
 
-# 003: Twitter
-twitter:
+# 003: X
+x:
   Weight: 3
-  Prefix: https://twitter.com/
-  Title: Twitter
+  Prefix: https://x.com/
+  Title: X
   Icon:
-    Class: fab fa-twitter fa-fw
+    Simpleicons: x
+
+twitter:
+  Alias: x
 
 # 004: Instagram
 instagram:
@@ -30,7 +33,7 @@ instagram:
   Icon:
     Class: fab fa-instagram fa-fw
 
-# 005: facebook
+# 005: Facebook
 facebook:
   Weight: 5
   Prefix: https://facebook.com/
@@ -567,7 +570,7 @@ rootme:
   Title: Root-Me
   Prefix: https://www.root-me.org/
   Icon:
-    Src: svg/icons/rootme.svg
+    Simpleicons: rootme
 
 # 073: Malt
 malt:
@@ -591,7 +594,7 @@ tryhackme:
   Title: TryHackMe
   Prefix: https://tryhackme.com/p/
   Icon:
-    Simpleicons: Tryhackme
+    Simpleicons: tryhackme
 
 # 076: Codeberg
 codeberg:
@@ -600,6 +603,30 @@ codeberg:
   Prefix: https://codeberg.org/
   Icon:
     Simpleicons: codeberg
+
+# 077: Hugging Face
+huggingface:
+  Weight: 77
+  Title: Hugging Face
+  Prefix: https://huggingface.co/
+  Icon:
+    Simpleicons: huggingface
+
+# 078: Threads
+threads:
+  Weight: 78
+  Title: Threads
+  Prefix: https://www.threads.net/@
+  Icon:
+    Class: fab fa-threads fa-fw
+
+# 079: BlueSky
+bluesky:
+  Weight: 79
+  Title: BlueSky
+  Prefix: https://bsky.app/profile/
+  Icon:
+    Simpleicons: bluesky
 
 # Phone
 phone:
