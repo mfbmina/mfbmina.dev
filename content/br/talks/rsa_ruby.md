@@ -11,4 +11,3 @@ Palestra apresentada no meetup Ruby on Porto.
 Slides em inglês.
 
 **Slides**
-{{< speakerdeck id="4095c812cc494d04a096e19ba3c85537" >}}

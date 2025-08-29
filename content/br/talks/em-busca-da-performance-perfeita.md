@@ -9,4 +9,3 @@ Palestra com dicas sobre performance em aplicações Go.
 Apresentada em um meetup interno no PicPay e palestra reserva da Gophercon Brasil 2023.
 
 **Slides**
-{{< speakerdeck id="073ec21d24634671af546c31eb3730a0" >}}

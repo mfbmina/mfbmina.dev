@@ -1,52 +1,63 @@
-baseurl = "https://mfbmina.dev"
-DefaultContentLanguage = "br"
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-subtitle = "Matheus Mina"
-title = "mfbmina.dev"
+baseURL = "http://mfbmina.dev/"
 theme = "LoveIt"
+title = "mfbmina.dev"
 
 [languages]
-  [languages.br]
-    contentDir = 'content/br'
   [languages.en]
-    contentDir = 'content/en'
+    disabled = false
+    languageCode = ''
+    languageDirection = ''
+    languageName = 'English'
+    weight = 0
+  [languages.pt-br]
+    disabled = false
+    languageCode = 'pt-br'
+    languageDirection = ''
+    languageName = 'Português'
+    weight = 0
 
-[params]
-  comments = true
-  favicon = "img/favicon.ico"
-  hideAuthor = true
-  homeTitle = "mfbmina.dev"
-  logo = "img/me.png"
-  readingTime = true
-  rss = true
-  shareImg = "img/gopher.png"
-  showRelatedPosts = true
-  subtitle = "by Matheus Mina"
-  wordCount = true
-  [params.author]
-    name = "Matheus Mina"
-    website = "https://mfbmina.dev"
-    email = "mfbmina@gmail.com"
-    github = "mfbmina"
-    bluesky = "mfbmina.dev"
-    x = "mfbmina"
-    linkedin = "mfbmina"
-    devto = "mfbmina"
-    telegram = "mfbmina"
+# Menu config
 
-[[menu.main]]
-    name = "Posts"
-    url = "/"
+[menu]
+  [[menu.main]]
     weight = 1
-
-[[menu.main]]
-    name = "Talks"
-    url = "/talks/"
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
     weight = 2
-
-[[menu.main]]
-    name = "About"
-    url = "/about/"
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
     weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About"
+    url = "/about"
+    title = ""
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false

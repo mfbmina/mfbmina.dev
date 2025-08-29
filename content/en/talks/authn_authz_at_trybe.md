@@ -14,4 +14,3 @@ Video and slides in Portuguese.
 {{< youtube xHMGKePVZhw >}}
 
 **Slides**
-{{< speakerdeck id="ba59b1deb85841429e7e93ef23b1373f" >}}

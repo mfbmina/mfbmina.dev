@@ -9,4 +9,3 @@ Talk with perfomance tips in Go apps. Presented at an internal meetup interno at
 Slides in Portuguese.
 
 **Slides**
-{{< speakerdeck id="073ec21d24634671af546c31eb3730a0" >}}

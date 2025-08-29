@@ -1,9 +1,0 @@
-{{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (and .Site.Params.comments (ne .Type "page"))) }}
-  <script src="https://utteranc.es/client.js"
-    repo="mfbmina/mfbmina.dev"
-    issue-term="pathname"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async>
-  </script>
-{{ end }}
