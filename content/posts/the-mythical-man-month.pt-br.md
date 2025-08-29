@@ -4,7 +4,7 @@ date = 2025-02-10T11:39:42-03:00
 draft = false
 +++
 
-Após ler o livro [The Goal]({{< relref toc-theory-of-constraints >}}) fui atrás de uma próxima leitura e me recomendaram o The Mythical Man-Month, do Fred Brooks. Esse livro é um clássico da literatura da computação, desconhecido por mim até agora, mas que descreve o ciclo de desenvolvimento de softwares na década de 70.
+Após ler o livro [The Goal]({{< ref toc-theory-of-constraints >}}) fui atrás de uma próxima leitura e me recomendaram o The Mythical Man-Month, do Fred Brooks. Esse livro é um clássico da literatura da computação, desconhecido por mim até agora, mas que descreve o ciclo de desenvolvimento de softwares na década de 70.
 
 ## Tema central
 O tema central do livro já é descrito no título: o mítico homem-mês. Homem-mês é uma métrica de produtividade assim como as que são utilizadas hoje, por exemplo, pontos, tamanho de camisetas ou qualquer coisa que as equipes utilizam. O argumento é de que a métrica é falha e o número de tarefas, linhas de código ou funcionalidades que uma pessoa entrega não é constante entre projetos. 

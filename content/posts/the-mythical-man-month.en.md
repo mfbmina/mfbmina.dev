@@ -4,7 +4,7 @@ date = 2025-02-10T11:39:42-03:00
 draft = false
 +++
 
-After reading the book [The Goal]({{< relref toc-theory-of-constraints >}}), I went after the next reading, and I was recommended to read The Mythical Man-Month, from Fred Brooks. This book is a computer science class, which I didn't know yet, that describes the software development life cycle in the 70s.
+After reading the book [The Goal]({{< ref toc-theory-of-constraints >}}), I went after the next reading, and I was recommended to read The Mythical Man-Month, from Fred Brooks. This book is a computer science class, which I didn't know yet, that describes the software development life cycle in the 70s.
 
 ## Main subject
 The book's main subject is told at the title: the mythical man-month. Man-month is a productivity metric like the ones that are used today, such as points, t-shirts size or whatever that is being used. The argument is the metric is failed and number of tasks, line of codes or features developed by someone aren't constant between projects.

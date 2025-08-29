@@ -4,7 +4,7 @@ date = 2025-07-16T15:26:36-03:00
 draft = false
 +++
 
-In a [previous post]({{< relref api-testing >}}) I showed some ways to improve tests by creating API mocks that we call. However, that's not always enough, and we might need E2E tests (or acceptance tests), for example, to test integrations with databases, messaging services, or anything else. For these cases, I'm here to introduce the Testcontainers tool.
+In a [previous post]({{< ref api-testing >}}) I showed some ways to improve tests by creating API mocks that we call. However, that's not always enough, and we might need E2E tests (or acceptance tests), for example, to test integrations with databases, messaging services, or anything else. For these cases, I'm here to introduce the Testcontainers tool.
 
 The [Testcontainers](https://testcontainers.com/) library is an open-source tool that lets you create containers during test execution. The idea is for your application's test dependencies to be part of the code, avoiding the need for mocks and even local dependency installation. Another big advantage is that it makes it easier to achieve test isolation and replicability among developers. The tool supports various programming languages like Go, Ruby, Elixir, Java, etc.
 

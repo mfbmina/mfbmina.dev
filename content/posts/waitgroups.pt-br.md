@@ -4,7 +4,7 @@ date = 2025-08-23T10:11:15-03:00
 draft = false
 +++
 
-Imagine o seguinte problema: é necessário processar centenas de registros e gerar uma única saída. Uma forma de resolver é processar cada registro sequencialmente e só no fim unificar a saída. Contudo isso pode ser extremamente lento, dependendo do tempo gasto para processar cada registro. Outra forma é fazer o processamento de forma concorrente, acelerando o tempo gasto para o processamento. No meu post sobre [introdução à concorrência]({{< relref introduction-concurrency-go >}}) falei um pouco sobre `goroutines` e `channels` e agora decidi falar sobre os `waitgroups`, uma forma de simplificar a gestão de múltiplas `goroutines`.
+Imagine o seguinte problema: é necessário processar centenas de registros e gerar uma única saída. Uma forma de resolver é processar cada registro sequencialmente e só no fim unificar a saída. Contudo isso pode ser extremamente lento, dependendo do tempo gasto para processar cada registro. Outra forma é fazer o processamento de forma concorrente, acelerando o tempo gasto para o processamento. No meu post sobre [introdução à concorrência]({{< ref introduction-concurrency-go >}}) falei um pouco sobre `goroutines` e `channels` e agora decidi falar sobre os `waitgroups`, uma forma de simplificar a gestão de múltiplas `goroutines`.
 
 ## Antes da 1.25
 `Waitgroups` são parte do pacote [sync](https://pkg.go.dev/sync#WaitGroup) e seu uso é relativamente simples. Para cada goroutine disparada, é necessário adicionar 1 ao contador do `sync` e depois, deve-se esperar que todas `goroutines` terminem seus trabalhos. É necessário que cada goroutine reduza 1 do contador para indicar seu fim. Exemplificando:

@@ -4,14 +4,14 @@ date = 2025-05-14T19:16:23-03:00
 draft = false
 +++
 
-No post sobre [Circuit Breaker]({{< relref golang-circuit-breaker >}}), citei que atualmente é comum que a sua aplicação tenha que se comunicar com outras e, com isso, estratégias de controle de tráfego se tornam essenciais. Recentemente descobri o [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) uma estratégia baseada em tokens para controlar o tráfego.
+No post sobre [Circuit Breaker]({{< ref golang-circuit-breaker >}}), citei que atualmente é comum que a sua aplicação tenha que se comunicar com outras e, com isso, estratégias de controle de tráfego se tornam essenciais. Recentemente descobri o [Token Bucket,](https://en.wikipedia.org/wiki/Token_bucket) uma estratégia baseada em tokens para controlar o tráfego.
 
 Imagine que você tenha 5 ingressos para um brinquedo e que a cada hora você ganhe um novo ingresso, mas nunca podendo exceder o limite de 5. A cada ida ao brinquedo, um ticket é usado. Dessa forma, ao utilizar todos os seus tickets, você não pode ir ao brinquedo até ganhar um novo ticket. É um algoritmo bem interessante, utilizado, por exemplo, pelo PIX, para controlar a busca de chaves e evitando que um malfeitor pegue dados de usuários.
 
 ![Token bucket](/img/posts/golang-token-bucket/token_bucket.png)
 
 ## Show me the code!
-Traduzindo para código, vamos propor um cenário em que 10 `goroutines` sejam inicializadas e vão executar uma ação qualquer. Caso você ainda não conheça sobre [goroutines e concorrência,]({{< relref introduction-concurrency-go >}}) recomendo o meu post sobre o tema.
+Traduzindo para código, vamos propor um cenário em que 10 `goroutines` sejam inicializadas e vão executar uma ação qualquer. Caso você ainda não conheça sobre [goroutines e concorrência,]({{< ref introduction-concurrency-go >}}) recomendo o meu post sobre o tema.
 
 ```golang
 package main
@@ -162,6 +162,6 @@ Para ver todos os exemplos, acesse este [repositório.](https://github.com/mfbmi
 
 - [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket)
 - [Pacote Rate](https://pkg.go.dev/golang.org/x/time/rate)
-- [Introdução a concorrência em Go]({{< relref introduction-concurrency-go >}})
-- [Circuit Breaker]({{< relref golang-circuit-breaker >}})
+- [Introdução a concorrência em Go]({{< ref introduction-concurrency-go >}})
+- [Circuit Breaker]({{< ref golang-circuit-breaker >}})
 - [Limitação requisições no PIX](https://www.bcb.gov.br/content/estabilidadefinanceira/pix/API-DICT.html#section/Seguranca/Limitacao-de-requisicoes)
