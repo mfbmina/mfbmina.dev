@@ -8,6 +8,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 # whether to use emoji code
 enableEmoji = true
+defaultContentLanguage = 'pt-br'
 
 [languages]
   [languages.en]
