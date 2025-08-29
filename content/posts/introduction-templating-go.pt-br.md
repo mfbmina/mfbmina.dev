@@ -6,6 +6,7 @@ draft = false
 
 Computadores e linguagens de programação surgiram para facilitar as nossas vidas e automatizar as tarefas do cotidiano. No dia a dia de nós, programadores e engenheiros de software, muitas vezes temos que criar diversos arquivos semelhantes, cujo um ou outro campo muda de forma sutil. Um exemplo claro são arquivos de configuração, faturas, XMLs, HTMLs ou qualquer arquivo que nos permita gerar arquivos similares mudando poucos pontos. Existe uma solução simples para esse problema: criar um template e ir alterando só as partes que preciso de forma manual! Contudo, isso não é a melhor forma de resolver o problema, pois ela não é escalável. Além de que podemos utilizar tecnologia para facilitar nossas vidas.
 
+## Text/template
 Go fornece o pacote [text/template](https://pkg.go.dev/text/template) que permite a criação de templates e também fornece ferramentas que ajudam a preencher os campos deste template. Um template é nada mais que um arquivo de texto, tendo como covenção usar `.tmpl`, com algumas marcações especificas dentro do texto que dizem o que pode ser feito, entre elas pode-se fazer condicionais, laços e etc. Para uma lista mais completa de quais ações podem ser executadas, recomendo ler a [documentação](https://pkg.go.dev/text/template#hdr-Actions) que detalha todas as possibilidades. Para exemplificar, vamos criar nosso template de uma fatura:
 
 ```tmpl
@@ -82,6 +83,7 @@ Item 2 -  $56.78 - 1 - $56.78
 Total Value   81.46
 ```
 
+## Conclusão
 Viu como é simples utilizar templates com Go? Conseguimos resolver o problema de forma simples e escalável. Caso você queira, também pode checar o código fonte neste [repositório](https://github.com/mfbmina/templating-golang). Também é possível utilizar templates HTML, mas vamos deixar isso pra uma próxima postagem.
 
 Caso tenha gostado dessa postagem, siga meu blog para mais contéudos assim! Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**

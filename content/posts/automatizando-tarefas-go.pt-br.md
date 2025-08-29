@@ -6,6 +6,8 @@ draft = false
 
 Na vida de uma pessoa desenvolvedora, nos deparamos diversas vezes com tarefas monótonas, repetitivas e sempre nos vem a ideia na cabeça de como podemos automatizar isso. Aqui na Trybe, temos dois cenários bem legais de como Go nos ajudou a automatizar algumas dessas tarefas.
 
+## Primeiro cenário
+### trybe-cli
 O primeiro cenário é o nosso **trybe-cli**. Isso mesmo, escrevemos um client em Go, para ajudar nossas pessoas desenvolvedoras e executar tarefas repetitivas com alguns comandos. Neste momento, nosso cli nos permite:
 
 - criar todos os arquivos da esteira de deploy;
@@ -19,8 +21,10 @@ Para escrever esse cli, duas ferramentas nos ajudaram muito. A primeira delas é
 - criação automática de auto-complete para `bash`, `zsh` e etc;
 - reconhece flags de forma automática e inteligente, por exemplo `-h` e `--help`;
 
+### goreleaser
 A segunda ferramenta é a [goreleaser](https://github.com/goreleaser/goreleaser), responsável por buildar e gerar os binários em todas as plataformas: MacOS, Linux e Windows. Para nós, isso é extremamente útil, já que não precisamos nos preocupar com as particularidades de cada sistema operacional e nossas pessoas desenvolvedoras não ficam travadas em um sistema ou outro. Isso só é possível porque Go é uma linguagem cross-plataform.
 
+## Segundo cenário
 O segundo cenário, é um **micro-serviço** responsável somente por receber requisições do GitHub.  Para explicar o porque fazemos isso, vale a pena explicar um pouco sobre nosso ambiente de desenvolvimento. Hoje temos os seguintes ambientes, que podem ser traduzidos em clusters kubernetes:
 
 - _produção_: ambiente que as pessoas estudantes, candidatas e empregadas utilizam;
@@ -32,6 +36,7 @@ Como podem ver, o cluster das preview-apps cresce exponencialmente, já que pra 
 
 Ao fechar um pull request, seja ao fazer um merge ou ao recusar, aquele pod se torna automaticamente obsoleto e dispensável. Com isso, um pequeno micro-serviço foi criado com a única responsabilidade de escutar estes eventos do GitHub e apagar o pod. Assim nosso cluster só mantem os pods que estão de fato sendo utilizados.
 
+## Conclusão
 Como podemos ver, Go é bem versátil e que pode nos ajudar em diversos cenários de automação, criando desde clis multi-plataformas até micro-serviços pequenos e robustos. É definitivamente uma linguagem a se avaliar neste cenário.
 
 Você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**

@@ -6,6 +6,7 @@ draft = false
 
 One of the best Go features is how easy we can use concurrency. The language gives us `goroutines`, which are like lightweight threads managed by the Go runtime. It help us to run several functions at the same instant and is very helpful if you wish to improve the performance of your application.
 
+## Keyword go
 Using this feature is easy as adding the `go` keyword before any function call. This will make the function run concurrently. To make it simpler, let's show you the code. Here I've written the `SleepSort` algorithm, which uses the `sleep` method to sort each element in its place.
 
 ```go
@@ -33,9 +34,9 @@ func Sort(x int) {
 
 In this code, we have the `sort` function which sleeps for x seconds and prints the value. When every function finishes its execution, we will have the array in the correct order, right? Unfortunately, the answer is no!
 
-
 ![Response at the beggining](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t5lxza9xm8x7f5zjfgu8.png)
 
+## Channels
 As the functions run concurrent to the main process, we only see what the main has to return. One way to fix this issue is to make all processes talk somehow with the main process. For that, Go give us the `channel` concept which is like a pipe/conduit responsible for send data between processes. Let's update our code to use this feature!
 
 ```go
@@ -76,4 +77,5 @@ We can notice that `channels` have a special operator `<-`. To understand how it
 
 It is also important to say that we had to change the `sort` function signature was updated to accept a `chan`. It is initialized in the main function and then given to the `goroutines`.
 
+## Conclusion
 As we can see, starting using concurrency in Go is quite simple. The language also supports more advanced options but we can talk about it in the next blog post. If you like the subject, you can also find me on **[Twitter](https://twitter.com/mfbmina)**, **[GitHub](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**

@@ -4,8 +4,6 @@ date = 2018-12-13T09:22:18-03:00
 draft = false
 +++
 
-## Introdução
-
 RSA é um algoritmo de encriptação baseado em chaves públicas e privadas , que foi desenvolvido pensando na dificuldade de se fatorar dois números primos grandes. O seu nome vem das iniciais de seus criadores Rivest, Shamir e Adleman.
 
 Computacionalmente falando, ele é um algoritmo caro, mas mesmo assim é amplamente utilizado no mercado e um dos mais importantes algoritmos de criptografia. Seu uso é geralmente realizado de maneira indireta, como por exemplo pelo OpenSSL, que utiliza RSA na geração de suas chaves ou até mesmo quanto utilizamos chaves SSH ou certificados SSL, que também são encriptados por este algoritmo.

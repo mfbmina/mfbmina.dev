@@ -10,6 +10,7 @@ Imagine that you have 5 tickets to a ride, and every new hour you get a new tick
 
 ![Token bucket](/img/posts/golang-token-bucket/token_bucket.png)
 
+## Show me the code!
 Translating to code, let's propose a scenario where 10 `goroutines` are initialized and execute something. If you don't know yet about [goroutines and concurrency,]({{< relref introduction-concurrency-go >}}) I recommend my post about it.
 
 ```golang
@@ -40,6 +41,7 @@ While running the code above, it is noticeable that the `goroutines` were execut
 
 ![goroutine example](/img/posts/golang-token-bucket/something.gif)
 
+## Package rate
 The Token Bucket algorithm comes from the necessity of controlling the execution, and, as always, Go or its community gives us a solution. In this case, it is the [rate](https://pkg.go.dev/golang.org/x/time/rate) package. Using it is quite simple. At first a new `Limitter` is initialized with the maximum number of tokens and a `Limit`, which defines how many tokens are created per second.
 
 ```golang
@@ -56,6 +58,7 @@ func main() {
 }
 ```
 
+### Allow strategy
 The coolest thing from the `rate` package is it has three different strategies. The first strategy is called `allow`.
 
 ```golang
@@ -72,6 +75,7 @@ At this strategy, the execution is allowed if there is a token to be consumed at
 
 ![Allow strategy](/img/posts/golang-token-bucket/allow.gif)
 
+### Wait strategy
 The second one is called `wait` and by the package author, it is probably the most common one of being used.
 
 ```golang
@@ -92,6 +96,7 @@ With `wait`, the `goroutine` will be held until there is a token available for u
 
 ![Wait strategy](/img/posts/golang-token-bucket/wait.gif)
 
+### Reserve strategy
 At last, we have the `reserve` strategy. As the name says, you reserve the next available ticket and wait until it is created.
 
 ```golang
@@ -114,6 +119,7 @@ This strategy is similar to the `wait`, however, it allows us to control it with
 
 ![Reserve strategy](/img/posts/golang-token-bucket/reserve.gif)
 
+## Extras
 Besides all that, all these strategies can burn more than one ticket if it is necessary. For example, the `Allow()` function turns into `AllowN(t time.Time, n int)`, where `t` is the time allowed to happen `n` events.
 
 Another cool feature was the possibility of making a simple Circuit Breaker with this package and the type `Sometimes`. You can configure the following parameters:
@@ -144,7 +150,6 @@ As we can see, at every two calls, one call is blocked.
 ![Circuit Breaker](/img/posts/golang-token-bucket/cb.gif)
 
 ## Conclusion
-
 The Token Bucket is a fascinating traffic control algorithm since it allows us to block exceeding executions and book future executions. The Go implementation is simple to use and safe to use with multiple `goroutines`.
 
 The `rate` package also provides a simple circuit breaker implementation, preventing us from adding more third-party libs to the code if it is needed to use both methods in our application.
@@ -154,7 +159,6 @@ But it is important to say that this package is still experimental and can chang
 To sell all the examples, access this [repository.](https://github.com/mfbmina/poc_golang_rate)
 
 ## Useful links
-
 - [Token Bucket](https://en.wikipedia.org/wiki/Token_bucket)
 - [Rate package](https://pkg.go.dev/golang.org/x/time/rate)
 - [Introduction to Concurrency in Go]({{< relref introduction-concurrency-go >}})

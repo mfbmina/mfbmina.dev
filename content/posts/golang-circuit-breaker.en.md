@@ -8,6 +8,7 @@ Today it is common for our applications to have a couple of dependencies, especi
 
 One good practice for improving our resilience is to shut down the communication with those apps that are not behaving well. Looking into other fields, we learned the concept of circuit breakers from electrical engineering, where a switch turns off when a failure happens. In Brazil, all houses have these switches that automatically shut down if our electric network becomes unstable.
 
+## What is a circuit breaker in computer science?
 In computer science, our circuit breaker is a bit more complex because it also has an intermediary state. The drawing below explains more about how it works:
 
 ![Circuit Breaker](/img/posts/circuit_breaker.png)
@@ -17,9 +18,9 @@ In short, the possible states are:
 - `closed`: there is communication between apps. At each request done with failures, a counter is updated. If we reach the failure threshold, we move the circuit to `open`. 
 - `half-open`: it is a healing state until we can work as usual. While on it, if we reach the success threshold we move to `closed`. If the requests keep failing, we move back to `open`.
 
-
 Pretty cool, right? To explain the concept better, why not create one?
 
+## Show me the code!
 First, let's build our service A. It will be responsible for receiving all requests, in other words, it will be the service that our main app depends on. To simplify, we will expose two endpoints: a `/success` that will always respond with 200 and the `/failure` that will always respond with 500.
 
 ```go
@@ -95,6 +96,7 @@ func Get(url string) (int, error) {
 }
 ```
 
+## Conclusion
 And that is how we can have a Go app with a circuit breaker! When using this pattern, you can increase the resilience of your app by making it more tolerant of failures from your dependencies. Also, using this lib removed most of the complexity, making it easier to adopt the pattern in our day-to-day apps. If you want to see the code of this proof of concept, check it [here.](https://github.com/mfbmina/poc_circuit_breaker)
 
 If you are still curious about other resilience patterns, Elton Minetto also published a great blog post [about it!](https://eltonminetto.dev/en/post/2024-08-24-resilience-in-communication-between-microservices-using-the-failsafe-go-lib/)

@@ -8,6 +8,7 @@ Caesar cipher is the simplest and most widely known encryption technique. It is 
 
 It is very simple because it just works for letters between **A** and **Z**, ignoring all special characters, such as dots, whitespaces, question marks, and special letters, like **Ç** or **Á**.
 
+## Show me the code!
 Starting our implementation, we need to create a class that will know what we want to cipher and how many rotations we will do.
 
 {{< gist mfbmina 5396859b9f4fad4723bce338d24a7ec7 >}}
@@ -55,6 +56,7 @@ An interesting thing happens when you use rotation equal to 13. Between A and Z,
 
 To have different results, you need to change the rotation to another value!
 
+## Conclusion
 Unfortunately, this solution does not work for strings with multi-byte characters. Thanks for some guys on Slack that notice that! If you want a solution that works with multi-byte chars, you should implement a solution based on mod division.
 
 This is the first post about cipher, my idea is to implement some techniques and try to easily explain it here. If you want to take a look at the whole code, please check at **[Github](https://github.com/mfbmina/cipher_studies/blob/master/caeser.rb)**.

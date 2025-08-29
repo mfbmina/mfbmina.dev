@@ -6,6 +6,7 @@ draft = false
 
 At the developing world, it is necessary to know how the application that you're working on is behaving, and the most known way of doing that is by metrics. They can be of several types, such as performance, product, or health. Nowadays, [Prometheus](https://www.cncf.io/projects/prometheus/) is the market way for collecting metrics.
 
+## How it works?
 It is an open-source service maintained by [CNCF](https://www.cncf.io/), the Cloud Native Computing Foundation. It works like the following: an endpoint is exposed, and it responds with a desired body format. Then Prometheus calls this endpoint time to time, collecting all the information from there. 
 
 ```
@@ -19,6 +20,7 @@ This format is pretty simple. For each metric, there are three entries:
 - #TYPE defines its type.
 - The third value has its value.
 
+## How to use with Go?
 In Go apps, there is a lib that facilitates even more the metrics exposition. It implements a handler and this handler exposes by default the main metrics related to the software, like memory, heap or even information about goroutines. The example below describes better how to use it:
 
 ```golang
@@ -116,8 +118,10 @@ EXPOSE 8080
 CMD ["/myapp"]
 ```
 
+If you want to ensure that everything is fine, you can access `http://localhost:9090` and check if the configuration worked. 
 
-If you want to ensure that everything is fine, you can access `http://localhost:9090` and check if the configuration worked. However, most times the default metrics are not enough to understand how our app is behaving and then must define custom metrics. When using the Prometheus standard lib for Go, this task turns out to be simple, as shown below:
+## Custom metrics
+However, most times the default metrics are not enough to understand how our app is behaving and then must define custom metrics. When using the Prometheus standard lib for Go, this task turns out to be simple, as shown below:
 
 ```golang
 successRate := promauto.NewCounter(prometheus.CounterOpts{
@@ -128,7 +132,10 @@ successRate := promauto.NewCounter(prometheus.CounterOpts{
 successRate.Inc()
 ```
 
-That way, a new metric will be returned when accessing the endpoint `/metrics`. But, it is not always possible to have a web server to expose metrics. From that premise, the  [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/) was developed. It works like the following: you send your metrics to it using HTTP calls, and it stores all data. Eventually a Prometheus instance will scrap its information. Anyway, it is not always a good idea to use this strategy. Quoting the official documentation:
+That way, a new metric will be returned when accessing the endpoint `/metrics`. But, it is not always possible to have a web server to expose metrics. 
+
+## Pushing metrics actively
+From that premise, the  [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/) was developed. It works like the following: you send your metrics to it using HTTP calls, and it stores all data. Eventually a Prometheus instance will scrap its information. Anyway, it is not always a good idea to use this strategy. Quoting the official documentation:
 - When monitoring multiple instances through a single Pushgateway, the Pushgateway becomes both a single point of failure and a potential bottleneck.
 - You lose Prometheus's automatic instance health monitoring via the "up" metric (generated on every scrape).
 - The Pushgateway never forgets series pushed to it and will expose them to Prometheus forever unless those series are manually deleted via the Pushgateway's API.
@@ -187,6 +194,7 @@ scrape_configs:
     - 'pushgateway:9091'
 ```
 
+## Conclusion
 It's worth mentioning that, for the example, I only used the type counter. Therefore, there are other types that can be found [here](https://prometheus.io/docs/concepts/metric_types/)! For more examples on how to use Prometheus with Go, you can check the [official examples](https://github.com/prometheus/client_golang/tree/main/examples) or the [PoC](https://github.com/mfbmina/poc-prometheus-exporter) where I build a synthetic monitor simulator and build metrics for the default endpoint and for Pushgateway.
 
 If you liked the post, tell me: which metrics you usually monitor at your application? Are they  custom or default metrics?

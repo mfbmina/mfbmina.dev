@@ -6,6 +6,8 @@ draft = false
 
 No mundo do desenvolvimento, é necessário saber como a aplicação que estamos trabalhando está se comportando e a maneira mais conhecida de realizarmos isso é por meio de métricas.  Elas podem ser de diversos tipos, como, por exemplo, de desempenho, de produto ou de saúde. Atualmente, o [Prometheus](https://www.cncf.io/projects/prometheus/) é amplamente utilizado pelo mercado a fim de coletar essas métricas.
 
+
+## Como funciona?
 Ele é um serviço open-source mantido pela [CNCF](https://www.cncf.io/), a Cloud Native Computing Foundation. Ele funciona da seguinte maneira: um endpoint é exposto na aplicação. Esse endpoint retorna um texto no formato esperado, e o Prometheus acessa esse endpoint de tempos em tempos coletando as informações dali. 
 
 ```
@@ -19,6 +21,7 @@ O formato é bem simples, para cada métrica, você vai ter pelo menos três ent
 - O #TYPE define o tipo da métrica.
 - A terceira linha mostra o valor da métrica.
 
+## Como utilizar em Go?
 Em aplicações escritas com Go, temos uma biblioteca que facilita ainda mais a exposição dessas métricas. Ela implementa um handler que expõe por padrão as principais métricas relacionadas ao software, como, por exemplo, goroutines, memória, heap, etc. O exemplo abaixo demonstra melhor como se usa:
 
 ```golang
@@ -116,7 +119,10 @@ EXPOSE 8080
 CMD ["/myapp"]
 ```
 
-Se quiser verificar se tudo está funcionando, é só acessar `http://localhost:9090` e ver se deu certo a configuração. Contudo, muitas vezes as métricas padrões não são suficientes para representar o comportamento da nossa aplicação e é necessário definir métricas customizadas. Ao utilizar a biblioteca padrão do Prometheus para Go, essa tarefa se torna trivial e simples, como o exemplo abaixo:
+Se quiser verificar se tudo está funcionando, é só acessar `http://localhost:9090` e ver se deu certo a configuração. 
+
+## Métricas customizadas
+Contudo, muitas vezes as métricas padrões não são suficientes para representar o comportamento da nossa aplicação e é necessário definir métricas customizadas. Ao utilizar a biblioteca padrão do Prometheus para Go, essa tarefa se torna trivial e simples, como o exemplo abaixo:
 
 ```golang
 successRate := promauto.NewCounter(prometheus.CounterOpts{
@@ -127,7 +133,10 @@ successRate := promauto.NewCounter(prometheus.CounterOpts{
 successRate.Inc()
 ```
 
-Desta forma, uma nova métrica será retornada ao acessar o endpoint `/metrics`. Porém, nem sempre é possível ter um servidor web para ter as métricas expostas dessa forma. A partir dessa premissa, foi desenvolvido o [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/). Ele funciona da seguinte forma: você envia suas métricas por chamadas HTTP e ele armazena e expõe o endpoint `/metrics` para a coleta do Prometheus. Todavia, nem sempre é uma boa ideia utilizar esta estratégia, pois, segundo a própria documentação oficial:
+Desta forma, uma nova métrica será retornada ao acessar o endpoint `/metrics`. Porém, nem sempre é possível ter um servidor web para ter as métricas expostas dessa forma. 
+
+## Enviando métricas de forma ativa
+A partir dessa premissa, foi desenvolvido o [Pushgateway](https://prometheus.io/docs/instrumenting/pushing/). Ele funciona da seguinte forma: você envia suas métricas por chamadas HTTP e ele armazena e expõe o endpoint `/metrics` para a coleta do Prometheus. Todavia, nem sempre é uma boa ideia utilizar esta estratégia, pois, segundo a própria documentação oficial:
 - Quando se monitora múltiplas instâncias por meio de um único Pushgateway, ele se torna um ponto único de falha e um potencial gargalo.
 - Você perde o monitoramento automático da saúde da sua aplicação, gerada em cada varredura.
 - O Pushgateway nunca esquece nenhum dado que foi enviado para ele e vai sempre os expor para o Prometheus, exceto caso seja manualmente deletado.
@@ -186,6 +195,7 @@ scrape_configs:
     - 'pushgateway:9091'
 ```
 
+## Conclusão
 Vale a pena mencionar que, para o exemplo, eu utilizei somente o tipo de métrica Counter, ou em português Contador. Contudo, existem diversos outros tipos que podem ser encontrados [aqui](https://prometheus.io/docs/concepts/metric_types/)! Para mais exemplos utilizando o Prometheus com Go, você pode checar os [exemplos oficiais](https://github.com/prometheus/client_golang/tree/main/examples) da biblioteca ou a [PoC](https://github.com/mfbmina/poc-prometheus-exporter) onde implemento um simulador de monitoramento sintético e gero métricas através do endpoint e do Pushgateway.
 
 Se você gostou do post, me diz: quais métricas você geralmente monitora na sua aplicação? Elas são métricas padrões ou customizadas?

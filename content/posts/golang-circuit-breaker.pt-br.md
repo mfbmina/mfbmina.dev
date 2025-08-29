@@ -8,6 +8,7 @@ Nos dias de hoje, é bem comum que nossa aplicação dependa de outras, principa
 
 Uma boa prática para aumentar a resiliência da nossa aplicação, é cortar a comunicação com essas aplicações que estão em estado depreciados. Observando outras áreas, absorvermos da Engenharia Elétrica o conceito de Circuit Breaker. Nele é colocado um equipamento, ou disjuntor, que se desliga automaticamente caso alguma falha aconteça. Isso é muito comum em nossas casas, que possuem disjuntores que se desligam sozinhos caso a rede elétrica comece a ficar instável.
 
+## Circuit breaker na ciência da computação
 Já na computação, o nosso Circuit Breaker é um pouco mais complexo, uma vez que definimos também um estado intermediário. O desenho abaixo explica melhor o funcionamento de um Circuit Breaker:
 
 ![Circuit Breaker](/img/posts/circuit_breaker.png)
@@ -19,6 +20,7 @@ Por fim, os estados são:
 
 Bem legal, né? Mas para exemplificar melhor o conceito, que tal fazermos na prática?
 
+## Show me the code!
 Primeiro, vamos construir nosso serviço A. Ele vai ser responsável por receber as requisições, ou seja, ele vai ser o serviço que nossa aplicação depende, o serviço do fornecedor, ou etc. Para facilitar, vamos expor dois endpoints, um `/success` que vai retornar sempre 200 e um `/failure` que vai retornar sempre 500.
 
 ```go
@@ -95,6 +97,7 @@ func Get(url string) (int, error) {
 }
 ```
 
+## Conclusão
 E temos nosso serviço Go usando um circuit breaker! Ao utilizar esse padrão, você consegue aumentar a resiliência e a tolerância a falhas dos seus serviços. Podemos notar que ao utilizar a biblioteca, a complexidade foi toda abstraida, tornando muito simples o processo de integramos isso em nosso dia a dia. Se quiser ver o código todo da prova de conceito é só acessar [aqui.](https://github.com/mfbmina/poc_circuit_breaker)
 
 Se tiver curiosidade para conhecer outros padrões de resiliência, o Elton Minetto publicou um ótimo post sobre o [tema](https://eltonminetto.dev/post/2024-08-24-resilience-in-communication-between-microservices-using-the-failsafe-go-lib/)!

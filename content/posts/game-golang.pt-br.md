@@ -10,6 +10,7 @@ No curso, utilizávamos Python e implementamos um slide puzzle. Foi bem desafiad
 
 ![Sliding puzzle](/img/posts/sliding-puzzle.png)
 
+## Escrevendo games em Go
 Decidi então escrever um sliding puzzle usando Go. O primeiro passo foi escrever o que chamei de `core`, ou seja, a parte principal do jogo. Para isso, defini uma estrutura chamada `Play` que contém o tabuleiro e as posições `x` e `y` do valor nulo. O tabuleiro pode ser representado com um array, contudo acho mais simples uma representação usando uma matriz quadrada, e pro nosso caso, escolhi uma 3x3. Para representar o valor nulo, o valor escolhido foi o `0`.
 
 ```go
@@ -22,6 +23,7 @@ type Play struct {
 }
 ```
 
+### Iniciando uma nova partida
 Depois precisamos gerar uma nova partida com um tabuleiro aleatório. Para embalharar, percorremos cada célula do tabuleiro e trocamos por outra de aleátoria. Isso nos garante que vamos ter o mínimo de embaralhamento em nosso tabuleiro.
 
 ```go
@@ -62,6 +64,7 @@ func generateRandomTable() ([3][3]int, int, int) {
 }
 ```
 
+### Movimentando peças
 O próximo passo foi implementar os movimentos de subida, descida, direita e esquerda. Aqui vamos sempre olhar para o valor nulo e é ele que vamos movimentar. Caso não seja possível andar com o `0`, nós retornamos um erro.
 
 ```go
@@ -110,6 +113,7 @@ func (p *Play) Right() error {
 }
 ```
 
+### Verificando a vitória
 Por fim, nos resta só verificar se o tabuleiro está num estado de vitória ou não.
 
 ```go
@@ -197,6 +201,7 @@ func getMove() string {
 }
 ```
 
+## Resolvendo jogos impossíveis
 Contudo, ao jogar algumas vezes percebi que algumas vezes o jogo era impossível de ser resolvido. Pesquisando, descobri que o problema vem do meu algoritmo de embaralhamento. Ao trocar uma célula por outra, fazemos algumas trocas que nunca seriam realizadas em um tabuleiro físico. Mas, para nossa sorte, isso é possível de identificar e resolver ao contar o número de inversões necessárias para resolver o jogo. Se o número for par ele é solucionável e se for impar, não.
 
 ```go
@@ -245,8 +250,10 @@ func generateRandomTable() ([3][3]int, int, int) {
 }
 ```
 
+## Ebiten
 Finalmente temos nosso jogo funcional! Podemos agora implementar uma GUI para o nosso sliding puzzle! Escolhi a biblioteca [Ebiten](https://github.com/hajimehoshi/ebiten), uma engine open source que nos permite criar jogos 2D. Ela nos obriga a implementar uma interface que define as funções `Update`, `Draw` e `Layout`.
 
+### Função layout
 A função `Layout` é a mais simples delas: define o tamanho da janela. 
 
 ```go
@@ -255,6 +262,7 @@ func (u *UI) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight 
 }
 ```
 
+### Função draw
 Já a função `Draw` é responsável por desenhar a sua tela e é executada a cada frame. Para representar nosso tabuleiro, decidi utilizar imagens de 300x300, para cada um dos números válidos. Assim, a cada iteração, a função pega o valor do tabuleiro e representa visualmente. Se o jogo estiver num estado de vitória, ele exibe uma imagem de parabéns!
 
 ```go
@@ -302,6 +310,7 @@ func loadImage(name string) *ebiten.Image {
 }
 ```
 
+### Função update
 A função `Update` é responsável por atualizar o estado do jogo, ou seja, de fato realizar alguma ação no tabuleiro. Definimos aqui qual o comportamento esperado ao se apertar alguma tecla. No `core`, nós mapeamos qualquer ação ao valor zero, contudo, ao traduzir isso para uma GUI, faz mais sentido inverter a lógica. O usuário aperta para baixo, pois quer mover o número para baixo e não o zero.
 
 ```go
@@ -350,4 +359,5 @@ func (u *UI) Render() {
 }
 ```
 
+## Conclusão
 Temos nosso jogo pronto! Foi um projeto bem interessante de se criar e me mostrou que implementar joguinhos é sempre uma ótima maneira de se aprender conceitos novos e reforçar conhecimentos em alguma linguagem de programação. Além disso, o Ebitten nos permite criar jogos 2D usando a nossa linguagem favorita e distribuir para diversas plataformas, até mesmo para Web usando WebAssembly ou XBOX. Se quiser executar o código fonte, ele se encontra [aqui](https://github.com/mfbmina/puzzle). Me diga o que você achou dessa postagem nos comentários e fica uma pergunta: qual jogo você quer criar usando Go?

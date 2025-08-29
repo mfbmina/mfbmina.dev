@@ -8,15 +8,14 @@ A primeira vez que ouvi falar sobre RPC foi em uma aula de sistema distribuídos
 
 Como meu blog serve muito de documentação pessoal, achei legal documentar aqui o que aprendi sobre, começando sobre o que é RPC e depois indo para o gRPC.
 
-# Vamos lá, o que é RPC?
-
+## Vamos lá, o que é RPC?
 [RPC](https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto) é uma sigla para `Remote Procedure Call` (em Português `Chamada de Procedimento Remoto`). Ou seja, você envia procedimentos/comandos para um servidor remoto. Sendo simples e direto, isso é RPC. Ele funciona da seguinte forma:
 
 ![RPC](/img/posts/br/rpc.png)
 
 O RPC funciona tanto sobre UDP, quanto TCP. Cabe a você ver o que faz sentido para seu caso de uso! Se você não se importa com uma eventual resposta ou até mesmo em perder pacotes, UDP. Caso contrário, use TCP. Para aqueles que gostam de ler as RFCs, pode encontrar o link [aqui!](https://datatracker.ietf.org/doc/html/rfc1831)
 
-## OK, mas como o RPC se difere de uma chamada REST, por exemplo?
+### OK, mas como o RPC se difere de uma chamada REST, por exemplo?
 
 Ambos são maneiras de arquiteturar APIs, porém, a arquitetura REST possuí principíos muito bem definidos e que devem ser seguidos para se ter uma arquitetura RESTful. O RPC até possui principios, mas eles são definidos entre cliente e servidor. Para o cliente RPC, é como se ele tivesse chamando um procedimento local.
 
@@ -24,11 +23,11 @@ Outro ponto importante é que para o RPC, não importa muito se a conexão é TC
 
 Para quem quiser saber mais sobre, recomendo este excelente guia da AWS sobre [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/).
 
-## E como implementar um servidor RPC com Go?
+### E como implementar um servidor RPC com Go?
 
 Temos duas entidades principais, o cliente e o servidor.
 
-### Começando pelo servidor...
+#### Começando pelo servidor...
 
 O servidor é um servidor WEB, comumente usado em qualquer microsserviço. Vamos definir então o tipo de conexão que vamos utilizar, para nosso caso, TCP foi o escolhido:
 
@@ -88,7 +87,7 @@ func main() {
 }
 ```
 
-### Definindo o cliente...
+#### Definindo o cliente...
 
 Como o cliente e o servidor precisam seguir a mesma estrutura definida, vamos redefinir aqui a estrutura de argumentos a ser enviada pelo nosso cliente:
 
@@ -133,7 +132,7 @@ Um adendo importante é que estamos trafegando dados binários e por padrão o G
 
 Para quem quiser ver o código completo, é só acessar a [PoC.](https://github.com/mfbmina/poc_rpc)
 
-# E o que é gRPC?
+## E o que é gRPC?
 
 gRPC é um framework para se escrever aplicações usando RPC! Esse framework hoje é mantido pela [CNCF](https://www.cncf.io/) e segundo a [documentação oficial](https://grpc.io/) foi criado pela Google:
 > gRPC was initially created by Google, which has used a single general-purpose RPC infrastructure called Stubby to connect the large number of microservices running within and across its data centers for over a decade. In March 2015, Google decided to build the next version of Stubby and make it open source. The result was gRPC, which is now used in many organizations outside of Google to power use cases from microservices to the "last mile" of computing (mobile, web, and Internet of Things).
@@ -144,7 +143,7 @@ Além de funcionar em diversos sistemas operacionais e em diversas arquiteturas,
 - Fluxo bi-direcional de dados utilizando `http/2` para transporte;
 - Funcionalidades extensíveis como autenticação, tracing, balanceador de carga e verificador de saúde.
 
-## E como utilizar o gRPC com Go?
+### E como utilizar o gRPC com Go?
 
 Para nossa sorte, Go é uma das 11 linguagens que tem bibliotecas oficiais para o gRPC! É importante falar que esse framework usa o [Protocol Buffer](https://protobuf.dev/) para serializar a mensagem. O primeiro passo então é instalar o protobuf de forma local e os plugins para Go:
 
@@ -160,7 +159,7 @@ E adicionar os plugins ao seu PATH:
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-### A mágica do protobuf...
+#### A mágica do protobuf...
 
 Vamos então criar nossos arquivos `.proto`! Nesse arquivo vamos definir nosso serviço, quais os handlers que ele possui e para cada handler, qual a requisição e qual resposta esperadas.
 
@@ -192,7 +191,7 @@ protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=p
 
 Esse comando vai gerar dois arquivos: `ping_pong.pb.go` e `ping_pong_grpc.pb.go`. Recomendo dar uma olhada nesses arquivos para entender melhor a estrutura do servidor e do cliente. Com isso, podemos então construir o servidor:
 
-### Construindo o servidor...
+#### Construindo o servidor...
 
 Para conseguir comparar com o RPC comum, vamos utilizar a mesma lógica: recebemos `PING` e respondemos `PONG`. Aqui definimos um servidor e um handler para a requisição e usamos as definições vindas do protobuf para a requisição e resposta. Depois, é só iniciar o servidor:
 
@@ -235,7 +234,7 @@ func main() {
 }
 ```
 
-### E o cliente...
+#### E o cliente...
 
 Para consumir o nosso servidor, precisamos de um cliente. o cliente é bem simples também. A biblioteca do gRPC já implementa basicamente tudo que precisamos, então inicializamos um client e só chamamos o método RPC que queremos usar, no caso o `Ping`. Tudo vem importado do código gerado via plugins do protobuf.
 
@@ -270,11 +269,14 @@ func main() {
 
 Quem tiver interesse para ver o código completo, pode acessar a [PoC gRPC](https://github.com/mfbmina/poc_grpc).
 
-# Considerações finais
+## Considerações finais
 
 O gRPC não é nada mais que uma abstração em cima do RPC convencional utilizando o protobuf como serializador e o protocolo `http/2`. Existem algumas considerações de performance ao se utilizar o `http/2` e em alguns cenários, como em requisições com o corpo simples, o `http/1` se mostra mais performático que o `http/2`. Recomendo a leitura deste [benchmark](https://github.com/duh-rpc/duh-go-benchmarks) e desta issue aberta no [golang/go](https://github.com/golang/go/issues/47840) sobre o `http/2`. Contudo, em requisições de corpo complexo, como grande parte das que resolvemos dia a dia, gRPC se torna uma solução extremamente atraente devido ao serializador do protobuf, que é extremamente mais rápido que JSON. O Elton Minetto fez um [blog post](https://eltonminetto.dev/post/2024-08-05-json-vs-flatbuffers-vs-protobuf/) explicando melhor essas alternativas e realizando um benchmark. Um consideração também é o protobuf consegue resolver o problema de inconsistência de contratos entre servidor e cliente, contudo é necessário uma maneira fácil de distribuir os arquivos `.proto`.
 
-Por fim, minha recomendação é use gRPC se sua equipe tiver a necessidade e a maturidade necessária para tal. Hoje, grande parte das aplicações web não necessitam da performance que gRPC visa propor e nem todos já trabalharam com essa tecnologia, o que pode causar uma menor velocidade e qualidade nas entregas. Como nessa postagem eu citei muitos links, decidi listar todas as referências abaixo:
+Por fim, minha recomendação é use gRPC se sua equipe tiver a necessidade e a maturidade necessária para tal. Hoje, grande parte das aplicações web não necessitam da performance que gRPC visa propor e nem todos já trabalharam com essa tecnologia, o que pode causar uma menor velocidade e qualidade nas entregas. 
+
+## Links utéis
+Como nessa postagem eu citei muitos links, decidi listar todas as referências abaixo:
 
 - [RPC](https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto)
 - [RPC RFC](https://datatracker.ietf.org/doc/html/rfc1831)

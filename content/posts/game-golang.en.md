@@ -10,6 +10,7 @@ In this course, we used Python to develop a slide puzzle. It was very challengin
 
 ![Sliding puzzle](/img/posts/sliding-puzzle.png)
 
+## Writing games in Go
 I decided to build a sliding puzzle with Go. The first step was building the core, the main parts of the game. Therefore, I created a struct called `Play`, which has the table and positions `x` and `y` for the nil value. The table could be represented with an array, but I think the quadratic matrix represents it better. Also, to represent the nil value, I chose the `0`. 
 
 ```go
@@ -22,6 +23,7 @@ type Play struct {
 }
 ```
 
+### Initialising a new game
 After that, we will create a new play with a random table. To randomize it, we go through each cell and change it for another one by random. That guarantees us that we will have a minimum randness at our table.
 
 ```go
@@ -62,6 +64,7 @@ func generateRandomTable() ([3][3]int, int, int) {
 }
 ```
 
+### Moving pieces
 Next, we can implement the moves for up, down, left, and right. Here, we will always move the nil value. If we can't move it, we will return an error.
 
 ```go
@@ -110,6 +113,7 @@ func (p *Play) Right() error {
 }
 ```
 
+### Checking victory
 At last, we can check if the table is in the win position.
 
 ```go
@@ -197,6 +201,7 @@ func getMove() string {
 }
 ```
 
+## Solving impossible games
 But when I played it sometimes, I noticed that some games were impossible to solve. Researching a bit, I discovered that my randomization was causing the issue because when changing a cell for another one, we can make some moves that will never occur in a real table. But we can identify and fix this issue by counting the number of inversions needed to solve the game. If the number of inversions is even, it is solvable. If it is odd, it is not.
 
 ```go
@@ -245,8 +250,10 @@ func generateRandomTable() ([3][3]int, int, int) {
 }
 ```
 
+## Ebiten
 We finally have a functional game! Now, we can work on a GUI for our sliding puzzle. I've choose [Ebiten](https://github.com/hajimehoshi/ebiten), an open source engine that allows us to build 2D games. It makes us implement an interface with the functions `Update`, `Draw` e `Layout`.
 
+### Layout function
 Implementing `Layout` is the simplest one: it defines the windows size. 
 
 ```go
@@ -255,6 +262,7 @@ func (u *UI) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight 
 }
 ```
 
+### Draw function
 `Draw` is responsible for drawing what is shown on the screen and runs for every frame. To represent our table, I had chosen to use 300x300 images for each one of the valid numbers. So, at each iteration, the functions look at the table and represent it visually. If the game is at the win state, it renders the congratulations image.
 
 ```go
@@ -302,6 +310,7 @@ func loadImage(name string) *ebiten.Image {
 }
 ```
 
+### Update function
 The `Update` function is responsible for updating the game itself. In other words, it makes something happen by defining the behavior when pressing any key. At the `core`, we mapped any action to the zero value, but when translating to a GUI, it makes more sense to reverse the logic. The user hits down because he wants to move the number below, not the zero.
 
 
@@ -351,4 +360,5 @@ func (u *UI) Render() {
 }
 ```
 
+## Conclusion
 And our game is ready! It was a really cool project to work on. It showed me that building games is always a great way to learn new things, and it is also a way to reinforce knowledge. Also, Ebiten allows us to build 2D games using our favorite language, and we can distribute it to several platforms, including Web with WebAssembly or even XBOX. If you wish to run the code, you can find it [here](https://github.com/mfbmina/puzzle). Please give me some feedback about this blog post, and I have one last question for you: which game do you want to build using Go?

@@ -260,7 +260,7 @@ enableEmoji = true
       # whether to keep the static table of the contents in front of the post
       keepStatic = false
       # whether to make the table of the contents in the sidebar automatically collapsed
-      auto = true
+      auto = false
     [params.page.code]
       # whether to show the copy button of the code block
       copy = true

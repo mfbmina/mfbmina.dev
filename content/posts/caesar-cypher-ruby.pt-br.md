@@ -22,6 +22,7 @@ Neste ponto, nos deparamos com um pequeno problema. Se o valor de **new_byte** (
 
 Neste código, **initial_byte** é referente ao valor de **A** ou **a** e **limit_byte** é o byte referente a **Z** ou **z**. Desta maneira, sempre vamos rotacionar entre as letras.
 
+## Show me the code!
 Vamos agora descobrir como é possível encontrar os bytes presentes em cada caractere de uma **string**. Olhando mais a fundo no Ruby, isto é facilmente feito pelo método **[bytes](https://ruby-doc.org/core-2.5.1/String.html#method-i-bytes). ** Tendo conhecimento disto, temos o seguinte:
 * **A** é representado pelo byte 65.
 * **Z** é representado pelo byte 90.
@@ -56,6 +57,7 @@ Uma coisa interessantíssima acontece quando nós utilizamos a quantidade de rot
 
 Para ter resultados diferentes, é necessário trocar a quantidade de rotações.
 
+## Conclusão
 Infelizmente essa implementação tem um problema. Os caracteres em Ruby podem ser multi-bytes e originalmente não levei isto em consideração. Para que funcione ignorando os caracteres multi-bytes deve se implementar a solução utilizando divisão modular.
 
 Este é minha primeira postagem sobre criptografia e minha ideia é implementar algumas das técnicas conhecidas e tentar explicar facilmente aqui. Se você tiver interesse em olhar o código completo, por favor acesse o [repositório no Github](https://github.com/mfbmina/cipher_studies/blob/master/caeser.rb).

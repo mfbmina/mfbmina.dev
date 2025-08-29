@@ -6,6 +6,7 @@ draft = false
 
 As the software we work on grows, the code tends to undergo various changes and refactorings. During this process, we might simply forget pieces of code that were once used but no longer make sense in the project, the infamous dead code. A very common example is when an API is deactivated, and only the `handler` is removed, but all the business logic remains, unused.
 
+## What is deadcode?
 Dead code can be defined as a function that exists within your codebase, is syntactically valid, but is not used by any other part of your code. In other words, it's an unreachable function. Dead code brings indirect problems to a project, such as outdated libraries, legacy code, code bloat, security vulnerabilities, and so on. If it's still not clear what dead code is, see the example below:
 
 ```golang
@@ -52,6 +53,7 @@ func indirectUnreachable() {
 }
 ```
 
+## Deadcode package
 The Go team then provided a solution to this problem with the [deadcode](https://pkg.go.dev/golang.org/x/tools/cmd/deadcode) tool. It's worth mentioning that the tool should always be run from `main`, as it searches for dead code based on what would be executed in production. When you run this tool, you finally get all unused functions:
 
 ```sh
@@ -68,4 +70,5 @@ This way, we can easily find dead code in our project. To install the tool, simp
 $ go get -tool golang.org/x/tools/cmd/deadcode@latest
 ```
 
+## Conclusion
 This tool is very useful to run after project refactorings and has helped me a lot to keep the code lean and containing only what truly matters to the project. If you're interested and want to know more, I recommend reading the [official post](https://go.dev/blog/deadcode). Tell me in the comments what you think of the tool, and if you want to see the full code, access it [here](https://github.com/mfbmina/poc_deadcode).

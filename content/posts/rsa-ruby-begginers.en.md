@@ -4,8 +4,6 @@ date = 2018-12-13T09:22:18-03:00
 draft = false
 +++
 
-## Introdução
-
 RSA is a public/private encryption algorithm and it is based on the difficulty of the factorization of the product of two large prime numbers. It was named after its creators Rivest, Shamir, and Adleman.
 
 It is an expensive algorithm, computationally speaking, and because of this, it is not common to use it directly, but it is still widely used in the market and is one of the most important encryption algorithms. As an example, OpenSSL implements this algorithm for generating keys and it is commonly used for encrypting SSL certificates or SSH keys.

@@ -8,6 +8,7 @@ Atualmente grande parte dos fluxos de autenticação se baseia em gerar um token
 
 ![Exemplo do Header Authorization](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/40k9kehupm6ck21njuih.png)
 
+## Extraindo informações
 É comum que esse token contenha informações do usuário, como por exemplo o id. Então ao receber a requisição, o backend decodifica esse token para extrair essas informações e assim relacionar com algum usuário do banco de dados. Com o usuário em mãos, executamos a ação desejada. Logo abaixou vou dar um exemplo de um serviço em Go que faz exatamente isso.
 
 ```go
@@ -80,10 +81,10 @@ func getToken(tokenStr string) (string, error) {
 
 Esse fluxo funciona muito bem para monolitos, mas para micro-serviços não. O problema é que ao ir para um ambiente de micro-serviços, essa lógica responsável por abrir o token tem que ser replicada para cada um dos serviços novos. Se por acaso o formato do token mudar, todos os micro-serviços vão ter que se atualizar para seguir o padrão novo de token.
 
+## Enriquecendo requisições
 Para evitar esse problema, podemos fazer algo chamado de enriquecimento de requests. Isso consiste em adicionar mais informações a request original, dando mais contexto e informações ao backend. Um serviço que faz isso, por exemplo, é o [Cloudflare](https://developers.cloudflare.com/fundamentals/get-started/reference/http-request-headers/) que adiciona alguns headers na sua requisição. Para fazer esse enriquecimento, podemos colocar uma aplicação intermediaria para fazer essa abertura de token e colocar a requisição no header das demais respostas.
 
 Uma maneira bem simples de fazer isso é utilizar os mecanismos de middleware do [Traefik](https://doc.traefik.io/traefik/). Ele é um proxy reverso e load balancer que nos permite de maneira simples fazer roteamento entre os nossos microserviços. Além disso, ele é open-source e escrito em Go. Utilizando a idéia do middleware com o Traefik, a nossa arquitetura ficaria assim:
-
 
 ![Fluxo da solução final](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/f0kjbfjlmvm54mdivplq.png)
 
@@ -96,6 +97,7 @@ Bem legal, né? Para resumir tudo, o ciclo da requisição vai funcionar assim:
 5. O Traefik encaminha a request original ao serviço backend
 6. O serviço responde o usuário
 
+## Construindo a solução
 Colocando a mão na massa, vamos configurar nosso serviço no Traefik receber e encaminhar as chamadas para o nosso serviço.
 
 ```yaml
@@ -259,7 +261,7 @@ http:
         - url: http://private/user-middleware
 ```
 
-E pronto! Mágica funcionando! Todas as requests pro UserService vão ter o header `X-User-Id`. Para finalizar, é só a gente remover o código que “abre” o token e passar a ler a informação vinda do header. Nosso handler ficaria assim:
+E pronto! Mágica funcionando! Todas as requests pro UserService vão ter o header `X-User-Id`. Para finalizar, é só a gente remover o código que "abre" o token e passar a ler a informação vinda do header. Nosso handler ficaria assim:
 
 ```go
 func getEmailFinal(w http.ResponseWriter, r *http.Request) {
@@ -272,6 +274,7 @@ func getEmailFinal(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
+## Conclusão
 Ao enriquecer a request podemos simplificar o código dos nossos serviços, repassando informações utéis ao backend de forma transparente. Podemos ver que o handler do nosso serviço ficou bem mais limpo, focando somente no que ele de fato deveria fazer.
 
 Se curtiu o post, você também pode me encontrar no **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)** ou **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**

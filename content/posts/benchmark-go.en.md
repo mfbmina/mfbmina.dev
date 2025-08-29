@@ -27,6 +27,7 @@ func FatorialLoop(n int) int {
 }
 ```
 
+## Before 1.24
 Previously, to write a benchmark, it was necessary to write down the whole execution loop of the test. When done, we need to run the command `$ go test -bench .`
 
 ```golang
@@ -71,6 +72,7 @@ func Benchmark_FatorialRecursiveWithoutCompilerImprovements(b *testing.B) {
 }
 ```
 
+## After 1.24
 The new Go version solved these *issues*, and, with a simpler syntax, we have trustworthy benchmarks without premature compiler optimizations.
 
 ```golang
@@ -87,6 +89,7 @@ func Benchmark_FatorialRecursive_1_24(b *testing.B) {
 }
 ```
 
+## Conclusion
 This is a small improvement, but it makes the developer experience much finer. It also reinforces the trust at the benchmark tests by ensuring less interference at the code being checked. As we can see from the results, the older version with optimizations tends to be better than it actually is.
 
 ```
