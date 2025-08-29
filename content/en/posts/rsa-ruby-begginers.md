@@ -146,6 +146,6 @@ Another big flaw lies in the deterministic nature of RSA. You can generate value
 
 Also, padding schemes can be fragile. In my example, I am choosing a "dumb" padding scheme based on bytes and filling them with zeros. If you want to, you can easily check for frequency in the encrypted text and with this information, decrypt the message.
 
-This is the second post about cipher, my idea is to implement some techniques and try to easily explain it here. If you want to take a look at the whole code, please check at [GitHub]((https://github.com/mfbmina/cipher_studies/blob/master/rsa.rb)).
+This is the second post about cipher, my idea is to implement some techniques and try to easily explain it here. If you want to take a look at the whole code, please check at [GitHub](https://github.com/mfbmina/cipher_studies/blob/master/rsa.rb).
 
 You also can find me on **[Twitter](https://twitter.com/mfbmina)**, **[Github](https://github.com/mfbmina)**, or **[LinkedIn](https://www.linkedin.com/in/mfbmina/).**

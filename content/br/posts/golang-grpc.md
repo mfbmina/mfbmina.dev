@@ -277,7 +277,7 @@ O gRPC não é nada mais que uma abstração em cima do RPC convencional utiliza
 Por fim, minha recomendação é use gRPC se sua equipe tiver a necessidade e a maturidade necessária para tal. Hoje, grande parte das aplicações web não necessitam da performance que gRPC visa propor e nem todos já trabalharam com essa tecnologia, o que pode causar uma menor velocidade e qualidade nas entregas. Como nessa postagem eu citei muitos links, decidi listar todas as referências abaixo:
 
 - [RPC](https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto)
-- [RPC RFC]((https://datatracker.ietf.org/doc/html/rfc1831))
+- [RPC RFC](https://datatracker.ietf.org/doc/html/rfc1831)
 - [RPC x REST](https://aws.amazon.com/pt/compare/the-difference-between-rpc-and-rest/)
 - [PoC RPC](https://github.com/mfbmina/poc_rpc)
 - [net/rpc](https://pkg.go.dev/net/rpc)

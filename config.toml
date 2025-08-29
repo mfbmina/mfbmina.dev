@@ -5,6 +5,7 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 subtitle = "Matheus Mina"
 title = "mfbmina.dev"
+theme = "LoveIt"
 
 [languages]
   [languages.br]

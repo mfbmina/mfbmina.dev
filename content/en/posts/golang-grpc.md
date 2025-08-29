@@ -130,7 +130,7 @@ To see the full example, please visit the [PoC](https://github.com/mfbmina/poc_r
 
 # And what is gRPC?
 
-gRPC is a framework for writing services using RPC. This framework is part of [CNCF](https://www.cncf.io/) and the [official documentation]((https://grpc.io/)) says it was created by Google:
+gRPC is a framework for writing services using RPC. This framework is part of [CNCF](https://www.cncf.io/) and the [official documentation](https://grpc.io/) says it was created by Google:
 > gRPC was initially created by Google, which has used a single general-purpose RPC infrastructure called Stubby to connect the large number of microservices running within and across its data centers for over a decade. In March 2015, Google decided to build the next version of Stubby and make it open source. The result was gRPC, which is now used in many organizations outside of Google to power use cases from microservices to the "last mile" of computing (mobile, web, and Internet of Things).
 
 It can work with multiple operational systems and architectures. It also has the following core features:
@@ -271,7 +271,7 @@ gRPC is not more than an abstraction over the conventional RPC, using protobuf a
 
 My final recommendation is to use gRPC if you and your team need it and are mature enough for it. Usually, web applications don't need all the performance that gRPC aims to give. It is usual to find people who have never worked with it, which can cause a slow development process and a loss in software quality. In this post, I've cited a lot of references, and they are all listed below:
 - [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call)
-- [RPC RFC]((https://datatracker.ietf.org/doc/html/rfc1831))
+- [RPC RFC](https://datatracker.ietf.org/doc/html/rfc1831)
 - [RPC x REST](https://aws.amazon.com/en/compare/the-difference-between-rpc-and-rest/)
 - [PoC RPC](https://github.com/mfbmina/poc_rpc)
 - [net/rpc](https://pkg.go.dev/net/rpc)
