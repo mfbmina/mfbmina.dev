@@ -84,18 +84,92 @@ func avg() float64 {
 
 No exemplo acima, podemos ter diversas rotinas chamando o `avg` para pegar a média da lista de inteiros, contudo, se uma rotina decidir inserir mais um valor, todos vão ter que esperar essa escrita finalizar.
 
-## Pool
+## Atomic
+
+O [atomic](https://pkg.go.dev/sync/atomic) é um subpacote do pacote sync que implementa suporte a concorrência em tipos primitivos. Atualmente ele suporta operações os tipos: bool, int32, int64, pointer, uint32, uint64, uintpointer e value. Com ele, podemos simplificar o exemplo utilizado na mutex:
+
+```go
+func countWithAtomic() atomic.Int32 {
+	var counter atomic.Int32
+	wg := sync.WaitGroup{}
+
+  counter.Add(1)
+	for i := 0; i < 1000; i++ {
+		wg.Go(func() {
+			v, ok := counter.Load
+
+		})
+	}
+
+	wg.Wait()
+	return counter.Load()
+}
+```
+
+É necessário notar que as operações básicas, como adição, foram reimplementadas para garantir que as rotinas não concorram pelo recurso.
+
+## Map
+
+O map é funciona como qualquer outro map normal. Ele fornece funções que para comparar, trocar, atribuir ou recuperar os valores, com a diferença de ser seguro para concorrência. 
+
+```go
+func mapExample() int {
+	var m sync.Map
+	wg := sync.WaitGroup{}
+
+	for i := 0; i < 1000; i++ {
+		wg.Go(func() {
+			m.LoadOrStore(i, i*i)
+		})
+	}
+
+	wg.Wait()
+
+	v, _ := m.Load(0)
+	return v.(int)
+}
+```
+
+A própia documentação sugere que ele deve ser utilizado em dois casos:
+1. quando a uma key é escrita apenas uma vez, mas lida diversas vezes. Um exemplo é um cache que só cresce. 
+2. quando múltiplas goroutinas lêem e escrevem grupos distintos de chaves. 
+
+Qualquer outro caso é melhor utilizar o map tradicional com mutexes.
 
 ## Once
 
-## Cond
+O tipo `Once` garante que algo será executado uma única vez, mesmo que diversas rotinas tentem executar. Um exemplo disso poderia ser a inicialização de recursos, como é demonstrado pela documentação do Go.
 
-## Map
+```go
+func doSomething() int {
+	wg := sync.WaitGroup{}
+	o := sync.Once{}
+	result := 0
+
+	for i := 0; i < 10; i++ {
+		wg.Go(func() {
+			o.Do(func() {
+				result++
+			})
+		})
+	}
+
+	wg.Wait()
+	return result
+}
+```
+
+É importante se atentar que caso a função dê `panic`, ela não será reexecutada.
+
+## Pool
+
+## Cond
 
 ## Conclusão
 
 ## Links Extras
 - [sync](https://pkg.go.dev/sync)
+- [atomic](https://pkg.go.dev/sync/atomic)
 - [Introdução à concorrência em Go]({{< ref introduction-concurrency-go >}})
 - [Waitgroups: o que são, como usar e o que mudou com o Go 1.25]({{< ref waitgroups >}})
 - [Deep dive into the sync package - Gophercon UK](https://www.youtube.com/watch?v=DOj1G7CMT-I)
