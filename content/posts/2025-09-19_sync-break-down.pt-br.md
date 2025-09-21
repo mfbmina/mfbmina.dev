@@ -224,11 +224,11 @@ func poolExample() {
 }
 ```
 
-Para inicializar uma `Pool` precisamos definir a sua função de inicialização. Ao utilizar o `Get` recuperamos o que está salvo na memória e com o `Put` escrevemos um novo valor nela.
+Para inicializar uma `Pool` precisamos definir a sua função de inicialização. Ao utilizar o `Get` recuperamos o que está salvo na memória e com o `Put` escrevemos um novo valor nela. O `New` só é utilizado se não existir nada alocado na memória.
 
 ## Conclusão
 
-O pacote `sync` fornece diversas funcionalidades que são extremamente úteis ao se trabalhar com múltiplas goroutines. É possível controlar a execução com os tipos `Cond` e `Once`. `Waitgroups` garantem que tudo será executado. `Mutex`, `RWMutex` e os tipos atômicos evitam a concorrência pelos recursos. Por fim, o `Pool` alivia o trabalho do GC quando é possível trabalhar com objetos de curta duração na memória. Sem sombra de dúvidas esse pacote é crucial para quem trabalha com goroutines. Diga nos comentários se já utilizou este pacote e se de alguma forma ele te ajudou. Se ainda não utilizou, comente o que achou do post.
+O pacote `sync` fornece diversas funcionalidades que são extremamente úteis ao se trabalhar com múltiplas goroutines. É possível controlar a execução com os tipos `Cond` e `Once`. `Waitgroups` garantem que tudo será executado. `Mutex`, `RWMutex` e os tipos atômicos evitam a concorrência pelos recursos. Por fim, o `Pool` alivia o trabalho do GC quando é possível trabalhar com objetos de curta duração na memória. Sem sombra de dúvidas, esse pacote é crucial para quem trabalha com goroutines. Caso você queira entender os detalhes de implementação deste pacote, recomendo a palestra apresentada na Gophercon UK 2025, [Deep dive into the sync package](https://www.youtube.com/watch?v=DOj1G7CMT-I), apresentada pelo Jesus Hawthorn. Diga nos comentários se já utilizou este pacote e se de alguma forma ele te ajudou. Se ainda não utilizou, comente o que achou do post.
 
 ## Links Extras
 - [sync](https://pkg.go.dev/sync)

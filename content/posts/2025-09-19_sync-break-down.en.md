@@ -227,11 +227,11 @@ func poolExample() {
 }
 ```
 
-To initialize a `Pool` we need to define its initialization function. When using `Get` we retrieve what is saved in memory and with `Put` we write a new value to it.
+To initialize a `Pool` we need to define its initialization function. When using `Get` we retrieve what is saved in memory and with `Put` we write a new value to it. `New` is only used if there is nothing allocated into the memory.
 
 ## Conclusion
 
-The `sync` package provides several functionalities that are extremely useful when working with multiple goroutines. It's possible to control execution with `Cond` and `Once` types. `Waitgroups` ensure everything will be executed. `Mutex`, `RWMutex`, and atomic types prevent resource contention. Finally, `Pool` relieves the GC's work when it's possible to work with short-lived objects in memory. Without a doubt, this package is crucial for anyone working with goroutines. Tell us in the comments if you have already used this package and if it helped you in any way. If you haven't used it yet, comment on what you thought of the post.
+The `sync` package provides several functionalities that are extremely useful when working with multiple goroutines. It's possible to control execution with `Cond` and `Once` types. `Waitgroups` ensure everything will be executed. `Mutex`, `RWMutex`, and atomic types prevent resource contention. Finally, `Pool` relieves the GC's work when it's possible to work with short-lived objects in memory. Without a doubt, this package is crucial for anyone working with goroutines. If you wish to understand the implementation details of this package, I recommend watching the talk presented at Gophercon UK 2025, [Deep dive into the sync package](https://www.youtube.com/watch?v=DOj1G7CMT-I) by Jesus Hawthorn. Tell us in the comments if you have already used this package and if it helped you in any way. If you haven't used it yet, comment on what you thought of the post.
 
 ## Extra Links
 - [sync](https://pkg.go.dev/sync)
