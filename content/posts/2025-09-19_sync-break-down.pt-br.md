@@ -228,13 +228,14 @@ Para inicializar uma `Pool` precisamos definir a sua função de inicialização
 
 ## Conclusão
 
-O pacote `sync` fornece diversas funcionalidades que são extremamente úteis ao se trabalhar com múltiplas goroutines. É possível controlar a execução com os tipos `Cond` e `Once`. `Waitgroups` garantem que tudo será executado. `Mutex`, `RWMutex` e os tipos atômicos evitam a concorrência pelos recursos. Por fim, o `Pool` alivia o trabalho do GC quando é possível trabalhar com objetos de curta duração na memória. Sem sombra de dúvidas, esse pacote é crucial para quem trabalha com goroutines. Caso você queira entender os detalhes de implementação deste pacote, recomendo a palestra apresentada na Gophercon UK 2025, [Deep dive into the sync package](https://www.youtube.com/watch?v=DOj1G7CMT-I), apresentada pelo Jesus Hawthorn. Diga nos comentários se já utilizou este pacote e se de alguma forma ele te ajudou. Se ainda não utilizou, comente o que achou do post.
+O pacote `sync` fornece diversas funcionalidades que são extremamente úteis ao se trabalhar com múltiplas goroutines. É possível controlar a execução com os tipos `Cond` e `Once`. `Waitgroups` garantem que tudo será executado. `Mutex`, `RWMutex` e os tipos atômicos evitam a concorrência pelos recursos. Por fim, o `Pool` alivia o trabalho do GC quando é possível trabalhar com objetos de curta duração na memória. Sem sombra de dúvidas, esse pacote é crucial para quem trabalha com goroutines. Caso você queira entender os detalhes de implementação deste pacote, recomendo a palestra apresentada na Gophercon UK 2025, [Deep dive into the sync package](https://www.youtube.com/watch?v=DOj1G7CMT-I), apresentada pelo Jesus Hawthorn. E também tem uma [apresentação]({{< ref easing_concurrency_with_the_sync_package >}}) que fiz na Golang SP sobre o tema. Diga nos comentários se já utilizou este pacote e se de alguma forma ele te ajudou. Se ainda não utilizou, comente o que achou do post.
 
 ## Links Extras
 - [sync](https://pkg.go.dev/sync)
 - [atomic](https://pkg.go.dev/sync/atomic)
 - [Introdução à concorrência em Go]({{< ref introduction-concurrency-go >}})
 - [Waitgroups: o que são, como usar e o que mudou com o Go 1.25]({{< ref waitgroups >}})
+- [Apresentação na Golang SP]({{< ref easing_concurrency_with_the_sync_package >}})
 - [Deep dive into the sync package - Gophercon UK](https://www.youtube.com/watch?v=DOj1G7CMT-I)
 - [Go Goroutine Synchronization: a Practical Guide](https://medium.com/@Realblank/go-goroutine-synchronization-a-practical-guide-49705a499fd7)
 - [Deadlock](https://en.wikipedia.org/wiki/Deadlock_(computer_science))
