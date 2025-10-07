@@ -10,7 +10,7 @@ I'm a software engineer who met Go after years of working with Ruby and fell in 
 
 Some information about me:
 
-- Staff Software Engineer at PicPay
+- Staff Software Engineer and Tech Lead
 - From Varginha, Minas Gerais, Brazil
 - Technician in Industrial IT on CEFET-MG
 - Bachelor in Computer Science on UNIFEI

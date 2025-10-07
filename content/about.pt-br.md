@@ -9,7 +9,7 @@ Me chamo Matheus, mas sou mais conhecido como Mina!
 Sou um desenvolvedor/engenheiro de software que conheceu Go, após anos trabalhando com Ruby, e se apaixonou pela linguagem. Aqui vai encontrar sobre tecnologias e temas que estou estudando, trabalhando ou até mesmo que tenho algum interesse.
 
 Algumas curiosidades sobre mim:
-- Staff Software Engineer no PicPay
+- Staff Software Engineer e Tech Lead
 - Natural de Varginha, Minas Gerais
 - Técnico em Informática Industrial pelo CEFET-MG
 - Bacharel em Ciência da Computação pela UNIFEI
