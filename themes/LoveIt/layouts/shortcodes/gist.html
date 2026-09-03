@@ -1,0 +1,15 @@
+{{ $username := .Get 0 }}
+{{ $id := .Get 1 }}
+{{ if not $username }}
+  {{ errorf "Missing required parameter 'username' for shortcode 'gist'" }}
+{{ end }}
+{{ if not $id }}
+  {{ errorf "Missing required parameter 'id' for shortcode 'gist'" }}
+{{ end }}
+{{ if $id }}
+  <div class="gist-container">
+    <div class="gist-embed" data-id="{{ $id }}" data-ratio="1.7772511848341233">
+      <script src="https://gist.github.com/{{ $username }}/{{ .Get $id }}.js"></script>
+    </div>
+  </div>
+{{ end }}
